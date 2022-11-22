@@ -1546,4 +1546,6 @@ $pdf->SetXY(170, 83);
 $pdf->Write(3, "Barzahlung");
 
 */
+$pdf->SetAuthor("ISLM-Bahn");
+$pdf->SetTitle("Tickets");
 $pdf->Output();
