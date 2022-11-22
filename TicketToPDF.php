@@ -4,15 +4,15 @@ date_default_timezone_set('Europe/Berlin');
 $date = date('d.m.Y');
 $time = date('h:i');
 $klasse = "1"; // AUS JSON AUSLESEN
-$ticketart = "Viererticket"; // AUS JSON AUSLESEN
-$anzErwachsene = 2; // AUS JSON AUSLESEN
-$anzKinder = 2; // AUS JSON AUSLESEN
-$anzErmaesigt = 0; // AUS JSON AUSLESEN
-$anzSenior = 1; // AUS JSON AUSLESEN
+$ticketart = "Monatsticket"; // AUS JSON AUSLESEN
+$anzErwachsene = 3; // AUS JSON AUSLESEN
+$anzKinder = 1; // AUS JSON AUSLESEN
+$anzErmaesigt = 1; // AUS JSON AUSLESEN
+$anzSenior = 2; // AUS JSON AUSLESEN
 $standort = "Koeln"; // AUS JSON AUSLESEN
 $zielort = "Aachen"; // AUS JSON AUSLESEN
-$isAboTicket = false; // BOOLEAN AUS JSON AUSLESEN
-$price = 50; // AUS JSON AUSLESEN
+$isAboTicket = true; // BOOLEAN AUS JSON AUSLESEN
+$price = 10; // AUS JSON AUSLESEN
 
 $pdf = new FPDF();
 
@@ -659,7 +659,7 @@ else if ($isAboTicket) {
             $pdf->Write(0, "Klasse " . $klasse);
 
             // Einzelticket
-            $pdf->SetXY(125, $saveY + 8);
+            $pdf->SetXY(120, $saveY + 8);
             $pdf->Write(0, $ticketart);
             $pdf->SetFont('Arial', '', 16);
             $pdf->SetXY(159, $saveY + 8);
@@ -762,7 +762,7 @@ else if ($isAboTicket) {
             $pdf->Write(0, "Klasse " . $klasse);
 
             // Einzelticket
-            $pdf->SetXY(125, $saveY + 8);
+            $pdf->SetXY(120, $saveY + 8);
             $pdf->Write(0, $ticketart);
             $pdf->SetFont('Arial', '', 16);
             $pdf->SetXY(159, $saveY + 8);
@@ -865,7 +865,7 @@ else if ($isAboTicket) {
             $pdf->Write(0, "Klasse " . $klasse);
 
             // Einzelticket
-            $pdf->SetXY(125, $saveY + 8);
+            $pdf->SetXY(120, $saveY + 8);
             $pdf->Write(0, $ticketart);
             $pdf->SetFont('Arial', '', 16);
             $pdf->SetXY(159, $saveY + 8);
@@ -968,7 +968,7 @@ else if ($isAboTicket) {
             $pdf->Write(0, "Klasse " . $klasse);
 
             // Einzelticket
-            $pdf->SetXY(125, $saveY + 8);
+            $pdf->SetXY(120, $saveY + 8);
             $pdf->Write(0, $ticketart);
             $pdf->SetFont('Arial', '', 16);
             $pdf->SetXY(159, $saveY + 8);
