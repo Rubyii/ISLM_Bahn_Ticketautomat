@@ -12,7 +12,7 @@ $anzSenior = "0"; // AUS JSON AUSLESEN
 $standort = "Koeln"; // AUS JSON AUSLESEN
 $zielort = "Aachen"; // AUS JSON AUSLESEN
 $isAboTicket = true; // BOOLEAN AUS JSON AUSLESEN
-$price = 50;
+$price = 50; // AUS JSON AUSLESEN
 
 $pdf = new FPDF();
 
