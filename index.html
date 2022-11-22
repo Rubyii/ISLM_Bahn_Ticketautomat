@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
@@ -8,24 +8,40 @@
 <body>
 <div class="grid-container">
     <div class="ueberschrift">
-        <img class="logo" src="static/images/ISLM_Logo2009.png">
+        <img alt="ISLM-Bahn" class="logo" src="static/images/ISLM_Logo2009.png">
         <div id="uhrzeitdatum" class="uhrzeitdatum">
             <div id="uhrzeit"></div>
             <div id="datum"></div>
         </div>
     </div>
-    <div class="hinweistext">Bitte geben sie ihr Ziel ein</div>
+    <div class="hinweistext">
+        <div class="text">
+            Bitte geben Sie Ihr Ziel ein
+        </div>
+    </div>
 
     <div class="hauptfunktion">
-
-        2
-
+        <div class="hauptfunktion-innen">
+            <form action="static/php/startseite.php" method="post">
+                <label for="start" class="label">Start</label>
+                <input type="text" id="start" name = "start" class="input">
+                <br><br>
+                <label for="ziel" class="label">Ziel</label>
+                <input type="text" id="ziel" name = "ziel" class="input-ziel">
+                <br><br>
+                <input type="submit" class="input" value="Weiter">
+            </form>
+        </div>
     </div>
 
     <div class="navigation">
-
-        3
-
+        <div class="navigation-innen">
+            <form action="static/php/startseite.php" method="post" class="button-form">
+                <input type="submit" class="button-gruen" value="Tages Ticket">
+                <input type="submit" class="button-gruen" value="Monats Ticket">
+                <input type="submit" class="button-gruen" value="Jahres Ticket">
+            </form>
+        </div>
     </div>
 </div>
 
@@ -34,5 +50,3 @@
 </body>
 <script src="static/js/zeit.js"></script>
 </html>
-
-
