@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    @import url("index.css");
-    <title>Title</title>
+    <title>Startseite</title>
+    <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
+<div class="grid-container">
+    <div class="ueberschrift">
+        <img alt="ISLM-Bahn" class="logo" src="static/images/ISLM_Logo2009.png">
+        <div id="uhrzeitdatum" class="uhrzeitdatum">
+            <div id="uhrzeit"></div>
+            <div id="datum"></div>
+        </div>
+    </div>
+    <div class="hinweistext">
+        <div class="text">
+            Bitte geben Sie die Anzahl der Reisenden an
+        </div>
+    </div>
+
+    <div class="hauptfunktion">
+        <div class="hauptfunktion-innen">
+            <form action="static/php/startseite.php" method="post">
+                <label for="erwachsene" class="label">Erwachsene</label>
+                <div id="erwachsene">
+                    <input type="button"  name = "plus" class="button-gruen">
+                    <input type="button"  name = "minus" class="button-gruen">
+                </div>
+                <br><br>
+                <label for="senioren" class="label">Senioren</label>
+                <div id="senioren">
+                    <input type="button"  name = "plus" class="button-gruen">
+                    <input type="button"  name = "minus" class="button-gruen">
+                </div>
+
+                <br><br>
+                <label for="ermaessigt" class="label">Ermäßigt</label>
+                <div id="ermaessigt">
+                    <input type="button"  name = "plus" class="button-gruen">
+                    <input type="button"  name = "minus" class="button-gruen">
+                </div>
+                <br><br>
+                <label for="kinder" class="label">Kinder</label>
+                <div id="kinder">
+                    <input type="button"  name = "plus" class="button-gruen">
+                    <input type="button"  name = "minus" class="button-gruen">
+                </div>
+                <div id="wagenklasse">
+                    <input type="button"  name = "klasse2" class="button-gruen">
+                    <input type="button"  name = "klasse1" class="button-gruen">
+                </div>
+                <br><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="navigation-innen">
+            <form action="static/php/startseite.php" method="post" class="button-form">
+                <input type="submit" class="button-gruen" name="NaviSchritt" value="Abbrechen">
+                <input type="submit" class="button-gruen" name="NaviSchritt" value="Zurück">
+                <input type="submit" class="button-gruen" name="NaviSchritt" value="Weiter">
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 </body>
+<script src="static/js/zeit.js"></script>
 </html>
