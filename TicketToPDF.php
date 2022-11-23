@@ -3,21 +3,55 @@ require ('fpdf/fpdf.php');
 date_default_timezone_set('Europe/Berlin');
 $date = date('d.m.Y');
 $time = date('h:i');
+
 $klasse = "1"; // AUS JSON AUSLESEN
-$ticketart = "Monatsticket"; // AUS JSON AUSLESEN
+$ticketart = "Viererticket"; // AUS JSON AUSLESEN
+
 $anzErwachsene = 3; // AUS JSON AUSLESEN
 $anzKinder = 1; // AUS JSON AUSLESEN
 $anzErmaesigt = 1; // AUS JSON AUSLESEN
 $anzSenior = 2; // AUS JSON AUSLESEN
+
 $standort = "Koeln"; // AUS JSON AUSLESEN
 $zielort = "Aachen"; // AUS JSON AUSLESEN
-$isAboTicket = true; // BOOLEAN AUS JSON AUSLESEN
-$price = 10; // AUS JSON AUSLESEN
+
+$isAboTicket = false;
+
+$preis_Einzelticket_Erwachsen = 10; // AUS JSON AUSLESEN
+$preis_Einzelticket_Senior = 10; // AUS JSON AUSLESEN
+$preis_Einzelticket_Kind = 10; // AUS JSON AUSLESEN
+$preis_Einzelticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+
+$preis_Gruppenticket = 10; // AUS JSON AUSLESEN
+
+$preis_Viererticket_Erwachsen = 15; // AUS JSON AUSLESEN
+$preis_Viererticket_Senior = 10; // AUS JSON AUSLESEN
+$preis_Viererticket_Kind = 8; // AUS JSON AUSLESEN
+$preis_Viererticket_Ermaessigt = 9; // AUS JSON AUSLESEN
+
+$preis_Tagesticket_Erwachsen = 10; // AUS JSON AUSLESEN
+$preis_Tagesticket_Senior = 10; // AUS JSON AUSLESEN
+$preis_Tagesticket_Kind = 10; // AUS JSON AUSLESEN
+$preis_Tagesticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+
+$preis_Monatsticket_Erwachsen = 10; // AUS JSON AUSLESEN
+$preis_Monatsticket_Senior = 10; // AUS JSON AUSLESEN
+$preis_Monatsticket_Kind = 10; // AUS JSON AUSLESEN
+$preis_Monatsticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+
+$preis_Jahresticket_Erwachsen = 10; // AUS JSON AUSLESEN
+$preis_Jahresticket_Senior = 10; // AUS JSON AUSLESEN
+$preis_Jahresticket_Kind = 10; // AUS JSON AUSLESEN
+$preis_Jahresticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+
+
+
 
 $pdf = new FPDF();
 
 $pdf->AddPage();
 
+// Vorverarbeitung
 $expired = new DateTime('Now');
 if ($isAboTicket) {
     if ($ticketart == "Tagesticket") {
@@ -33,6 +67,9 @@ if ($isAboTicket) {
 
 $result = $expired->format('d.m.Y');
 
+if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart == "Jahresticket") {
+    $isAboTicket = true;
+}
 
 $cellHeightTopBottom = 20;
 $cellHeightMain = 40;
@@ -128,11 +165,11 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            $pdf->Write(3, "**" . number_format($preis_Einzelticket_Erwachsen, 2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            $pdf->Write(3, "***" . number_format($preis_Einzelticket_Erwachsen * 0.19, 2));
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -140,7 +177,7 @@ if ($ticketart == "Einzelticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            $pdf->Write(3, "EUR**" . number_format($preis_Einzelticket_Erwachsen, 2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -239,11 +276,11 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**".number_format($price,2));
+            $pdf->Write(3, "**".number_format($preis_Einzelticket_Kind,2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***".number_format($price * 0.19,2));
+            $pdf->Write(3, "***".number_format($preis_Einzelticket_Kind * 0.19,2));
 
             // Line
             $pdf->Line(160,$saveY ,160,$saveY + 20);
@@ -251,7 +288,7 @@ if ($ticketart == "Einzelticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**".number_format($price,2));
+            $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Kind,2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -349,11 +386,11 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**".number_format($price,2));
+            $pdf->Write(3, "**".number_format($preis_Einzelticket_Senior,2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***".number_format($price * 0.19,2));
+            $pdf->Write(3, "***".number_format($preis_Einzelticket_Senior * 0.19,2));
 
             // Line
             $pdf->Line(160,$saveY ,160,$saveY + 20);
@@ -361,7 +398,7 @@ if ($ticketart == "Einzelticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**".number_format($price,2));
+            $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Senior,2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -459,11 +496,11 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**".number_format($price,2));
+            $pdf->Write(3, "**".number_format($preis_Einzelticket_Ermaessigt,2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***".number_format($price * 0.19,2));
+            $pdf->Write(3, "***".number_format($preis_Einzelticket_Ermaessigt * 0.19,2));
 
             // Line
             $pdf->Line(160,$saveY ,160,$saveY + 20);
@@ -471,7 +508,7 @@ if ($ticketart == "Einzelticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**".number_format($price,2));
+            $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Ermaessigt,2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -588,11 +625,11 @@ else if ($ticketart == "Gruppenticket") {
     $pdf->SetXY(75, $saveY + 6);
     $pdf->Write(3, "MwSt D:");
     $pdf->SetXY(75, $saveY + 10);
-    $pdf->Write(3, "**".number_format($price,2));
+    $pdf->Write(3, "**".number_format($preis_Gruppenticket,2));
     $pdf->SetXY(95, $saveY + 10);
     $pdf->Write(3, "19,00% = ");
     $pdf->SetXY(130, $saveY + 10);
-    $pdf->Write(3, "***".number_format($price * 0.19,2));
+    $pdf->Write(3, "***".number_format($preis_Gruppenticket * 0.19,2));
 
     // Line
     $pdf->Line(160,$saveY ,160,$saveY + 20);
@@ -600,7 +637,7 @@ else if ($ticketart == "Gruppenticket") {
     // Betrag
     $pdf->SetFont('Arial', 'B', 18);
     $pdf->SetXY(162, $saveY + 5);
-    $pdf->Write(3, "EUR**".number_format($price,2));
+    $pdf->Write(3, "EUR**".number_format($preis_Gruppenticket,2));
 
     $pdf->SetFont('Arial', '', 12);
     $pdf->SetXY(175, $saveY + 13);
@@ -691,20 +728,42 @@ else if ($isAboTicket) {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "**" . number_format($preis_Tagesticket_Erwachsen, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "**" . number_format($preis_Monatsticket_Erwachsen, 2));
+            }
+            else {
+                $pdf->Write(3, "**" . number_format($preis_Jahresticket_Erwachsen, 2));
+            }
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
-
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "***" . number_format($preis_Tagesticket_Erwachsen * 0.19, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "***" . number_format($preis_Monatsticket_Erwachsen * 0.19, 2));
+            }
+            else {
+                $pdf->Write(3, "***" . number_format($preis_Jahresticket_Erwachsen * 0.19, 2));
+            }
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
-
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Erwachsen, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Monatsticket_Erwachsen, 2));
+            }
+            else {
+                $pdf->Write(3, "EUR**" . number_format($preis_Jahresticket_Erwachsen, 2));
+            }
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
             $pdf->Write(3, "Barzahlung");
@@ -794,11 +853,27 @@ else if ($isAboTicket) {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "**" . number_format($preis_Tagesticket_Kind, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "**" . number_format($preis_Monatsticket_Kind, 2));
+            }
+            else {
+                $pdf->Write(3, "**" . number_format($preis_Jahresticket_Kind, 2));
+            }
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "***" . number_format($preis_Tagesticket_Kind * 0.19, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "***" . number_format($preis_Monatsticket_Kind * 0.19, 2));
+            }
+            else {
+                $pdf->Write(3, "***" . number_format($preis_Jahresticket_Kind * 0.19, 2));
+            }
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -806,7 +881,16 @@ else if ($isAboTicket) {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Kind, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Monatsticket_Kind, 2));
+            }
+            else {
+                $pdf->Write(3, "EUR**" . number_format($preis_Jahresticket_Kind, 2));
+            }
+
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -897,11 +981,29 @@ else if ($isAboTicket) {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "**" . number_format($preis_Tagesticket_Senior, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "**" . number_format($preis_Monatsticket_Senior, 2));
+            }
+            else {
+                $pdf->Write(3, "**" . number_format($preis_Jahresticket_Senior, 2));
+            }
+
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "***" . number_format($preis_Tagesticket_Senior * 0.19, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "***" . number_format($preis_Monatsticket_Senior * 0.19, 2));
+            }
+            else {
+                $pdf->Write(3, "***" . number_format($preis_Jahresticket_Senior * 0.19, 2));
+            }
+
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -909,7 +1011,16 @@ else if ($isAboTicket) {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Senior, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Monatsticket_Senior, 2));
+            }
+            else {
+                $pdf->Write(3, "EUR**" . number_format($preis_Jahresticket_Senior, 2));
+            }
+
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -1000,11 +1111,29 @@ else if ($isAboTicket) {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "**" . number_format($preis_Tagesticket_Ermaessigt, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "**" . number_format($preis_Monatsticket_Ermaessigt, 2));
+            }
+            else {
+                $pdf->Write(3, "**" . number_format($preis_Jahresticket_Ermaessigt, 2));
+            }
+
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "***" . number_format($preis_Tagesticket_Ermaessigt * 0.19, 2));
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "***" . number_format($preis_Monatsticket_Ermaessigt * 0.19, 2));
+            }
+            else {
+                $pdf->Write(3, "***" . number_format($preis_Jahresticket_Ermaessigt * 0.19, 2));
+            }
+
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -1012,7 +1141,16 @@ else if ($isAboTicket) {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            if ($ticketart == "Tagesticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Ermaessigt, 2));;
+            }
+            else if ($ticketart == "Monatsticket") {
+                $pdf->Write(3, "EUR**" . number_format($preis_Monatsticket_Ermaessigt, 2));
+            }
+            else {
+                $pdf->Write(3, "EUR**" . number_format($preis_Jahresticket_Ermaessigt, 2));
+            }
+
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -1107,11 +1245,11 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            $pdf->Write(3, "**" . number_format($preis_Viererticket_Erwachsen, 2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            $pdf->Write(3, "***" . number_format($preis_Viererticket_Erwachsen * 0.19, 2));
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -1119,7 +1257,7 @@ else if ($ticketart == "Viererticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Erwachsen, 2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -1208,11 +1346,11 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            $pdf->Write(3, "**" . number_format($preis_Viererticket_Kind, 2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            $pdf->Write(3, "***" . number_format($preis_Viererticket_Kind * 0.19, 2));
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -1220,7 +1358,7 @@ else if ($ticketart == "Viererticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Kind, 2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -1309,11 +1447,11 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            $pdf->Write(3, "**" . number_format($preis_Viererticket_Senior, 2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            $pdf->Write(3, "***" . number_format($preis_Viererticket_Senior * 0.19, 2));
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -1321,7 +1459,7 @@ else if ($ticketart == "Viererticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Senior, 2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
@@ -1410,11 +1548,11 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(75, $saveY + 6);
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
-            $pdf->Write(3, "**" . number_format($price, 2));
+            $pdf->Write(3, "**" . number_format($preis_Viererticket_Ermaessigt, 2));
             $pdf->SetXY(95, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
-            $pdf->Write(3, "***" . number_format($price * 0.19, 2));
+            $pdf->Write(3, "***" . number_format($preis_Viererticket_Ermaessigt * 0.19, 2));
 
             // Line
             $pdf->Line(160, $saveY, 160, $saveY + 20);
@@ -1422,7 +1560,7 @@ else if ($ticketart == "Viererticket") {
             // Betrag
             $pdf->SetFont('Arial', 'B', 18);
             $pdf->SetXY(162, $saveY + 5);
-            $pdf->Write(3, "EUR**" . number_format($price, 2));
+            $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Ermaessigt, 2));
 
             $pdf->SetFont('Arial', '', 12);
             $pdf->SetXY(175, $saveY + 13);
