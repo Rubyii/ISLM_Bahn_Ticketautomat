@@ -8,6 +8,10 @@
     background-color: #F0F0F0;
     font-family: helvetica, serif;
 }
+object {
+    position: absolute;
+    margin-left: 412px;
+}
 
 /* GRID UNTERTEILUNG NICHT VERÄNDERN */
 .grid-container {
@@ -122,8 +126,8 @@
     box-shadow: 0 2px #999;
 
     /* HIER POSITION ÄNDERN */
-    top: 35vh;
-    left: 125vh;
+    top: 4vh;
+    left: 145vh;
 }
 
 /* WEITER KNOPF:AKTIV */

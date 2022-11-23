@@ -5,12 +5,12 @@ $date = date('d.m.Y');
 $time = date('h:i');
 
 $klasse = "1"; // AUS JSON AUSLESEN
-$ticketart = "Monatsticket"; // AUS JSON AUSLESEN
+$ticketart = "Gruppenticket"; // AUS JSON AUSLESEN
 
-$anzErwachsene = 3; // AUS JSON AUSLESEN
-$anzKinder = 1; // AUS JSON AUSLESEN
+$anzErwachsene = 0; // AUS JSON AUSLESEN
+$anzKinder = 0; // AUS JSON AUSLESEN
 $anzErmaesigt = 1; // AUS JSON AUSLESEN
-$anzSenior = 2; // AUS JSON AUSLESEN
+$anzSenior = 1; // AUS JSON AUSLESEN
 
 $standort = "Koeln"; // AUS JSON AUSLESEN
 $zielort = "Aachen"; // AUS JSON AUSLESEN
@@ -1688,4 +1688,12 @@ $pdf->Write(3, "Barzahlung");
 */
 $pdf->SetAuthor("ISLM-Bahn");
 $pdf->SetTitle("Tickets");
-$pdf->Output();
+$pdf->Output('F',"tickets/ISLM_Ticket.pdf",true);
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; URL=index.html">
+</head>
+</html>

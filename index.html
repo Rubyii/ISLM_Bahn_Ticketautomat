@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Startseite</title>
+    <title>Ticket drucken</title>
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
@@ -20,7 +21,8 @@
             <!-- Bitte nur innerhalb der div arbeiten -->
 
 
-            Eigener Text
+
+
 
 
             <!-- Ende -->
@@ -32,18 +34,9 @@
             <!-- Start -->
             <!-- Bitte nur innerhalb der div arbeiten -->
 
+            <object data="tickets/ISLM_Ticket.pdf#toolbar=0" width="850" height="600px"></object>
 
-            <form action="static/php/startseite.php" method="post">
 
-                PHP action selber definieren
-                <br><br>
-                Wenn man selber sachen hinzufuegt verschiebt sich Weiter Knopf.
-                <br><br>
-                Am Ende in der CSS unter .input[type=submit] die top und left werte anpassen
-                <br><br>
-                Die Funktionen der jeweiligen website je nach Bedarf innerhalb der Form machen und mit CSS anpassen
-                <input type="submit" class="input" value="Weiter">
-            </form>
 
 
             <!-- Ende -->
@@ -56,7 +49,10 @@
             <!-- Bitte nur innerhalb der div arbeiten -->
 
 
-            Innerhalb der div arbeiten
+            <form action="static/php/startseite.php" method="post">
+                <input type="submit" class="input" value="Drucken">
+            </form>
+
 
 
             <!-- Ende -->
