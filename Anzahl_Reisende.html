@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Startseite</title>
+    <title>Anzahl Reisende</title>
     <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
@@ -31,25 +31,25 @@
                 <br><br>
                 <label for="senioren" class="label">Senioren</label>
                 <div id="senioren">
-                    <input type="button"  name = "plus" class="button-gruen">
-                    <input type="button"  name = "minus" class="button-gruen">
+                    <input type="button" width="100" height="100"  name = "plus-minus" class="button-gruen" value="+" >
+                    <input type="button"  name = "plus-minus" class="button-gruen" value="-">
                 </div>
 
                 <br><br>
                 <label for="ermaessigt" class="label">Ermäßigt</label>
                 <div id="ermaessigt">
-                    <input type="button"  name = "plus" class="button-gruen">
-                    <input type="button"  name = "minus" class="button-gruen">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus" value="+">
+                    <input type="button"  name = "plus-minus" class="button-gruen minus" value="-">
                 </div>
                 <br><br>
                 <label for="kinder" class="label">Kinder</label>
                 <div id="kinder">
-                    <input type="button"  name = "plus" class="button-gruen">
-                    <input type="button"  name = "minus" class="button-gruen">
+                    <input type="button"  name = "plus-minus" class="button-gruen" value="+">
+                    <input type="button"  name = "plus-minus" class="button-gruen" value="-">
                 </div>
                 <div id="wagenklasse">
-                    <input type="button"  name = "klasse2" class="button-gruen">
-                    <input type="button"  name = "klasse1" class="button-gruen">
+                    <input type="button"  name = "klasse2" class="button-gruen" value="2.Klasse">
+                    <input type="button"  name = "klasse1" class="button-gruen" value="1.Klasse">
                 </div>
                 <br><br>
             </form>
@@ -58,7 +58,7 @@
 
     <div class="navigation">
         <div class="navigation-innen">
-            <form action="static/php/startseite.php" method="post" class="button-form">
+            <form action="static/php/anzahlreisende.php" method="post" class="button-form">
                 <input type="submit" class="button-gruen" name="NaviSchritt" value="Abbrechen">
                 <input type="submit" class="button-gruen" name="NaviSchritt" value="Zurück">
                 <input type="submit" class="button-gruen" name="NaviSchritt" value="Weiter">
