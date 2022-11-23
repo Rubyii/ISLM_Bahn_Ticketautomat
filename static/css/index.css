@@ -215,14 +215,52 @@
     height: 100px;
     text-align: center;
 }
+.plus-minus + .plus-minus {
+    margin-left: 100px;
+}
+
 .alter-gruppe{
     display: inline;
 }
 .wagenklasse {
-    border: solid black;
-    position: relative;
-    left: 200%;
-    bottom: 500px;
+    position: absolute;
+    left: 60%;
+    top: 230px;
+    width: 200px;
+    height: 130px;
+
 }
+.wagenklasse + .wagenklasse{
+    margin-left: 300px;
+}
+
+.navi-schritt{
+    position: absolute;
+    left: 60%;
+    bottom:60px;
+
+}
+.navi-schritt + .navi-schritt{
+    margin-left: 300px;
+}
+.navigation-innen >form > * {
+    width: 200px;
+    height: 130px;
+}
+.navi-abbrechen{
+    position: absolute;
+    bottom: 230px;
+    left: 60%;
+}
+.empty-space{
+    background-color: #F0F0F0;
+    position: absolute;
+    bottom: 200px;
+    left:60%;
+}
+.empty-space + .navi-abbrechen{
+    margin-left: 300px;
+}
+
 
 

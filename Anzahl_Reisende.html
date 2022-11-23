@@ -29,20 +29,20 @@
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
                 </div>
                 <br><br>
-                <label for="senioren" class="label">Senioren</label>
+                <label for="senioren" class="label">Senioren&emsp;&nbsp;&nbsp;</label>
                 <div id="senioren" class="alter-gruppe">
                     <input type="button"   name = "plus-minus" class="button-gruen plus-minus" value="+" >
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
                 </div>
-
+                             <!-- &nbsp; &ensp; &emsp; -->
                 <br><br>
-                <label for="ermaessigt" class="label">Ermäßigt</label>
+                <label for="ermaessigt" class="label">Ermäßigt&emsp;&nbsp;&nbsp;</label>
                 <div id="ermaessigt" class="alter-gruppe">
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="+">
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
                 </div>
                 <br><br>
-                <label for="kinder" class="label">Kinder</label>
+                <label for="kinder" class="label">Kinder&emsp;&ensp;&ensp;&nbsp;&nbsp;&nbsp;</label>
                 <div id="kinder" class="alter-gruppe">
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="+">
                     <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
@@ -59,9 +59,10 @@
     <div class="navigation">
         <div class="navigation-innen">
             <form action="static/php/anzahlreisende.php" method="post" class="button-form">
-                <input type="submit" class="button-gruen" name="NaviSchritt" value="Abbrechen">
-                <input type="submit" class="button-gruen" name="NaviSchritt" value="Zurück">
-                <input type="submit" class="button-gruen" name="NaviSchritt" value="Weiter">
+                <div class="empty-space"> </div>
+                <input type="submit" class="button-gruen navi-abbrechen" name="navi-abbrechen" value="Abbrechen">
+                <input type="submit" class="button-gruen navi-schritt" name="navi-schritt" value="Zurück">
+                <input type="submit" class="button-gruen navi-schritt" name="navi-schritt" value="Weiter">
             </form>
         </div>
     </div>
