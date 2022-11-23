@@ -5,7 +5,7 @@ $date = date('d.m.Y');
 $time = date('h:i');
 
 $klasse = "1"; // AUS JSON AUSLESEN
-$ticketart = "Viererticket"; // AUS JSON AUSLESEN
+$ticketart = "Monatsticket"; // AUS JSON AUSLESEN
 
 $anzErwachsene = 3; // AUS JSON AUSLESEN
 $anzKinder = 1; // AUS JSON AUSLESEN
@@ -34,10 +34,10 @@ $preis_Tagesticket_Senior = 10; // AUS JSON AUSLESEN
 $preis_Tagesticket_Kind = 10; // AUS JSON AUSLESEN
 $preis_Tagesticket_Ermaessigt = 10; // AUS JSON AUSLESEN
 
-$preis_Monatsticket_Erwachsen = 10; // AUS JSON AUSLESEN
-$preis_Monatsticket_Senior = 10; // AUS JSON AUSLESEN
-$preis_Monatsticket_Kind = 10; // AUS JSON AUSLESEN
-$preis_Monatsticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+$preis_Monatsticket_Erwachsen = 50; // AUS JSON AUSLESEN
+$preis_Monatsticket_Senior = 45; // AUS JSON AUSLESEN
+$preis_Monatsticket_Kind = 42; // AUS JSON AUSLESEN
+$preis_Monatsticket_Ermaessigt = 45; // AUS JSON AUSLESEN
 
 $preis_Jahresticket_Erwachsen = 10; // AUS JSON AUSLESEN
 $preis_Jahresticket_Senior = 10; // AUS JSON AUSLESEN
@@ -52,6 +52,10 @@ $pdf = new FPDF();
 $pdf->AddPage();
 
 // Vorverarbeitung
+if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart == "Jahresticket") {
+    $isAboTicket = true;
+}
+
 $expired = new DateTime('Now');
 if ($isAboTicket) {
     if ($ticketart == "Tagesticket") {
@@ -67,9 +71,7 @@ if ($isAboTicket) {
 
 $result = $expired->format('d.m.Y');
 
-if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart == "Jahresticket") {
-    $isAboTicket = true;
-}
+
 
 $cellHeightTopBottom = 20;
 $cellHeightMain = 40;
