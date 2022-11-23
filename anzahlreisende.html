@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Anzahl Reisende</title>
+    <link rel="stylesheet" href="static/css/anzahlreisende.css">
+</head>
+<body>
+<div class="grid-container">
+    <div class="ueberschrift">
+        <img alt="ISLM-Bahn" class="logo" src="static/images/ISLM_Logo2009.png">
+        <div id="uhrzeitdatum" class="uhrzeitdatum">
+            <div id="uhrzeit"></div>
+            <div id="datum"></div>
+        </div>
+    </div>
+    <div class="hinweistext">
+        <div class="text">
+            Bitte geben Sie die Anzahl der Reisenden an
+        </div>
+    </div>
+
+    <div class="hauptfunktion">
+        <div class="hauptfunktion-innen">
+            <form action="static/php/startseite.php" method="post">
+                <label for="erwachsene" class="label">Erwachsene</label>
+                <div id="erwachsene" class="alter-gruppe">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="+">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
+                </div>
+                <br><br>
+                <label for="senioren" class="label">Senioren&emsp;&nbsp;&nbsp;</label>
+                <div id="senioren" class="alter-gruppe">
+                    <input type="button"   name = "plus-minus" class="button-gruen plus-minus" value="+" >
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
+                </div>
+                             <!-- &nbsp; &ensp; &emsp; -->
+                <br><br>
+                <label for="ermaessigt" class="label">Ermäßigt&emsp;&nbsp;&nbsp;</label>
+                <div id="ermaessigt" class="alter-gruppe">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="+">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
+                </div>
+                <br><br>
+                <label for="kinder" class="label">Kinder&emsp;&ensp;&ensp;&nbsp;&nbsp;&nbsp;</label>
+                <div id="kinder" class="alter-gruppe">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="+">
+                    <input type="button"  name = "plus-minus" class="button-gruen plus-minus" value="-">
+                </div>
+                <div >
+                    <input type="button"  name = "klasse2" class="button-gruen wagenklasse" value="2.Klasse">
+                    <input type="button"  name = "klasse1" class="button-gruen wagenklasse" value="1.Klasse">
+                </div>
+                <br><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div class="navigation-innen">
+            <form action="static/php/anzahlreisende.php" method="post" class="button-form">
+                <div class="empty-space"> </div>
+                <input type="submit" class="button-gruen navi-abbrechen" name="navi-abbrechen" value="Abbrechen">
+                <input type="submit" class="button-gruen navi-schritt" name="navi-schritt" value="Zurück">
+                <input type="submit" class="button-gruen navi-schritt" name="navi-schritt" value="Weiter">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="static/js/zeit.js"></script>
+</html>
