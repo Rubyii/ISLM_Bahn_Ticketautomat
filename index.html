@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/index.css">
+   <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx2QBmwxDzm52voQ6qwjaOgjQS32JXEE&libraries=places&callback=initAutocomplete"></script>
 </head>
 <body>
 <div class="grid-container">
@@ -24,10 +25,17 @@
         <div class="hauptfunktion-innen">
             <form action="static/php/startseite.php" method="post">
                 <label for="start" class="label">Start</label>
-                <input type="text" id="start" name = "start" class="input">
+                <input type="text" id="start" name = "start" value="Aachen" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
-                <input type="text" id="ziel" name = "ziel" class="input-ziel">
+                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" required autocomplete="off">
+                <datalist id="ziele">
+                    <option value="Aachen Hauptbahnhof">
+                    <option value="Aachen Rothe Erde">
+                    <option value="Dueren">
+                    <option value="Koeln">
+                    <option value="Koeln Ehrenfeld">
+                </datalist>
                 <br><br>
                 <input type="submit" class="input" value="Weiter">
             </form>
@@ -44,9 +52,6 @@
         </div>
     </div>
 </div>
-
-
-
 </body>
 <script src="static/js/zeit.js"></script>
 </html>
