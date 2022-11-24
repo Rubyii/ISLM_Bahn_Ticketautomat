@@ -10,7 +10,7 @@
 }
 object {
     position: absolute;
-    margin-left: 412px;
+    margin-left: 100px;
 }
 
 /* GRID UNTERTEILUNG NICHT VERÄNDERN */
@@ -127,7 +127,7 @@ object {
 
     /* HIER POSITION ÄNDERN */
     top: 4vh;
-    left: 145vh;
+    left: 123vh;
 }
 
 /* WEITER KNOPF:AKTIV */
