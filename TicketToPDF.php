@@ -4,45 +4,45 @@ date_default_timezone_set('Europe/Berlin');
 $date = date('d.m.Y');
 $time = date('h:i');
 
-$klasse = "1"; // AUS JSON AUSLESEN
-$ticketart = "Jahresticket"; // AUS JSON AUSLESEN
+$klasse = "2"; // AUSLESEN
+$ticketart = "Viererticket"; // AUSLESEN
 
-$anzErwachsene = 4; // AUS JSON AUSLESEN
-$anzKinder =2; // AUS JSON AUSLESEN
-$anzErmaesigt = 0; // AUS JSON AUSLESEN
-$anzSenior = 3; // AUS JSON AUSLESEN
+$anzErwachsene = 4; // AUSLESEN
+$anzKinder =2; // AUSLESEN
+$anzErmaesigt = 0; // AUSLESEN
+$anzSenior = 3; // AUSLESEN
 
-$standort = "Koeln"; // AUS JSON AUSLESEN
-$zielort = "Aachen"; // AUS JSON AUSLESEN
+$standort = "Koeln"; // AUSLESEN
+$zielort = "Aachen"; // AUSLESEN
 
 $isAboTicket = false;
 
-$preis_Einzelticket_Erwachsen = 10; // AUS JSON AUSLESEN
-$preis_Einzelticket_Senior = 10; // AUS JSON AUSLESEN
-$preis_Einzelticket_Kind = 10; // AUS JSON AUSLESEN
-$preis_Einzelticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+$preis_Einzelticket_Erwachsen = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Einzelticket_Senior = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Einzelticket_Kind = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Einzelticket_Ermaessigt = 10; // BERECHNETEN WERT AUSLESEN
 
-$preis_Gruppenticket = 10; // AUS JSON AUSLESEN
+$preis_Gruppenticket = 10; // BERECHNETEN WERT AUSLESEN
 
-$preis_Viererticket_Erwachsen = 15; // AUS JSON AUSLESEN
-$preis_Viererticket_Senior = 10; // AUS JSON AUSLESEN
-$preis_Viererticket_Kind = 8; // AUS JSON AUSLESEN
-$preis_Viererticket_Ermaessigt = 9; // AUS JSON AUSLESEN
+$preis_Viererticket_Erwachsen = 15; // BERECHNETEN WERT AUSLESEN
+$preis_Viererticket_Senior = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Viererticket_Kind = 8; // BERECHNETEN WERT AUSLESEN
+$preis_Viererticket_Ermaessigt = 9; // BERECHNETEN WERT AUSLESEN
 
-$preis_Tagesticket_Erwachsen = 10; // AUS JSON AUSLESEN
-$preis_Tagesticket_Senior = 10; // AUS JSON AUSLESEN
-$preis_Tagesticket_Kind = 10; // AUS JSON AUSLESEN
-$preis_Tagesticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+$preis_Tagesticket_Erwachsen = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Tagesticket_Senior = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Tagesticket_Kind = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Tagesticket_Ermaessigt = 10; // BERECHNETEN WERT AUSLESEN
 
-$preis_Monatsticket_Erwachsen = 50; // AUS JSON AUSLESEN
-$preis_Monatsticket_Senior = 45; // AUS JSON AUSLESEN
-$preis_Monatsticket_Kind = 42; // AUS JSON AUSLESEN
-$preis_Monatsticket_Ermaessigt = 45; // AUS JSON AUSLESEN
+$preis_Monatsticket_Erwachsen = 50; // BERECHNETEN WERT AUSLESEN
+$preis_Monatsticket_Senior = 45; // BERECHNETEN WERT AUSLESEN
+$preis_Monatsticket_Kind = 42; // BERECHNETEN WERT AUSLESEN
+$preis_Monatsticket_Ermaessigt = 45; // BERECHNETEN WERT AUSLESEN
 
-$preis_Jahresticket_Erwachsen = 10; // AUS JSON AUSLESEN
-$preis_Jahresticket_Senior = 10; // AUS JSON AUSLESEN
-$preis_Jahresticket_Kind = 10; // AUS JSON AUSLESEN
-$preis_Jahresticket_Ermaessigt = 10; // AUS JSON AUSLESEN
+$preis_Jahresticket_Erwachsen = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Jahresticket_Senior = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Jahresticket_Kind = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Jahresticket_Ermaessigt = 10; // BERECHNETEN WERT AUSLESEN
 
 
 
