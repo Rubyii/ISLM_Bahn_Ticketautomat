@@ -92,6 +92,8 @@
     border-left-style: solid;
     border-right-style: solid;
     border-width: 5px;
+    display: grid;
+    grid-template-columns: 50% auto;
 }
 
 /* NICHT VERÄNDERN */
@@ -108,7 +110,7 @@
 /* NICHT VERÄNDERN */
 .input[type=submit] {
     /* RELATIV WEITER KNOPF IST FREI VON ELTERN KLASSEN */
-    position: relative;
+    position: absolute;
     padding: 20px;
     width: 226px;
 
@@ -122,8 +124,8 @@
     box-shadow: 0 2px #999;
 
     /* HIER POSITION ÄNDERN */
-    top: 35vh;
-    left: 125vh;
+    top: 80vh;
+    left: 150vh;
 }
 
 /* WEITER KNOPF:AKTIV */
@@ -153,11 +155,14 @@
     border-left-style: solid;
     border-right-style: solid;
     border-width: 5px;
+    display: grid;
 }
 
 /* NICHT VERÄNDERN */
 .navigation-innen{
     margin-left: 2.5vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
 /* START */
@@ -178,6 +183,9 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    width: 226px;
+    height: 100px;
+
 }
 
 /* NICHT VERÄNDERN */
@@ -190,7 +198,7 @@
 
 /* BUTTON ORANGE */
 /* NICHT VERÄNDERN */
-.button-gruen {
+.button-orange {
     display: inline-block;
     padding: 20px 10px;
     font-size: 35px;
@@ -201,13 +209,42 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    width: 226px;
+    height: 100px;
 }
 
 /* NICHT VERÄNDERN */
-.button-gruen:active {
+.button-orange:active {
     background-color: #9E5D05 ;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
 }
 
+.inner {
+    display: grid;
 
+grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
+    margin-left: 20px;
+}
+.innerinner {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.innerinner > button {
+    position: relative;
+    bottom: 20px;
+
+}
+
+.right {
+    display: grid;
+    grid-template-rows: 20% auto;
+}
+.rightright {
+    display: grid;
+    grid-template-columns: 20% auto auto;
+    grid-template-rows: 80% 20%;
+    position: relative;
+    top: 50px;
+}

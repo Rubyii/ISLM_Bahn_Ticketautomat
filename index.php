@@ -1,9 +1,43 @@
+<?php
+
+$startort = "Köln"; // AUSLESEN
+$zielort = "Berlin"; // AUSLESEN
+
+$klasse = 2; // AUSLESEN
+
+$ticketart = "Gruppenticket"; // AUSLESEN
+$isAboTicket = false;
+
+$anzErwachsene = 4; // AUSLESEN
+$anzKind = 0; // AUSLESEN
+$anzSenior = 2; // AUSLESEN
+$anzErmaessigt = 0; // AUSLESEN
+
+$preisPPErwachsene = 10; //AUSLESEN
+$preisPPKind = 6; //AUSLESEN
+$preisPPSenior = 9; //AUSLESEN
+$preisPPErmaessigt = 8; //AUSLESEN
+
+$preisGesamt = 150; // AUSLESEN
+
+if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart == "Jahresticket") {
+    $isAboTicket = true;
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/index.css">
+    <style>
+
+    </style>
 </head>
 <body>
 <div class="grid-container">
@@ -16,50 +50,111 @@
     </div>
     <div class="hinweistext">
         <div class="hinweistext-innen">
-            <!-- Start -->
-            <!-- Bitte nur innerhalb der div arbeiten -->
+            <h3>Bitte überprüfen Sie Ihre Eingaben</h3>
 
 
-            Eigener Text
-
-
-            <!-- Ende -->
         </div>
     </div>
 
     <div class="hauptfunktion">
-        <div class="hauptfunktion-innen">
-            <!-- Start -->
-            <!-- Bitte nur innerhalb der div arbeiten -->
 
 
-            <form action="static/php/startseite.php" method="post">
+            <div class="inner">
+                <?php if (!$isAboTicket): ?>
+                <div class="innerinner">
+                    <?php
+                    if (!$isAboTicket):
+                    echo '<p >'.$startort.' - '.$zielort.'</p>';
+                    ?>
+                    <button class="button-gruen" type="button" onclick="location.href='U00'">Ändern</button>
+                    <?php endif ?>
 
-                PHP action selber definieren
-                <br><br>
-                Wenn man selber sachen hinzufuegt verschiebt sich Weiter Knopf.
-                <br><br>
-                Am Ende in der CSS unter .input[type=submit] die top und left werte anpassen
-                <br><br>
-                Die Funktionen der jeweiligen website je nach Bedarf innerhalb der Form machen und mit CSS anpassen
-                <input type="submit" class="input" value="Weiter">
-            </form>
+                </div>
+                <?php endif ?>
+                <div class="innerinner">
+                    <?php
+                    echo '<p>'.$klasse.'.Klasse'.'</p>';
+                    ?>
+                    <button class="button-gruen" type="button" onclick="location.href='KLASSE/REISENDE'">Ändern</button>
+                </div>
+                <div class="innerinner">
+                    <?php
+
+                    echo '<p>'.$ticketart.'</p>';
 
 
-            <!-- Ende -->
+                    ?>
+                    <button class="button-gruen" type="button" onclick="location.href='TARIFE'">Ändern</button>
+                </div>
+
+            </div>
+        <div class="right">
+            <div class="innerinner"><p>Anzahl Reisende</p>
+                <button class="button-gruen" type="button" onclick="location.href='KLASSE/REISENDE'">Ändern</button>
+            </div>
+
+
+            <div class="rightright">
+                <div>
+                </div>
+                <div>
+                    <?php
+                    if ($anzErwachsene != 0) {
+                        echo '<p>'.$anzErwachsene."x Erwachsene".'</p>';
+                    }
+                    if ($anzKind != 0) {
+                        echo '<p>'.$anzKind."x Kind".'</p>';
+                    }
+                    if ($anzSenior != 0) {
+                        echo '<p>'.$anzSenior."x Senior".'</p>';
+                    }
+                    if ($anzErmaessigt != 0) {
+                        echo '<p>'.$anzErmaessigt."x Ermaessigt".'</p>';
+                    }
+
+
+                    ?>
+                </div>
+                <div>
+                    <?php
+                    if ($anzErwachsene != 0) {
+                        echo '<p>'."p.P ".$preisPPErwachsene.'€'.'</p>';
+                    }
+                    if ($anzKind != 0) {
+                        echo '<p>'."p.P ".$preisPPKind.'€'.'</p>';
+                    }
+                    if ($anzSenior != 0) {
+                        echo '<p>'."p.P ".$preisPPSenior.'€'.'</p>';
+                    }
+                    if ($anzErmaessigt != 0) {
+                        echo '<p>'."p.P ".$preisPPErmaessigt.'€'.'</p>';
+                    }
+
+
+                    ?>
+                </div>
+                <div></div>
+                <div></div>
+                <div><em style="position: absolute; left: 500px; font-weight: bold">Preis: <?php echo $preisGesamt?>€</em></div>
+
+            </div>
+
         </div>
+
+
+
+
+
+
     </div>
 
     <div class="navigation">
         <div class="navigation-innen">
-            <!-- Start -->
-            <!-- Bitte nur innerhalb der div arbeiten -->
-
-
-            Innerhalb der div arbeiten
-
-
-            <!-- Ende -->
+            <form method="post" action="STARTSEITE">
+                <input type="submit" class="button-orange" value="Abbrechen">
+            </form>
+            <button class="button-orange" style="left: 300px; position: relative" type="button" onclick="location.href='TARIFE'">Zurück</button>
+            <button class="button-gruen" style="left: 240px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
         </div>
     </div>
 </div>
