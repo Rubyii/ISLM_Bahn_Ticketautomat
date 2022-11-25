@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+$bahnhoefe = array(
+    array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
+    array("AachenRotheErde", 50.77018640899706, 6.116490727116905),
+    array("Dueren", 50.80930664580822, 6.48204588509695),
+    array("KoelnHauptbahnhof", 50.943288440980105, 6.958548054110135),
+    array("KoelnEhrenfeld", 50.95172918094622, 6.91836526945143),
+);
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -18,23 +31,40 @@
     <div class="hinweistext">
         <div class="text">
             Bitte geben Sie Ihr Ziel ein
+            <?php
+                /*if (isset($_SESSION["dauer"])){
+                    echo $_SESSION["dauer"];
+                    echo $_SESSION["ziel"];
+                }elseif (isset($_SESSION["tarif"])){
+                    echo $_SESSION["tarif"];
+                }elseif(isset($_SESSION['error'])){
+                    if ($_SESSION['error'])
+                    echo "ERRORRRRRASRASRASRSARAS";
+                }*/
+            ?>
         </div>
     </div>
 
     <div class="hauptfunktion">
         <div class="hauptfunktion-innen">
-            <form action="static/php/startseite.php" method="post">
+            <form action="test.php" method="post">
                 <label for="start" class="label">Start</label>
-                <input type="text" id="start" name = "start" value="Aachen" class="input" readonly>
+                <input type="text" id="start" name = "start" value="AachenHauptbahnhof" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
-                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" required autocomplete="off">
+                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off">
+                <?php
+                if(isset($_SESSION['error'])){
+                    if ($_SESSION['error'])
+                        echo "<p class='errormessage'> Die Eingabe ist nicht korrekt </p>";
+                }
+                ?>
                 <datalist id="ziele">
-                    <option value="Aachen Hauptbahnhof">
-                    <option value="Aachen Rothe Erde">
-                    <option value="Dueren">
-                    <option value="Koeln">
-                    <option value="Koeln Ehrenfeld">
+                    <?php
+                    for ($i = 0; $i < sizeof($bahnhoefe); $i++){
+                        echo "<option value=".$bahnhoefe[$i][0].">";
+                    }
+                    ?>
                 </datalist>
                 <br><br>
                 <input type="submit" class="input" value="Weiter">
@@ -44,7 +74,7 @@
 
     <div class="navigation">
         <div class="navigation-innen">
-            <form action="static/php/startseite.php" method="post" class="button-form">
+            <form action="test.php" method="post" class="button-form">
                 <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Monats Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Jahres Ticket">
