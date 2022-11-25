@@ -1,0 +1,213 @@
+/* EIGENER CODE UNTER DEN JEWEILIGEN GRIDS FÜR ÜBERSICHT */
+
+/* ZENTRIET ALLES NICHT VERÄNDERN */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #F0F0F0;
+    font-family: helvetica, serif;
+}
+
+/* GRID UNTERTEILUNG NICHT VERÄNDERN */
+.grid-container {
+    display: grid;
+    background-color: #F0F0F0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2.5%;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: auto auto 60vh auto;
+
+}
+
+
+/* GRID 1  */
+/* NICHT VERÄNDERN */
+.ueberschrift {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 20px;
+    text-align: right;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+/* NICHT VERÄNDERN */
+.logo{
+    height: 80px;
+    width: 80px;
+}
+/* NICHT VERÄNDERN */
+.uhrzeitdatum{
+    text-align: center;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 2 */
+/* NICHT VERÄNDERN */
+.hinweistext {
+    padding: 20px;
+    font-size: 40px;
+    text-align: left;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    border-color: #ed8c08;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+}
+
+/* NICHT VERÄNDERN */
+.hinweistext-innen{
+    margin-left: 2.5vh;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 3 */
+/* NICHT VERÄNDERN */
+.hauptfunktion {
+    padding: 20px;
+    text-align: left;
+    font-size: 40px;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    border-color: #ed8c08;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+}
+
+/* NICHT VERÄNDERN */
+.hauptfunktion-innen{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    line-height: 30px;
+    margin-left: 2.5vh;
+}
+
+/* WEITER KNOPF */
+/* NICHT VERÄNDERN */
+.input[type=submit] {
+    /* RELATIV WEITER KNOPF IST FREI VON ELTERN KLASSEN */
+    position: relative;
+    padding: 20px;
+    width: 226px;
+
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+
+    /* HIER POSITION ÄNDERN */
+    top: 35vh;
+    left: 125vh;
+}
+
+/* WEITER KNOPF:AKTIV */
+/* NICHT VERÄNDERN */
+.input[type=submit]:active {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 4 */
+/* NICHT VERÄNDERN */
+.navigation {
+    padding: 20px;
+    text-align: left;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    border-color: #ed8c08;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+}
+
+/* NICHT VERÄNDERN */
+.navigation-innen{
+    margin-left: 2.5vh;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* BUTTON GRÜN */
+/* NICHT VERÄNDERN */
+.button-gruen {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+}
+
+/* NICHT VERÄNDERN */
+.button-gruen:active {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+
+/* BUTTON ORANGE */
+/* NICHT VERÄNDERN */
+.button-gruen {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #ed8c08   ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+}
+
+/* NICHT VERÄNDERN */
+.button-gruen:active {
+    background-color: #9E5D05 ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+
