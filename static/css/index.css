@@ -1,6 +1,3 @@
-/* EIGENER CODE UNTER DEN JEWEILIGEN GRIDS FÜR ÜBERSICHT */
-
-/* ZENTRIET ALLES NICHT VERÄNDERN */
 *{
     box-sizing: border-box;
     padding: 0;
@@ -9,7 +6,6 @@
     font-family: helvetica, serif;
 }
 
-/* GRID UNTERTEILUNG NICHT VERÄNDERN */
 .grid-container {
     display: grid;
     background-color: #F0F0F0;
@@ -22,9 +18,6 @@
 
 }
 
-
-/* GRID 1  */
-/* NICHT VERÄNDERN */
 .ueberschrift {
     display: flex;
     align-items: center;
@@ -36,23 +29,15 @@
     grid-column-end: 4;
 }
 
-/* NICHT VERÄNDERN */
 .logo{
     height: 80px;
     width: 80px;
 }
-/* NICHT VERÄNDERN */
+
 .uhrzeitdatum{
     text-align: center;
 }
 
-/* START */
-
-/* ENDE */
-
-
-/* GRID 2 */
-/* NICHT VERÄNDERN */
 .hinweistext {
     padding: 20px;
     font-size: 40px;
@@ -68,18 +53,10 @@
     border-width: 5px;
 }
 
-/* NICHT VERÄNDERN */
-.hinweistext-innen{
+.text{
     margin-left: 2.5vh;
 }
 
-/* START */
-
-/* ENDE */
-
-
-/* GRID 3 */
-/* NICHT VERÄNDERN */
 .hauptfunktion {
     padding: 20px;
     text-align: left;
@@ -94,7 +71,6 @@
     border-width: 5px;
 }
 
-/* NICHT VERÄNDERN */
 .hauptfunktion-innen{
     display: flex;
     flex-direction: row;
@@ -104,10 +80,8 @@
     margin-left: 2.5vh;
 }
 
-/* WEITER KNOPF */
-/* NICHT VERÄNDERN */
+
 .input[type=submit] {
-    /* RELATIV WEITER KNOPF IST FREI VON ELTERN KLASSEN */
     position: relative;
     padding: 20px;
     width: 226px;
@@ -121,27 +95,18 @@
     border-radius: 15px;
     box-shadow: 0 2px #999;
 
-    /* HIER POSITION ÄNDERN */
     top: 35vh;
     left: 125vh;
 }
 
-/* WEITER KNOPF:AKTIV */
-/* NICHT VERÄNDERN */
 .input[type=submit]:active {
     background-color: #0B330C ;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
 }
 
-/* START */
-
-/* ENDE */
-
-
-/* GRID 4 */
-/* NICHT VERÄNDERN */
 .navigation {
+
     padding: 20px;
     text-align: left;
 
@@ -155,18 +120,11 @@
     border-width: 5px;
 }
 
-/* NICHT VERÄNDERN */
 .navigation-innen{
     margin-left: 2.5vh;
 }
 
-/* START */
 
-/* ENDE */
-
-
-/* BUTTON GRÜN */
-/* NICHT VERÄNDERN */
 .button-gruen {
     display: inline-block;
     padding: 20px 10px;
@@ -180,34 +138,14 @@
     box-shadow: 0 2px #999;
 }
 
-/* NICHT VERÄNDERN */
 .button-gruen:active {
     background-color: #0B330C ;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
 }
 
-
-/* BUTTON ORANGE */
-/* NICHT VERÄNDERN */
-.button-gruen {
-    display: inline-block;
-    padding: 20px 10px;
-    font-size: 35px;
-    cursor: pointer;
-    text-align: center;
-    color: #fff;
-    background-color: #ed8c08   ;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 2px #999;
+.button-form{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
 }
-
-/* NICHT VERÄNDERN */
-.button-gruen:active {
-    background-color: #9E5D05 ;
-    box-shadow: 0 3px #666;
-    transform: translateY(2px);
-}
-
-
