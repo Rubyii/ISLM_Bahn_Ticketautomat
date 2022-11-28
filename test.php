@@ -11,6 +11,12 @@ $bahnhoefe = array(
 
 $zielkorrekt = false;
 $distanz = 0.0;
+$latFrom = 0;
+$longFrom = 0;
+
+$latTo = 0.0;
+$longTo = 0.0;
+
 
 //Harvesine Function
 function getDistance($latitude1, $longitude1, $latitude2, $longitude2): float|int
@@ -36,7 +42,7 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
 
     //ZIEL VALIDIERUNG
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
-        if ($bahnhoefe[$i][0] == $_POST['ziel']){
+        if ( ($_POST['start']!= $_POST['ziel']) && ($bahnhoefe[$i][0] == $_POST['ziel'])){
             $zielkorrekt = true;
             $_SESSION['error'] = false;
             break;
@@ -60,16 +66,6 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
     $_SESSION['start'] = $_POST['start'];
     $_SESSION['ziel'] =  $_POST['ziel'];
 
-    foreach($_SESSION as $key => $value) {
-
-        echo "<br> SESSION parameter '$key' has '$value' <br>";                       //TESTEN
-
-        $latFrom = 0;
-        $longFrom = 0;
-
-        $latTo = 0.0;
-        $longTo = 0.0;
-    }
 
 //Setzt Koordinaten fuer den Start
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
@@ -83,11 +79,12 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
         }
     }
 
-//Setzt Koordinaten fuer das Ziel
+
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
         if ($bahnhoefe[$i][0] == $_SESSION['ziel']){
             //echo ('JAZiel '."\n");
 
+            //Setzt Koordinaten fuer das Ziel
             $latTo = $bahnhoefe[$i][1];
             $longTo = $bahnhoefe[$i][2];
             $distanz = getDistance($latFrom, $longFrom, $latTo, $longTo);
@@ -122,6 +119,12 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
     unset($_SESSION['ziel']);
 
     echo $_SESSION['tarif'];
+}
+
+foreach($_SESSION as $key => $value) {
+
+    echo "<br> SESSION parameter '$key' has '$value' <br>";                       //TESTEN
+
 }
 ?>
 
