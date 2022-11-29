@@ -17,7 +17,7 @@ $bahnhoefe = array(
     <meta charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/index.css">
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx2QBmwxDzm52voQ6qwjaOgjQS32JXEE&libraries=places&callback=initAutocomplete"></script>
+    <script async defer src="static/js/tarif_handler.js"></script>
 </head>
 <body>
 <div class="grid-container">
@@ -38,27 +38,30 @@ $bahnhoefe = array(
         <div class="hauptfunktion-innen">
             <form action="test.php" method="post">
                 <div class="radio-btn">
-                <input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">
-                <label for="Einzelticket" >Einzelticket</label>
+                    <input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">
+                    <label for="Einzelticket" class="normaltarif">Einzelticket</label>
 
-                <input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">
-                <label for="Viererticket" >Viererticket</label>
+                    <input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">
+                    <label for="Viererticket" class="normaltarif">Viererticket</label>
 
-                <input type="radio" class="radio" name="tarif" id="5erGruppenticket" value="5erGruppenticket">
-                <label for="5erGruppenticket" >5er Gruppenticket</label>
+                    <input type="radio" class="radio" name="tarif" id="5erGruppenticket" value="5erGruppenticket">
+                    <label for="5erGruppenticket" class="gruppenticket">5er Gruppenticket</label>
 
-                <input type="radio" class="radio" name="tarif" id="10erGruppenticket" value="10erGruppenticket">
-                <label for="10erGruppenticket" > 10er Gruppenticket</label>
+                    <input type="radio" class="radio" name="tarif" id="10erGruppenticket" value="10erGruppenticket">
+                    <label for="10erGruppenticket" class="gruppenticket"> 10er Gruppenticket</label>
+
+                    <input type="submit" id="weiter" class="button-disabled" value="Weiter" disabled>
                 </div>
-
-                <input type="submit" class="input" value="Weiter">
             </form>
         </div>
     </div>
 
     <div class="navigation">
         <div class="navigation-innen">
-
+            <form action="test.php" method="post">
+                <input type="submit" class="Abbrechen" name="Abbrechen" id="Abbrechen" value="Abbrechen">
+                <input type="submit" class="Zurück" name="Zurück" id="Zurück" value="Zurück">
+            </form>
         </div>
     </div>
 </div>
