@@ -37,7 +37,19 @@ $bahnhoefe = array(
     <div class="hauptfunktion">
         <div class="hauptfunktion-innen">
             <form action="test.php" method="post">
+                <div class="radio-btn">
+                <input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">
+                <label for="Einzelticket" >Einzelticket</label>
 
+                <input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">
+                <label for="Viererticket" >Viererticket</label>
+
+                <input type="radio" class="radio" name="tarif" id="5erGruppenticket" value="5erGruppenticket">
+                <label for="5erGruppenticket" >5er Gruppenticket</label>
+
+                <input type="radio" class="radio" name="tarif" id="10erGruppenticket" value="10erGruppenticket">
+                <label for="10erGruppenticket" > 10er Gruppenticket</label>
+                </div>
 
                 <input type="submit" class="input" value="Weiter">
             </form>
