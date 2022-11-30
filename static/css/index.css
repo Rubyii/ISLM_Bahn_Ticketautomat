@@ -23,6 +23,31 @@
 }
 
 
+/*Rechteck und Dreiecke für die Flügel*/
+.rechteck{
+    height: 148px;
+    width: 77px;
+    background-color: #1a7c1b;
+    position: absolute; top:126px;
+
+}
+.dreieckleft {
+    height: 150px;
+    background-color: transparent;
+    border-left: 77px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-top: 55px solid #F0F0F0;
+    position: absolute; top:124px;
+}
+.dreieckright{
+    height: 150px;
+    background-color: transparent;
+    border-right: 77px solid transparent;
+    border-top: 40px solid transparent;
+    border-bottom: 50px solid #F0F0F0;
+    position: absolute; top:125px;
+}
+
 /* GRID 1  */
 /* NICHT VERÄNDERN */
 .ueberschrift {
