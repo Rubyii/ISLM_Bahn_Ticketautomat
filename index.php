@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-$bahnhoefe = array(
-    array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
-    array("AachenRotheErde", 50.77018640899706, 6.116490727116905),
-    array("Dueren", 50.80930664580822, 6.48204588509695),
-    array("KoelnHauptbahnhof", 50.943288440980105, 6.958548054110135),
-    array("KoelnEhrenfeld", 50.95172918094622, 6.91836526945143),
-);
-
 ?>
 
 <!DOCTYPE html>
@@ -58,37 +50,75 @@ $bahnhoefe = array(
     </div>
     <div class="hinweistext">
         <div class="text">
-            Bitte wählen sie ein Tarif aus
+            Bitte wählen sie einen Tarif aus
         </div>
     </div>
 
     <div class="hauptfunktion">
         <div class="hauptfunktion-innen">
-            <form action="test.php" method="post">
+            <form action="test.php" id="tarifauswahl" method="post">
                 <div class="radio-btn">
-                    <input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">
+                    <?php
+                    if ($_SESSION['tarif'] == 'Einzelticket'){
+                        echo '<input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket" checked>';
+                    }else{
+                        echo '<input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">';
+                    }
+                    ?>
                     <label for="Einzelticket" class="normaltarif">Einzelticket</label>
 
-                    <input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">
+                    <?php
+                    if ($_SESSION['tarif'] == 'Viererticket'){
+                        echo '<input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket" checked>';
+                    }else{
+                        echo '<input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">';
+                    }
+                    ?>
                     <label for="Viererticket" class="normaltarif">Viererticket</label>
 
-                    <input type="radio" class="radio" name="tarif" id="5erGruppenticket" value="5erGruppenticket">
-                    <label for="5erGruppenticket" class="gruppenticket">5er Gruppenticket</label>
+                    <?php
+                    if ($_SESSION['anzahl'] == 5){
+                        //Button Gruen
+                        echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket"';
 
-                    <input type="radio" class="radio" name="tarif" id="10erGruppenticket" value="10erGruppenticket">
-                    <label for="10erGruppenticket" class="gruppenticket"> 10er Gruppenticket</label>
+                        if($_SESSION['tarif'] == '5erGruppenticket'){
+                            //Selected
+                            echo 'checked';
+                        }
 
+                        echo      '>';
+                        echo '<label for="_5erGruppenticket" class="_5ergruppenticket">5er Gruppenticket</label>';
+                    }else{
+                        //Button Grau
+                        echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket" disabled>
+                    <label for="_5erGruppenticket" id="_5erGruppenticketlabel" class="_5ergruppenticket">5er Gruppenticket</label>';
+                    }
+                    ?>
+
+                    <?php
+                    if ($_SESSION['anzahl'] == 10){
+                        //Button Gruen
+                        echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket"';
+
+                        if($_SESSION['tarif'] == '10erGruppenticket'){
+                            //Selected
+                            echo 'checked';
+                        }
+
+                        echo      '>';
+                        echo '<label for="_10erGruppenticket" class="_10ergruppenticket">10er Gruppenticket</label>';
+                    }else{
+                        //Button Grau
+                        echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket" disabled>
+                    <label for="_10erGruppenticket" id="_10erGruppenticketlabel" class="_10ergruppenticket">10er Gruppenticket</label>';
+                    }
+                    ?>
+                </div>
+                <div class="navigation-btn">
+                    <input type="submit" class="Abbrechen" name="Abbrechen" id="Abbrechen" value="Abbrechen">
+                    <input type="submit" class="Zurück" name="Zurück" id="Zurück" value="Zurück">
                     <input type="submit" id="weiter" class="button-disabled" value="Weiter" disabled>
                 </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="navigation">
-        <div class="navigation-innen">
-            <form action="test.php" method="post">
-                <input type="submit" class="Abbrechen" name="Abbrechen" id="Abbrechen" value="Abbrechen">
-                <input type="submit" class="Zurück" name="Zurück" id="Zurück" value="Zurück">
             </form>
         </div>
     </div>
