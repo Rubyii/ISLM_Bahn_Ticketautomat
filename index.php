@@ -20,6 +20,33 @@ $bahnhoefe = array(
    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx2QBmwxDzm52voQ6qwjaOgjQS32JXEE&libraries=places&callback=initAutocomplete"></script>
 </head>
 <body>
+<!--Flügel links-->
+<div  class="rechteck"></div>
+<div  class="dreieckleft"></div>
+<div  class="dreieckright"></div>
+
+<div  class="rechteck" style="margin-top: 150px; background-color:#ed8c08"></div>
+<div  class="dreieckleft" style="margin-top: 150px"></div>
+<div  class="dreieckright"style="margin-top: 150px"></div>
+
+<div  class="rechteck" style="margin-top: 300px" ></div>
+<div  class="dreieckleft" style="margin-top: 300px"></div>
+<div  class="dreieckright" style="margin-top: 300px"></div>
+
+<!--Flügel rechts-->
+<div  class="rechteck" style="top:125px;right:0px;"></div>
+<div  class="dreieckleft"style="top:124px;right:0px;transform: scaleY(-1);"></div>
+<div  class="dreieckright"style="top:124px;right:0px;transform: scaleY(-1);"></div>
+
+<div  class="rechteck" style="margin-top: 150px; background-color:#ed8c08;top:125px;right:0px;"></div>
+<div  class="dreieckleft" style="margin-top: 150px;top:124px;right:0px;transform: scaleY(-1);"></div>
+<div  class="dreieckright"style="margin-top: 150px;top:124px;right:0px;transform: scaleY(-1);"></div>
+
+<div  class="rechteck" style="margin-top: 300px;top:125px;right:0px;" ></div>
+<div  class="dreieckleft" style="margin-top: 300px;top:124px;right:0px;transform: scaleY(-1);"></div>
+<div  class="dreieckright" style="margin-top: 300px;top:124px;right:0px;transform: scaleY(-1);"></div>
+
+
 <div class="grid-container">
     <div class="ueberschrift">
         <img alt="ISLM-Bahn" class="logo" src="static/images/ISLM_Logo2009.png">
@@ -31,17 +58,19 @@ $bahnhoefe = array(
     <div class="hinweistext">
         <div class="text">
             Bitte geben Sie Ihr Ziel ein
+
             <?php
-                /*if (isset($_SESSION["dauer"])){
-                    echo $_SESSION["dauer"];
-                    echo $_SESSION["ziel"];
-                }elseif (isset($_SESSION["tarif"])){
-                    echo $_SESSION["tarif"];
-                }elseif(isset($_SESSION['error'])){
-                    if ($_SESSION['error'])
-                    echo "ERRORRRRRASRASRASRSARAS";
-                }*/
+            /*if (isset($_SESSION["dauer"])){
+                echo $_SESSION["dauer"];
+                echo $_SESSION["ziel"];
+            }elseif (isset($_SESSION["tarif"])){
+                echo $_SESSION["tarif"];
+            }elseif(isset($_SESSION['error'])){
+                if ($_SESSION['error'])
+                echo "ERRORRRRRASRASRASRSARAS";
+            }*/
             ?>
+
         </div>
     </div>
 
