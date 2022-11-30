@@ -81,7 +81,7 @@ session_start();
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket"';
 
-                        if($_SESSION['tarif'] == '5erGruppenticket'){
+                        if(isset($_SESSION['tarif']) && $_SESSION['tarif'] == '5erGruppenticket'){
                             //Selected
                             echo 'checked';
                         }
@@ -100,7 +100,7 @@ session_start();
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket"';
 
-                        if($_SESSION['tarif'] == '10erGruppenticket'){
+                        if(isset($_SESSION['tarif']) && $_SESSION['tarif'] == '10erGruppenticket'){
                             //Selected
                             echo 'checked';
                         }

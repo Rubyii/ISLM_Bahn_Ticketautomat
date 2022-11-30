@@ -172,10 +172,11 @@
     grid-template-columns: auto auto auto;
     column-gap: 25px;
 
-    margin-top: 20px;
+    margin-top: 60px;
 }
 
 .Zurück{
+    position: absolute;
 
     padding: 20px;
     width: 226px;
@@ -188,6 +189,8 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+
+    margin-left: 725px;
 }
 
 .Zurück:active{
@@ -217,6 +220,8 @@
 }
 
 .weiter_btn {
+    position: absolute;
+
     padding: 20px;
     width: 226px;
 
@@ -229,6 +234,8 @@
     border-radius: 15px;
     box-shadow: 0 2px #999;
 
+    margin-left: 1090px;
+
 }
 
 .weiter_btn:active{
@@ -238,6 +245,8 @@
 }
 
 .button-disabled{
+    position: absolute;
+
     padding: 20px;
     width: 226px;
 
@@ -250,6 +259,7 @@
     border-radius: 15px;
     box-shadow: 0 2px #999;
 
+    margin-left: 1090px;
 }
 
 
