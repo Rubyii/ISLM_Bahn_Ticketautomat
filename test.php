@@ -5,11 +5,12 @@ if(isset($_POST['tarif'])){
     $_SESSION['tarif'] = $_POST['tarif'];
 }
 
-if ($_POST['Abbrechen']) {
+
+if (isset($_POST['Abbrechen'])) {
     session_unset();
     session_destroy();
     //header('Location: abbrechen.php');
-} elseif($_POST['Zurück']){
+} elseif(isset($_POST['Zurück'])){
     $_SESSION['Zurück'] = $_POST['Zurück'];
     //header('Location: abbrechen.php');
 }

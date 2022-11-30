@@ -59,7 +59,7 @@ session_start();
             <form action="test.php" id="tarifauswahl" method="post">
                 <div class="radio-btn">
                     <?php
-                    if ($_SESSION['tarif'] == 'Einzelticket'){
+                    if (isset($_SESSION['tarif']) && $_SESSION['tarif'] == 'Einzelticket'){
                         echo '<input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket" checked>';
                     }else{
                         echo '<input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">';
@@ -68,7 +68,7 @@ session_start();
                     <label for="Einzelticket" class="normaltarif">Einzelticket</label>
 
                     <?php
-                    if ($_SESSION['tarif'] == 'Viererticket'){
+                    if (isset($_SESSION['tarif']) && $_SESSION['tarif'] == 'Viererticket'){
                         echo '<input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket" checked>';
                     }else{
                         echo '<input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">';
@@ -77,7 +77,7 @@ session_start();
                     <label for="Viererticket" class="normaltarif">Viererticket</label>
 
                     <?php
-                    if ($_SESSION['anzahl'] == 5){
+                    if (isset($_SESSION['anzahl']) && $_SESSION['anzahl'] == 5){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket"';
 
@@ -96,7 +96,7 @@ session_start();
                     ?>
 
                     <?php
-                    if ($_SESSION['anzahl'] == 10){
+                    if (isset($_SESSION['anzahl']) && $_SESSION['anzahl'] == 10){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket"';
 
