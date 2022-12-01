@@ -20,7 +20,7 @@
 
 .main-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 33% 33%;
     margin-left: 50px;
     margin-top: 50px;
 }
@@ -56,4 +56,46 @@ input {
     right: 50px;
     bottom: 0;
     top: auto;
+}
+
+#status-kunde {
+    font-size: 11px;
+    color: red;
+}
+
+#dauer {
+    font-size: 11px;
+    color: red;
+}
+#klasse {
+    font-size: 11px;
+    color: red;
+}
+#einzelticketP {
+    font-size: 11px;
+    color: red;
+}
+#viererticketP {
+    font-size: 11px;
+    color: red;
+}
+#gruppenticket5P {
+    font-size: 11px;
+    color: red;
+}
+#gruppenticket10P {
+    font-size: 11px;
+    color: red;
+}
+#tagesticketP {
+    font-size: 11px;
+    color: red;
+}
+#monatsticketP {
+    font-size: 11px;
+    color: red;
+}
+#jahresticketP {
+    font-size: 11px;
+    color: red;
 }

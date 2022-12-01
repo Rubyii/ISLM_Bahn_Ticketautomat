@@ -1,5 +1,5 @@
 {
-    "erwachsene": "37",
+    "erwachsene": "5",
     "kinder": "-45",
     "senioren": "-10",
     "ermaessigt": "-20",
@@ -9,10 +9,10 @@
     "klasse2": "0",
     "klasse1": "10",
     "einzelticket": "10.00",
-    "viererticket": "12.00",
-    "gruppenticket5": "8.00",
-    "gruppenticket10": "8.00",
-    "tagesticket": "10.00",
-    "monatsticket": "75.50",
-    "jahresticket": "250.00"
+    "viererticket": "25.00",
+    "gruppenticket5": "5",
+    "gruppenticket10": "7.00",
+    "tagesticket": "5",
+    "monatsticket": "10",
+    "jahresticket": "10.00"
 }
