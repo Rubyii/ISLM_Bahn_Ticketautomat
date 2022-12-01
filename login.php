@@ -1,12 +1,33 @@
 <?php
 
-$benutzername = 'admin'; // AUSLESEN
-$passwortHash = NULL; // HASHWERT AUSLESEN
+$json = file_get_contents('configuration.json');
+
+$json_data = json_decode($json, true);
+
+
+
+$benutzername = $json_data['username'];
+$passwortHash = $json_data['passwordHash']; // Passwort: admin
+
+
+/*
+$jsonData = [
+        'passwordHash' => password_hash('admin',PASSWORD_DEFAULT),
+        'username' => 'admin'
+];
+
+$jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
+$file = fopen('configuration.json','w');
+fwrite($file, $jsonString);
+fclose($file);
+
+*/
+
 
 $errMsg = NULL;
 
 if (!empty($_POST['submit'])) {
-    if (empty($_POST['passwort']) || empty($_POST['benutzername']) || $_POST['benutzername'] != $benutzername /* || !password_verify($_POST['passwort'],$passwortHash) */) {
+    if (empty($_POST['passwort']) || empty($_POST['benutzername']) || $_POST['benutzername'] != $benutzername || !password_verify($_POST['passwort'],$passwortHash)) {
         $errMsg = "Falsches Passwort oder Benutzername!";
     }
     else {
