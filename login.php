@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $json = file_get_contents('configuration.json');
 
 $json_data = json_decode($json, true);
@@ -31,6 +33,7 @@ if (!empty($_POST['submit'])) {
         $errMsg = "Falsches Passwort oder Benutzername!";
     }
     else {
+        $_SESSION['login'] = true;
         header('Location: auswahlseite.php');
         exit();
     }
