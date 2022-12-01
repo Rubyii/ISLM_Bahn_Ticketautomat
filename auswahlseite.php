@@ -13,6 +13,7 @@ if (!empty($_POST['abmelden'])) {
     exit();
 }
 
+
 ?>
 
 <!DOCTYPE html>

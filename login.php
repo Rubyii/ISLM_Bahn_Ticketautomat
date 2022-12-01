@@ -2,7 +2,7 @@
 
 session_start();
 
-$json = file_get_contents('configuration.json');
+$json = file_get_contents('admin.json');
 
 $json_data = json_decode($json, true);
 
@@ -11,19 +11,6 @@ $json_data = json_decode($json, true);
 $benutzername = $json_data['username'];
 $passwortHash = $json_data['passwordHash']; // Passwort: admin
 
-
-/*
-$jsonData = [
-        'passwordHash' => password_hash('admin',PASSWORD_DEFAULT),
-        'username' => 'admin'
-];
-
-$jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
-$file = fopen('configuration.json','w');
-fwrite($file, $jsonString);
-fclose($file);
-
-*/
 
 
 $errMsg = NULL;

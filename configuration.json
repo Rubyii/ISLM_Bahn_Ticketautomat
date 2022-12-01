@@ -1,4 +1,18 @@
 {
-    "passwordHash": "$2y$10$dFf27x.X6O1al5PHSqvtoO\/HlR8436IQtT8BfKVs2d18jZBq7KnBK",
-    "username": "admin"
+    "erwachsene": "37",
+    "kinder": "-45",
+    "senioren": "-10",
+    "ermaessigt": "-20",
+    "kurz": "0",
+    "mittel": "10",
+    "lang": "20",
+    "klasse2": "0",
+    "klasse1": "10",
+    "einzelticket": "10.00",
+    "viererticket": "12.00",
+    "gruppenticket5": "8.00",
+    "gruppenticket10": "8.00",
+    "tagesticket": "10.00",
+    "monatsticket": "75.50",
+    "jahresticket": "250.00"
 }
