@@ -40,7 +40,7 @@ if (!empty($_POST['submit'])) {
 </head>
 <body>
 <div class="top-navigation">
-    <img src="static/img/ISLM_Logo2009%20(2).png">
+    <img alt="islm-bahn" src="static/img/ISLM_Logo2009%20(2).png">
 </div>
 
 <div class="main-grid">
@@ -52,7 +52,7 @@ if (!empty($_POST['submit'])) {
             </div>
 
             <div>
-            <input type="text" name="benutzername" id="benutzername" class="fields" required> <br>
+            <input type="text" name="benutzername" id="benutzername" class="fields" required autocomplete="off"> <br>
             </div>
 
             <div>

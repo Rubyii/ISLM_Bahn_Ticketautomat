@@ -28,7 +28,7 @@ if (!empty($_POST['abmelden'])) {
 <body>
 <div class="top-navigation">
     <div>
-        <img src="static/img/ISLM_Logo2009%20(2).png">
+        <img alt="islm-bahn" src="static/img/ISLM_Logo2009%20(2).png">
     </div>
 
 
@@ -49,7 +49,7 @@ if (!empty($_POST['abmelden'])) {
     <div>
         <div class="selectItem">
             <form method="post" action="statistik.php">
-                <input type="submit" value="Statistiken" name="statistiken" class="items">
+                <input type="submit" value="Statistiken W.I.P" name="statistiken" class="items" disabled>
             </form>
         </div>
     </div>
