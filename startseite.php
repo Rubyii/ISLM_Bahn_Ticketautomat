@@ -62,7 +62,7 @@ $bahnhoefe = array(
 
     <div class="hauptfunktion">
         <div class="hauptfunktion-innen">
-            <form action="test.php" method="post">
+            <form action="static/php/startseite_handler.php" method="post">
                 <label for="start" class="label">Start</label>
                 <input type="text" id="start" name = "start" value="AachenHauptbahnhof" class="input" readonly>
                 <br><br>
@@ -89,7 +89,7 @@ $bahnhoefe = array(
 
     <div class="navigation">
         <div class="navigation-innen">
-            <form action="test.php" method="post" class="button-form">
+            <form action="static/php/startseite_handler.php" method="post" class="button-form">
                 <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Monats Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Jahres Ticket">
