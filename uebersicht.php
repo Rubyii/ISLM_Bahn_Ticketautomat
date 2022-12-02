@@ -134,7 +134,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
             <div class="rightright">
                 <div>
                 </div>
-                <div>
+                <div style="font-size: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
                         echo '<p>'.$anzErwachsene."x Erwachsene".'</p>';
@@ -151,7 +151,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
 
                     ?>
                 </div>
-                <div>
+                <div style="position: relative; font-size: 30px; right: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
                         echo '<p>'."p.P ".$preisPPErwachsene.'€'.'</p>';
