@@ -162,7 +162,12 @@
 }
 
 /* START */
-
+.preis{
+    position: absolute;
+    font-weight: bold;
+    top: 250px;
+    left: 460px;
+}
 /* ENDE */
 
 

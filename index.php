@@ -18,7 +18,7 @@ $preisPPKind = 6; //AUSLESEN
 $preisPPSenior = 9; //AUSLESEN
 $preisPPErmaessigt = 8; //AUSLESEN
 
-$preisGesamt = 150; // AUSLESEN
+$preisGesamt = 58; // AUSLESEN
 
 if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart == "Jahresticket") {
     $isAboTicket = true;
@@ -33,11 +33,8 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Startseite</title>
+    <title>Uebersicht</title>
     <link rel="stylesheet" href="static/css/index.css">
-    <style>
-
-    </style>
 </head>
 <body>
 
@@ -157,14 +154,11 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
                     if ($anzErmaessigt != 0) {
                         echo '<p>'."p.P ".$preisPPErmaessigt.'€'.'</p>';
                     }
-
-
                     ?>
                 </div>
                 <div></div>
                 <div></div>
-                <div><em style="position: absolute; left: 500px; font-weight: bold">Preis: <?php echo $preisGesamt?>€</em></div>
-
+                <div><em class="preis">Preis: <?php echo $preisGesamt?>€</em></div>
             </div>
 
         </div>
@@ -182,7 +176,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
                 <input type="submit" class="button-orange" value="Abbrechen">
             </form>
             <button class="button-orange" style="left: 300px; position: relative" type="button" onclick="location.href='TARIFE'">Zurück</button>
-            <button class="button-gruen" style="left: 240px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
+            <button class="button-gruen" style="left: 220px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
         </div>
     </div>
 </div>
