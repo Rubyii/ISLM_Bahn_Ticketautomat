@@ -35,3 +35,9 @@
     background-color: white;
     padding: 50px 90px 50px 90px
 }
+
+.items:active {
+    border: none;
+    background-color: grey;
+    padding: 50px 90px 50px 90px
+}
