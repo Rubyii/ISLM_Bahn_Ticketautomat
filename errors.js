@@ -2,7 +2,7 @@
 
 
 function testProzent(value) {
-    if (value < -100 || value > 100 || !Number.isFinite(parseInt(value.replace('%','')))) {
+    if (value < -100 || value > 100 || isNaN(value.replace('%','')) ||  !Number.isFinite(parseInt(value.replace('%','')))) {
         document.getElementById('bestätigen').disabled = true;
         document.getElementById('bestätigen').style.background = '#FF0000';
 
@@ -29,7 +29,7 @@ function testProzent(value) {
 
         console.log("disabled "+value);
     }
-    else if ((value >= -100 || value <= 100) && Number.isFinite(parseInt(value.replace('%','')))) {
+    else if ((parseInt(value.replace('%','')) >= -100 && parseInt(value.replace('%','')) <= 100) && Number.isFinite(parseInt(value.replace('%',''))) && !isNaN(value.replace('%',''))) {
 
         const form = document.getElementById('configuration');
         const formElemets = Array.from(form.getElementsByTagName('input'));
@@ -51,7 +51,7 @@ function testProzent(value) {
 }
 
 function testEuro(value) {
-    if (value < 0 || !Number.isFinite(parseInt(value.replace('€','')))) {
+    if (value < 0 || isNaN(value.replace('€','')) || !Number.isFinite(parseInt(value.replace('€','')))) {
         document.getElementById('bestätigen').disabled = true;
         document.getElementById('bestätigen').style.background = '#FF0000';
 
@@ -95,7 +95,7 @@ function testEuro(value) {
 
         console.log("disabled "+value);
     }
-    else if ((value >= 0 ) && Number.isFinite(parseInt(value.replace('€','')))) {
+    else if ((parseInt(value.replace('€','')) >= 0 ) && Number.isFinite(parseInt(value.replace('€',''))) && !isNaN(value.replace('€',''))) {
         document.getElementById('bestätigen').disabled = false;
         document.getElementById('bestätigen').style.background = '#008000FF';
 
