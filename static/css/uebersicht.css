@@ -118,7 +118,7 @@
     border-right-style: solid;
     border-width: 5px;
     display: grid;
-    grid-template-columns: 50% auto;
+    grid-template-columns: 60% auto;
 }
 
 /* NICHT VERÄNDERN */
@@ -165,8 +165,8 @@
 .preis{
     position: absolute;
     font-weight: bold;
-    top: 250px;
-    left: 460px;
+    top: 275px;
+    left: 300px;
 }
 /* ENDE */
 
@@ -215,6 +215,8 @@
     box-shadow: 0 2px #999;
     width: 226px;
     height: 100px;
+
+    margin-left: 40px;
 
 }
 
@@ -270,11 +272,14 @@ grid-template-rows: auto auto auto;
 .right {
     display: grid;
     grid-template-rows: 20% auto;
+
+
 }
 .rightright {
     display: grid;
     grid-template-columns: 20% auto auto;
     grid-template-rows: 80% 20%;
+
     position: relative;
     top: 50px;
 }

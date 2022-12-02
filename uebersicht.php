@@ -1,11 +1,12 @@
 <?php
+session_start();
 
-$startort = "Köln"; // AUSLESEN
-$zielort = "Berlin"; // AUSLESEN
+$startort = "AachenHauptbahnhof"; // AUSLESEN
+$zielort = "Dueren"; // AUSLESEN
 
 $klasse = 2; // AUSLESEN
 
-$ticketart = "Gruppenticket"; // AUSLESEN
+$ticketart = "Einzelticket"; // AUSLESEN
 $isAboTicket = false;
 
 $anzErwachsene = 4; // AUSLESEN
@@ -34,7 +35,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
 <head>
     <meta charset="UTF-8">
     <title>Uebersicht</title>
-    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/uebersicht.css">
 </head>
 <body>
 
@@ -91,7 +92,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
                     if (!$isAboTicket):
                     echo '<p >'.$startort.' - '.$zielort.'</p>';
                     ?>
-                    <button class="button-gruen" type="button" onclick="location.href='U00'">Ändern</button>
+                    <button class="button-gruen" type="button" onclick="location.href='startseite.php'">Ändern</button>
                     <?php endif ?>
 
                 </div>
@@ -107,9 +108,20 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
 
                     echo '<p>'.$ticketart.'</p>';
 
+                    if (!$isAboTicket){
+                        echo '<button class="button-gruen" type="button" onclick="location.href=';
+                        echo "'tarif.php'";
+                        echo '">';
+                        echo 'Ändern</button>';
+                    }else{
+                        echo '<button class="button-gruen" type="button" onclick="location.href=';
+                        echo "'startseite.php'";
+                        echo '">';
+                        echo 'Ändern</button>';
+                    }
 
                     ?>
-                    <button class="button-gruen" type="button" onclick="location.href='TARIFE'">Ändern</button>
+
                 </div>
 
             </div>
@@ -137,7 +149,6 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
                         echo '<p>'.$anzErmaessigt."x Ermaessigt".'</p>';
                     }
 
-
                     ?>
                 </div>
                 <div>
@@ -163,11 +174,6 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
 
         </div>
 
-
-
-
-
-
     </div>
 
     <div class="navigation">
@@ -176,7 +182,7 @@ if ($ticketart == "Tagesticket" || $ticketart == "Monatsticket" || $ticketart ==
                 <input type="submit" class="button-orange" value="Abbrechen">
             </form>
             <button class="button-orange" style="left: 300px; position: relative" type="button" onclick="location.href='TARIFE'">Zurück</button>
-            <button class="button-gruen" style="left: 220px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
+            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
         </div>
     </div>
 </div>
