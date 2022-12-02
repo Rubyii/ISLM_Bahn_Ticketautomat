@@ -9,6 +9,8 @@ if (!$_SESSION['login']) {
 
 if (!empty($_POST['abmelden'])) {
     $_SESSION['login'] = false;
+    session_destroy();
+    session_regenerate_id();
     header('Location: login.php');
     exit();
 }
