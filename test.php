@@ -33,9 +33,9 @@ function getDistance($latitude1, $longitude1, $latitude2, $longitude2): float|in
 }
 
 
-foreach($_POST as $key => $value) {                                                 //TESTEN
+/*foreach($_POST as $key => $value) {                                                 //TESTEN
     echo "<br> POST parameter '$key' has '$value' <br>";
-}
+}*/
 
 //Start Ziel ausgewaehlt
 if (isset($_POST['start']) && isset($_POST['ziel'])){
@@ -57,7 +57,7 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
         unset($_SESSION['tarif']);
         unset($_POST['ziel']);
         $_SESSION['error'] = true;
-        header('Location: index.php');
+        header('Location: startseite.php');
     }
 
     //Tarif zuruecksetzen
@@ -88,7 +88,7 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
             $latTo = $bahnhoefe[$i][1];
             $longTo = $bahnhoefe[$i][2];
             $distanz = getDistance($latFrom, $longFrom, $latTo, $longTo);
-            echo "<br><br>Distanz ist ".getDistance($latFrom, $longFrom, $latTo, $longTo)."km";
+            /*echo "<br><br>Distanz ist ".getDistance($latFrom, $longFrom, $latTo, $longTo)."km";*/
 
             //Setzt je nach Distanz die Dauer auf kurz, mittel oder lang
             switch ($distanz) {
@@ -117,28 +117,29 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
     unset($_SESSION['dauer']);
     unset($_SESSION['start']);
     unset($_SESSION['ziel']);
-
-    echo $_SESSION['tarif'];
+    /*echo $_SESSION['tarif'];*/
 }
 
-foreach($_SESSION as $key => $value) {
+/*foreach($_SESSION as $key => $value) {
 
     echo "<br> SESSION parameter '$key' has '$value' <br>";                       //TESTEN
 
-}
+}*/
 ?>
 
+<!--
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>TEST</title>
+   <title>TEST</title>
 </head>
 <body>
-    <button onclick="window.location.href='index.php';">
-        Click Here
-    </button>
+   <button onclick="window.location.href='startseite.php';">
+       Click Here
+   </button>
 </body>
 </html>
+-->
 
 
 

@@ -16,8 +16,7 @@ $bahnhoefe = array(
 <head>
     <meta charset="UTF-8">
     <title>Startseite</title>
-    <link rel="stylesheet" href="static/css/index.css">
-   <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVx2QBmwxDzm52voQ6qwjaOgjQS32JXEE&libraries=places&callback=initAutocomplete"></script>
+    <link rel="stylesheet" href="static/css/startseite.css">
 </head>
 <body>
 <!--Flügel links-->
@@ -58,19 +57,6 @@ $bahnhoefe = array(
     <div class="hinweistext">
         <div class="text">
             Bitte geben Sie Ihr Ziel ein
-
-            <?php
-            /*if (isset($_SESSION["dauer"])){
-                echo $_SESSION["dauer"];
-                echo $_SESSION["ziel"];
-            }elseif (isset($_SESSION["tarif"])){
-                echo $_SESSION["tarif"];
-            }elseif(isset($_SESSION['error'])){
-                if ($_SESSION['error'])
-                echo "ERRORRRRRASRASRASRSARAS";
-            }*/
-            ?>
-
         </div>
     </div>
 
