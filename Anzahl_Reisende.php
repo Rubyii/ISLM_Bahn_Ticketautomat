@@ -1,9 +1,12 @@
 <?php
 session_start();
 
+/*
 foreach($_SESSION as $key => $value) {                                                 //TESTEN
     echo "<br> Session parameter '$key' has '$value' <br>";
 }
+*/
+var_dump($_SESSION);
 
 if (!empty($_POST['navi-abbrechen'])) {
     session_unset();
@@ -37,13 +40,14 @@ if (!empty($_POST['navi-zurück'])) {
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
 
+    /*
     if (isset($_SESSION['tarif'])){
         unset($_SESSION['start']);
         unset($_SESSION['ziel']);
     }elseif(isset($_SESSION['start']) && isset($_SESSION['ziel'])){
         unset($_SESSION['tarif']);
     }
-
+*/
     header('Location: startseite.php'); // ZUR VORHERIGEN SEITE HIER LEITEN
     exit();
 }
@@ -55,6 +59,7 @@ if (!empty($_POST['navi-weiter'])) {
     $_SESSION['anzKinder'] = (int) $_POST['anz_kinder'];
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
+    $_SESSION['count'] = $_SESSION['anzErwachsene'] + $_SESSION['anzSenioren'] + $_SESSION['anzErmaessigt'] + $_SESSION['anzKinder'];
 
     if (isset($_SESSION['ziel']))
     {

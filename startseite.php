@@ -1,8 +1,6 @@
 <?php
 session_start();
-foreach($_SESSION as $key => $value) {                                                 //TESTEN
-    echo "<br> Session parameter '$key' has '$value' <br>";
-}
+var_dump($_SESSION);
 
 $bahnhoefe = array(
     array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
@@ -90,7 +88,7 @@ $bahnhoefe = array(
                     ?>
                 </datalist>
                 <br><br>
-                <input type="submit" class="input" value="Weiter">
+                <input type="submit" class="input" value="Weiter" name="weiter">
             </form>
         </div>
     </div>

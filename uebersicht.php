@@ -50,7 +50,7 @@ $rechenwerte = array("Einzelticket" => (float) $json_data['einzelticket'],
                     "klasse1" => (float) $json_data['klasse1'] * 0.01,
                     "klasse2" => (float) $json_data['klasse2'] * 0.01);
 
-var_dump($rechenwerte);
+var_dump($_SESSION);
 
 if ($anzErwachsene != 0){
 
@@ -177,7 +177,7 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
                         echo '">';
                         echo 'Ändern</button>';
                     }else{
-                        unset($_SESSION['tarif']);
+                        //unset($_SESSION['tarif']);
                         echo '<button class="button-gruen" type="button" onclick="location.href=';
                         echo "'startseite.php'";
                         echo '">';

@@ -38,7 +38,7 @@ function getDistance($latitude1, $longitude1, $latitude2, $longitude2): float|in
 }*/
 
 //Tarif ausgewaehlt
-if (isset($_POST['tarif']) || isset($_SESSION['tarif'])){
+if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'])){
     $_SESSION['tarif'] = $_POST['tarif'];
     $_SESSION['error'] = false;
     //Start-Ziel zurücksetzen
@@ -70,7 +70,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif'])){
     }
 
     //Tarif zuruecksetzen
-    unset($_SESSION['tarif']);
+    //unset($_SESSION['tarif']);
 
     $_SESSION['start'] = $_POST['start'];
     $_SESSION['ziel'] =  $_POST['ziel'];

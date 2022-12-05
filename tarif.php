@@ -1,9 +1,12 @@
 <?php
 session_start();
+
+
 foreach($_SESSION as $key => $value) {                                                 //TESTEN
     echo "<br> Session parameter '$key' has '$value' <br>";
 }
 
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
