@@ -8,7 +8,19 @@ if (!empty($_POST['navi-abbrechen'])) {
     exit();
 }
 
-$count = $_SESSION['anzErwachsene'] + $_SESSION['anzSenioren'] + $_SESSION['anzErmaessigt'] +$_SESSION['anzKinder'];
+
+if (isset($_SESSION['anzErwachsene']) && isset($_SESSION['anzSenioren']) && isset($_SESSION['anzErmaessigt']) && isset($_SESSION['anzKinder']))
+{
+    $count = $_SESSION['anzErwachsene'] + $_SESSION['anzSenioren'] + $_SESSION['anzErmaessigt'] + $_SESSION['anzKinder'];
+}else {
+    $_SESSION['anzErwachsene'] = 0;
+    $_SESSION['anzSenioren'] = 0;
+    $_SESSION['anzErmaessigt'] = 0;
+    $_SESSION['anzKinder'] = 0;
+    $_SESSION['klasse'] = "klasse2";
+    $count = 0;
+}
+
 
 if (!empty($_POST['navi-zurück'])) {
     $_SESSION['anzErwachsene'] = (int) $_POST['anz_erwachsene'];
@@ -18,7 +30,7 @@ if (!empty($_POST['navi-zurück'])) {
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
 
-    header('Location: test.html'); // ZUR VORHERIGEN SEITE HIER LEITEN
+    header('Location: test.php'); // ZUR VORHERIGEN SEITE HIER LEITEN
     exit();
 }
 
@@ -29,7 +41,7 @@ if (!empty($_POST['navi-weiter'])) {
     $_SESSION['anzKinder'] = (int) $_POST['anz_kinder'];
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
-    header('Location: test.html'); // ZUR NACHFOLGENDEN SEITE HIER LEITEN
+    header('Location: test.php'); // ZUR NACHFOLGENDEN SEITE HIER LEITEN
     exit();
 }
 
@@ -96,7 +108,8 @@ if (!empty($_POST['navi-weiter'])) {
                         <label >Erwachsene</label>
                     </div>
                     <div>
-                        <input type="button" <?php if((empty($_SESSION['zurück']) || $_SESSION['zurück']) && $_SESSION['anzErwachsene'] == 0) {echo 'disabled ';} ?> id="minus_erwachsene" class="button-orange" value="-" onclick="decrement(this)">
+                        <input type="button" <?php
+                        if($_SESSION['anzErwachsene'] == 0)  {echo 'disabled';} ?> id="minus_erwachsene" class="button-orange" value="-" onclick="decrement(this)">
                     </div>
                     <div>
                         <input type="number" name="anz_erwachsene" id="anz_Erwachsene" value= <?php if (!empty($_SESSION['anzErwachsene'])) {echo $_SESSION['anzErwachsene'];} else {echo 0;} ?> style="pointer-events: none">
@@ -110,7 +123,7 @@ if (!empty($_POST['navi-weiter'])) {
                         <label >Senioren</label>
                     </div>
                     <div>
-                        <input type="button" <?php if((empty($_SESSION['zurück']) || $_SESSION['zurück']) && $_SESSION['anzSenioren'] == 0) {echo 'disabled ';} ?> id="minus_senioren" class="button-orange" value="-" onclick="decrement(this)">
+                        <input type="button" <?php if($_SESSION['anzSenioren'] == 0) {echo 'disabled ';} ?> id="minus_senioren" class="button-orange" value="-" onclick="decrement(this)">
                     </div>
                     <div>
                         <input type="number" name="anz_senioren" id="anz_senioren" value= <?php if (!empty($_SESSION['anzSenioren'])) {echo $_SESSION['anzSenioren'];} else {echo 0;} ?> style="pointer-events: none">
@@ -123,7 +136,7 @@ if (!empty($_POST['navi-weiter'])) {
                         <label>Ermäßigt</label>
                     </div>
                     <div>
-                        <input type="button" <?php if((empty($_SESSION['zurück']) || $_SESSION['zurück']) && $_SESSION['anzErmaessigt'] == 0) {echo 'disabled ';} ?> id="minus_ermaessigt" class="button-orange" value="-" onclick="decrement(this)">
+                        <input type="button" <?php if($_SESSION['anzErmaessigt'] == 0) {echo 'disabled ';} ?> id="minus_ermaessigt" class="button-orange" value="-" onclick="decrement(this)">
                     </div>
                     <div>
                         <input type="number" name="anz_ermaessigt" id="anz_ermaessigt" value= <?php if (!empty($_SESSION['anzErmaessigt'])) {echo $_SESSION['anzErmaessigt'];} else {echo 0;} ?> style="pointer-events: none">
@@ -137,7 +150,7 @@ if (!empty($_POST['navi-weiter'])) {
                         <label>Kinder</label>
                     </div>
                     <div>
-                        <input type="button" <?php if((empty($_SESSION['zurück']) || $_SESSION['zurück']) && $_SESSION['anzKinder'] == 0) {echo 'disabled ';} ?> id="minus_kinder" class="button-orange" value="-" onclick="decrement(this)">
+                        <input type="button" <?php if($_SESSION['anzKinder'] == 0) {echo 'disabled ';} ?> id="minus_kinder" class="button-orange" value="-" onclick="decrement(this)">
                     </div>
                     <div>
                         <input type="number" name="anz_kinder" id="anz_kinder" value= <?php if (!empty($_SESSION['anzKinder'])) {echo $_SESSION['anzKinder'];} else {echo 0;} ?> style="pointer-events: none">

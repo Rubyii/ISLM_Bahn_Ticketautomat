@@ -4,10 +4,10 @@
 
 function decrement(value) {
 
-    var anzErwachsene = parseInt(document.getElementById('anz_Erwachsene').value);
-    var anzSenioren = parseInt(document.getElementById('anz_senioren').value);
-    var anzErmaessigt = parseInt(document.getElementById('anz_ermaessigt').value);
-    var anzKinder = parseInt(document.getElementById('anz_kinder').value);
+    let anzErwachsene = parseInt(document.getElementById('anz_Erwachsene').value);
+    let anzSenioren = parseInt(document.getElementById('anz_senioren').value);
+    let anzErmaessigt = parseInt(document.getElementById('anz_ermaessigt').value);
+    let anzKinder = parseInt(document.getElementById('anz_kinder').value);
 
     if (value.id === "minus_erwachsene" && anzErwachsene > 0 && value.disabled === false) {
         anzErwachsene--;
@@ -89,10 +89,10 @@ function decrement(value) {
 }
 
 function increment(value) {
-    var anzErwachsene = parseInt(document.getElementById('anz_Erwachsene').value);
-    var anzSenioren = parseInt(document.getElementById('anz_senioren').value);
-    var anzErmaessigt = parseInt(document.getElementById('anz_ermaessigt').value);
-    var anzKinder = parseInt(document.getElementById('anz_kinder').value);
+    let anzErwachsene = parseInt(document.getElementById('anz_Erwachsene').value);
+    let anzSenioren = parseInt(document.getElementById('anz_senioren').value);
+    let anzErmaessigt = parseInt(document.getElementById('anz_ermaessigt').value);
+    let anzKinder = parseInt(document.getElementById('anz_kinder').value);
 
     if (value.id === 'plus_erwachsene' && anzErwachsene < 10 && value.disabled === false) {
         anzErwachsene++;
@@ -174,7 +174,7 @@ function increment(value) {
 
 
 function klasse(value) {
-    console.log("TEst");
+    //console.log("TEst");
     if (value.id === 'klasse1') {
         document.getElementById('klasse1').checked = true;
         document.getElementById('klasse2').checked = false;

@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+
+foreach($_SESSION as $key => $value) {
+
+    echo "<br> SESSION parameter '$key' has '$value' <br>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
