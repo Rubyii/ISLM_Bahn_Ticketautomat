@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+foreach($_SESSION as $key => $value) {                                                 //TESTEN
+    echo "<br> Session parameter '$key' has '$value' <br>";
+}
+
 if (!empty($_POST['navi-abbrechen'])) {
     session_unset();
     session_destroy();
@@ -12,6 +17,7 @@ if (!empty($_POST['navi-abbrechen'])) {
 if (isset($_SESSION['anzErwachsene']) && isset($_SESSION['anzSenioren']) && isset($_SESSION['anzErmaessigt']) && isset($_SESSION['anzKinder']))
 {
     $count = $_SESSION['anzErwachsene'] + $_SESSION['anzSenioren'] + $_SESSION['anzErmaessigt'] + $_SESSION['anzKinder'];
+    $_SESSION['count'] = $count;
 }else {
     $_SESSION['anzErwachsene'] = 0;
     $_SESSION['anzSenioren'] = 0;
@@ -19,6 +25,7 @@ if (isset($_SESSION['anzErwachsene']) && isset($_SESSION['anzSenioren']) && isse
     $_SESSION['anzKinder'] = 0;
     $_SESSION['klasse'] = "klasse2";
     $count = 0;
+    $_SESSION['count'] = $count;
 }
 
 
@@ -30,7 +37,14 @@ if (!empty($_POST['navi-zurück'])) {
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
 
-    header('Location: test.php'); // ZUR VORHERIGEN SEITE HIER LEITEN
+    if (isset($_SESSION['tarif'])){
+        unset($_SESSION['start']);
+        unset($_SESSION['ziel']);
+    }elseif(isset($_SESSION['start']) && isset($_SESSION['ziel'])){
+        unset($_SESSION['tarif']);
+    }
+
+    header('Location: startseite.php'); // ZUR VORHERIGEN SEITE HIER LEITEN
     exit();
 }
 
@@ -41,7 +55,14 @@ if (!empty($_POST['navi-weiter'])) {
     $_SESSION['anzKinder'] = (int) $_POST['anz_kinder'];
     $_SESSION['zurück'] = true;
     $_SESSION['klasse'] = $_POST['klasse'];
-    header('Location: test.php'); // ZUR NACHFOLGENDEN SEITE HIER LEITEN
+
+    if (isset($_SESSION['ziel']))
+    {
+        header('Location: tarif.php'); // ZUR NACHFOLGENDEN SEITE HIER LEITEN
+    }else{
+        header('Location: uebersicht.php'); // ZUR NACHFOLGENDEN SEITE HIER LEITEN
+    }
+
     exit();
 }
 

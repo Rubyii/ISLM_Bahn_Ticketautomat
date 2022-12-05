@@ -16,6 +16,6 @@ foreach($_SESSION as $key => $value) {
     <title>Title</title>
 </head>
 <body>
-<a href="Anzahl_Reisende.php">TEST</a>
+<a href="../../Anzahl_Reisende.php">TEST</a>
 </body>
 </html>

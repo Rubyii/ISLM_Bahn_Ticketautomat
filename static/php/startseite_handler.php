@@ -37,8 +37,17 @@ function getDistance($latitude1, $longitude1, $latitude2, $longitude2): float|in
     echo "<br> POST parameter '$key' has '$value' <br>";
 }*/
 
-//Start Ziel ausgewaehlt
-if (isset($_POST['start']) && isset($_POST['ziel'])){
+//Tarif ausgewaehlt
+if (isset($_POST['tarif']) || isset($_SESSION['tarif'])){
+    $_SESSION['tarif'] = $_POST['tarif'];
+    $_SESSION['error'] = false;
+    //Start-Ziel zurücksetzen
+    unset($_SESSION['dauer']);
+    unset($_SESSION['start']);
+    unset($_SESSION['ziel']);
+    header('Location: ../../Anzahl_Reisende.php');
+    /*echo $_SESSION['tarif'];*/
+} else if ((isset($_POST['start']) && isset($_POST['ziel'])) || (isset($_SESSION['start']) && isset($_SESSION['ziel']))){ //Start Ziel ausgewaehlt
 
     //ZIEL VALIDIERUNG
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
@@ -79,7 +88,6 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
         }
     }
 
-
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
         if ($bahnhoefe[$i][0] == $_SESSION['ziel']){
             //echo ('JAZiel '."\n");
@@ -94,12 +102,15 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
             switch ($distanz) {
                 case $distanz < 20:
                     $_SESSION['dauer'] = "kurz";
+                    header('Location: ../../Anzahl_Reisende.php');
                     break;
                 case ($distanz >= 20 && $distanz<= 50):
                     $_SESSION['dauer'] = "mittel";
+                    header('Location: ../../Anzahl_Reisende.php');
                     break;
                 case $distanz > 50:
                     $_SESSION['dauer'] = "lang";
+                    header('Location: ../../Anzahl_Reisende.php');
                     break;
                 default:
                     echo "FEHLER: MITARBEITER KONTAKTIEREN!!!";
@@ -109,15 +120,6 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
         }
     }
 
-    //Tarif ausgewaehlt
-} elseif (isset($_POST['tarif'])){
-    $_SESSION['tarif'] = $_POST['tarif'];
-    $_SESSION['error'] = false;
-    //Start-Ziel zurücksetzen
-    unset($_SESSION['dauer']);
-    unset($_SESSION['start']);
-    unset($_SESSION['ziel']);
-    /*echo $_SESSION['tarif'];*/
 }
 
 /*foreach($_SESSION as $key => $value) {

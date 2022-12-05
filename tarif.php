@@ -1,5 +1,8 @@
 <?php
 session_start();
+foreach($_SESSION as $key => $value) {                                                 //TESTEN
+    echo "<br> Session parameter '$key' has '$value' <br>";
+}
 
 ?>
 
@@ -77,7 +80,7 @@ session_start();
                     <label for="Viererticket" class="normaltarif">Viererticket</label>
 
                     <?php
-                    if (isset($_SESSION['anzahl']) && $_SESSION['anzahl'] == 5){
+                    if (isset($_SESSION['count']) && $_SESSION['count'] == 5){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket"';
 
@@ -96,7 +99,7 @@ session_start();
                     ?>
 
                     <?php
-                    if (isset($_SESSION['anzahl']) && $_SESSION['anzahl'] == 10){
+                    if (isset($_SESSION['count']) && $_SESSION['count'] == 10){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket"';
 

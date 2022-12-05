@@ -1,5 +1,8 @@
 <?php
 session_start();
+foreach($_SESSION as $key => $value) {                                                 //TESTEN
+    echo "<br> Session parameter '$key' has '$value' <br>";
+}
 
 $bahnhoefe = array(
     array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
@@ -67,11 +70,16 @@ $bahnhoefe = array(
                 <input type="text" id="start" name = "start" value="AachenHauptbahnhof" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
-                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off">
+                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off"
+                    <?php if (isset($_SESSION['ziel'])){echo "value=".'"'.$_SESSION['ziel'].'"';}?>
+                >
+
                 <?php
                 if(isset($_SESSION['error'])){
-                    if ($_SESSION['error'])
+                    if ($_SESSION['error']){
                         echo "<p class='errormessage'> Die Eingabe ist nicht korrekt </p>";
+                    }
+
                 }
                 ?>
                 <datalist id="ziele">
@@ -90,7 +98,7 @@ $bahnhoefe = array(
     <div class="navigation">
         <div class="navigation-innen">
             <form action="static/php/startseite_handler.php" method="post" class="button-form">
-                <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket">
+                <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket" >
                 <input type="submit" class="button-gruen" name="tarif" value="Monats Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Jahres Ticket">
             </form>
