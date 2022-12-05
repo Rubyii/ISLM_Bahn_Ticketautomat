@@ -120,9 +120,7 @@
 
 /* NICHT VERÄNDERN */
 .hauptfunktion-innen{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+
 
     line-height: 30px;
     margin-left: 2.5vh;
@@ -202,10 +200,54 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    width: 75px;
 }
 
+
 /* NICHT VERÄNDERN */
-.button-gruen:active {
+.button-gruen:active:enabled {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+.button-gruenW {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 75px;
+}
+
+
+/* NICHT VERÄNDERN */
+.button-gruenW:active:enabled {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+.button-gruenK {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 75px;
+}
+
+
+/* NICHT VERÄNDERN */
+.button-gruenK:active:enabled {
     background-color: #0B330C ;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
@@ -214,10 +256,10 @@
 
 /* BUTTON ORANGE */
 /* NICHT VERÄNDERN */
-.button-gruen {
+.button-orange {
     display: inline-block;
     padding: 20px 10px;
-    font-size: 35px;
+    font-size: 40px;
     cursor: pointer;
     text-align: center;
     color: #fff;
@@ -225,10 +267,35 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    width: 75px;
+
+
 }
 
 /* NICHT VERÄNDERN */
-.button-gruen:active {
+.button-orange:active:enabled {
+    background-color: #9E5D05 ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+.button-orangeN {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #ed8c08   ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 75px;
+
+
+}
+
+/* NICHT VERÄNDERN */
+.button-orangeN:active:enabled {
     background-color: #9E5D05 ;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
@@ -249,23 +316,33 @@
 .wagenklasse {
     position: absolute;
     left: 60%;
-    top: 230px;
+    top: 200px;
     width: 200px;
-    height: 130px;
+    height: 100px;
 
 }
-.wagenklasse + .wagenklasse{
-    margin-left: 300px;
+.wagenklasse2 {
+    position: absolute;
+    left: 79%;
+    top: 200px;
+    width: 200px;
+    height: 100px;
+
 }
+
 
 .navi-schritt{
     position: absolute;
     left: 60%;
     bottom:60px;
+    width: 200px;
+    height: 100px;
 
 }
 .navi-schritt + .navi-schritt{
     margin-left: 300px;
+    width: 200px;
+    height: 100px;
 }
 .navigation-innen >form > * {
     width: 200px;
@@ -275,6 +352,8 @@
     position: absolute;
     bottom: 230px;
     left: 60%;
+    width: 200px;
+    height: 100px;
 }
 .empty-space{
     background-color: #F0F0F0;
@@ -285,6 +364,99 @@
 .empty-space + .navi-abbrechen{
     margin-left: 300px;
 }
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 20% 8% 8% 8%;
+    grid-row-gap: 5%;
+    grid-template-rows: auto;
+    align-items: center;
+    text-align: center;
+
+}
+
+.inner-grid {
+    display: grid;
+
+
+}
+
+#minus_erwachsene:disabled {
+    background-color: grey;
+}
+#plus_erwachsene:disabled {
+    background-color: grey;
+}
+#minus_ermaessigt:disabled {
+    background-color: grey;
+}
+#plus_ermaessigt:disabled {
+    background-color: grey;
+}
+#minus_senioren:disabled {
+    background-color: grey;
+}
+#plus_senioren:disabled {
+    background-color: grey;
+}
+#minus_kinder:disabled {
+    background-color: grey;
+}
+#plus_kinder:disabled {
+    background-color: grey;
+}
+#weiter:disabled {
+    background-color: grey;
+}
+
+
+
+input[type="radio"] {
+    display: none;
+}
+label[class="wagenklasse"] {
+    text-align: center;
+    width: 200px;
+    padding-top: 32px;
+
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+
+}
+label[class="wagenklasse2"] {
+    text-align: center;
+    width: 200px;
+    padding-top: 32px;
+
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+
+}
+input[type="radio"]:checked + #klassen {
+    background-color: #0B330C;
+    box-shadow: 0 3px #666;
+}
+
+input[type="number"] {
+    height: 50px;
+    width: 70px;
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    border: none;
+}
+
+
 
 
 
