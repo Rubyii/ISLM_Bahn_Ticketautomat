@@ -29,12 +29,12 @@ if (!empty($_POST['submit'])) {
 
 
     $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
-    $file = fopen('configuration.json','w');
+    $file = fopen('static/json/configuration.json','w');
     fwrite($file, $jsonString);
     fclose($file);
 }
 
-$json = file_get_contents('configuration.json');
+$json = file_get_contents('static/json/configuration.json');
 
 $json_data = json_decode($json, true);
 
@@ -48,7 +48,7 @@ $json_data = json_decode($json, true);
     <title>Konfiguration</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="static/css/konfiguration.css">
-    <script src="errors.js"></script>
+    <script src="static/js/errors.js"></script>
 </head>
 <body>
 <div class="top-navigation">

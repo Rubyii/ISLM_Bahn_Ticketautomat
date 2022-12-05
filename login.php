@@ -2,7 +2,7 @@
 
 session_start();
 
-$json = file_get_contents('admin.json');
+$json = file_get_contents('static/json/admin.json');
 
 $json_data = json_decode($json, true);
 
