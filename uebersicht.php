@@ -24,30 +24,33 @@ $anzSenior = $_SESSION['anzSenioren'];
 $anzErmaessigt = $_SESSION['anzErmaessigt'];
 
 
+$json = file_get_contents('static/json/configuration.json');
+
+$json_data = json_decode($json, true);
 
 
 // !!!!ALLE WERTE MUESSEN AUS DER JSON GELESEN WERDEN!!!!
-$rechenwerte = array("Einzelticket" => 10,
-                    "Viererticket" => 36,
-                    "5erGruppenticket" => 8.50,
-                    "10erGruppenticket" => 8,
-                    "Tages Ticket" => 10,
-                    "Monats Ticket" => 50,
-                    "Jahres Ticket" => 250,
+$rechenwerte = array("Einzelticket" => (float) $json_data['einzelticket'],
+                    "Viererticket" => (float) $json_data['viererticket'],
+                    "5erGruppenticket" => (float) $json_data['gruppenticket5'],
+                    "10erGruppenticket" => (float) $json_data['gruppenticket10'],
+                    "Tages Ticket" => (float) $json_data['tagesticket'],
+                    "Monats Ticket" => (float) $json_data['monatsticket'],
+                    "Jahres Ticket" => (float) $json_data['jahresticket'],
 
-                    "prozentErwachsene" => 0,
-                    "prozentKind" => -0.4,
-                    "prozentSenior" => -0.1,
-                    "prozentErmaessigt" => -0.2,
+                    "prozentErwachsene" => (float) $json_data['erwachsene'] * 0.01,
+                    "prozentKind" => (float) $json_data['kinder'] * 0.01,
+                    "prozentSenior" => (float) $json_data['senioren'] * 0.01,
+                    "prozentErmaessigt" => (float) $json_data['ermaessigt'] * 0.01,
 
-                    "kurz" => 0,
-                    "mittel" => 0.1,
-                    "lang" => 0.2,
+                    "kurz" => (float) $json_data['kurz'] * 0.01,
+                    "mittel" => (float) $json_data['mittel'] * 0.01,
+                    "lang" => (float) $json_data['lang'] * 0.01,
 
-                    "klasse1" => 0.1,
-                    "klasse2" => 0);
+                    "klasse1" => (float) $json_data['klasse1'] * 0.01,
+                    "klasse2" => (float) $json_data['klasse2'] * 0.01);
 
-
+var_dump($rechenwerte);
 
 if ($anzErwachsene != 0){
 
