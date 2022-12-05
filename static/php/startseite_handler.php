@@ -57,7 +57,7 @@ if (isset($_POST['start']) && isset($_POST['ziel'])){
         unset($_SESSION['tarif']);
         unset($_POST['ziel']);
         $_SESSION['error'] = true;
-        header('Location: startseite.php');
+        header('Location: ../../startseite.php');
     }
 
     //Tarif zuruecksetzen
