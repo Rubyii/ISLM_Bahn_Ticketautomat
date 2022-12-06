@@ -53,7 +53,7 @@ $json_data = json_decode($json, true);
 <body>
 <div class="top-navigation">
     <div>
-        <img alt="islm-bahn" src="../static/img/ISLM_Logo2009%20(2).png">
+        <img alt="islm-bahn" src="../static/images/ISLM_Logo2009.png">
     </div>
 
     <form method="post" class="zurückArea" action="auswahlseite.php">

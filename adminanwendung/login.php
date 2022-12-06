@@ -40,7 +40,7 @@ if (!empty($_POST['submit'])) {
 </head>
 <body>
 <div class="top-navigation">
-    <img alt="islm-bahn" src="../static/img/ISLM_Logo2009%20(2).png">
+    <img alt="islm-bahn" src="../static/images/ISLM_Logo2009.png">
 </div>
 
 <div class="main-grid">
