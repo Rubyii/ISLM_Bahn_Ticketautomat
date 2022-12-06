@@ -79,7 +79,7 @@ if (!empty($_POST['navi-weiter'])) {
 <head>
     <meta charset="UTF-8">
     <title>Anzahl Reisende</title>
-    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/anzahl_reisende.css">
     <script src="static/js/anzReisende.js"></script>
 </head>
 <body>
@@ -92,15 +92,15 @@ if (!empty($_POST['navi-weiter'])) {
 
     <div  class="rechteck" style="margin-top: 150px; background-color:#ed8c08"></div>
     <div  class="dreieckleft" style="margin-top: 150px"></div>
-    <div  class="dreieckright"style="margin-top: 150px"></div>
+    <div  class="dreieckright" style="margin-top: 150px"></div>
 
     <div  class="rechteck" style="margin-top: 300px" ></div>
     <div  class="dreieckleft" style="margin-top: 300px"></div>
     <div  class="dreieckright" style="margin-top: 300px"></div>
 
-    <div  class="rechteck" style="top:125px;right:0px;"></div>
-    <div  class="dreieckleft"style="top:124px;right:0px;transform: scaleY(-1);"></div>
-    <div  class="dreieckright"style="top:124px;right:0px;transform: scaleY(-1);"></div>
+    <div  class="rechteck" style="top:125px;"></div>
+    <div  class="dreieckleft" style="top:124px;transform: scaleY(-1);"></div>
+    <div  class="dreieckright" style="top:124px;right:0px;transform: scaleY(-1);"></div>
 
     <!--Flügel rechts-->
     <div  class="rechteck" style="margin-top: 150px; background-color:#ed8c08;top:125px;right:0px;"></div>

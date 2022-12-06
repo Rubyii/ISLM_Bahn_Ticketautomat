@@ -29,12 +29,12 @@ if (!empty($_POST['submit'])) {
 
 
     $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
-    $file = fopen('static/json/configuration.json','w');
+    $file = fopen('../static/json/configuration.json','w');
     fwrite($file, $jsonString);
     fclose($file);
 }
 
-$json = file_get_contents('static/json/configuration.json');
+$json = file_get_contents('../static/json/configuration.json');
 
 $json_data = json_decode($json, true);
 
@@ -47,13 +47,13 @@ $json_data = json_decode($json, true);
 <head>
     <title>Konfiguration</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/konfiguration.css">
-    <script src="static/js/errors.js"></script>
+    <link rel="stylesheet" href="../static/css/konfiguration.css">
+    <script src="../static/js/errors.js"></script>
 </head>
 <body>
 <div class="top-navigation">
     <div>
-        <img src="static/img/ISLM_Logo2009%20(2).png">
+        <img alt="islm-bahn" src="../static/img/ISLM_Logo2009%20(2).png">
     </div>
 
     <form method="post" class="zurückArea" action="auswahlseite.php">
@@ -66,7 +66,7 @@ $json_data = json_decode($json, true);
         <div>
             <h3>Status-Kunde:</h3>
             <div class="status-kunde">
-                <label for="erwachsene">Erwachsene</label> <input oninput="testProzent(this.value)" type="text" id="erwachsene" name="erwachsene" value= <?php echo $json_data['erwachsene'].'%' ?>>
+                <label for="erwachsene">Erwachsene</label> <input oninput="testProzent(this.value)" autocomplete="off" type="text" id="erwachsene" name="erwachsene" value= <?php echo $json_data['erwachsene'].'%' ?>>
                 <label for="kinder">Kinder</label> <input oninput="testProzent(this.value)" type="text" id="kinder" name="kinder" value= <?php echo $json_data['kinder'].'%' ?>>
                 <label for="senioren">Senioren</label> <input oninput="testProzent(this.value)" type="text" id="senioren" name="senioren" value= <?php echo $json_data['senioren'].'%' ?>>
                 <label for="ermaessigt">Ermäßigt</label> <input oninput="testProzent(this.value)" type="text" id="ermaessigt" name="ermaessigt" value= <?php echo $json_data['ermaessigt'].'%' ?>>

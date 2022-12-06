@@ -23,12 +23,12 @@ if (!empty($_POST['abmelden'])) {
 <head>
     <title>Auswahlseite</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/auswahlseite.css">
+    <link rel="stylesheet" href="../static/css/auswahlseite.css">
 </head>
 <body>
 <div class="top-navigation">
     <div>
-        <img alt="islm-bahn" src="static/img/ISLM_Logo2009%20(2).png">
+        <img alt="islm-bahn" src="../static/img/ISLM_Logo2009%20(2).png">
     </div>
 
 

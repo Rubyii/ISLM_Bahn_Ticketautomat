@@ -2,7 +2,7 @@
 
 session_start();
 
-$json = file_get_contents('static/json/admin.json');
+$json = file_get_contents('../static/json/admin.json');
 
 $json_data = json_decode($json, true);
 
@@ -36,11 +36,11 @@ if (!empty($_POST['submit'])) {
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="../static/css/login.css">
 </head>
 <body>
 <div class="top-navigation">
-    <img alt="islm-bahn" src="static/img/ISLM_Logo2009%20(2).png">
+    <img alt="islm-bahn" src="../static/img/ISLM_Logo2009%20(2).png">
 </div>
 
 <div class="main-grid">
