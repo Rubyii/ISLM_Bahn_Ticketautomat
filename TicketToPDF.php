@@ -3054,7 +3054,7 @@ $pdf->Write(3, "Barzahlung");
 */
 $pdf->SetAuthor("ISLM-Bahn");
 $pdf->SetTitle("Tickets");
-$pdf->Output('F',"tickets/ISLM_Ticket.pdf",true);
+$pdf->Output('F',"ISLM_Ticket.pdf",true);
 
 ?>
 <!DOCTYPE html>
