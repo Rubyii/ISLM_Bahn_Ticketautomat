@@ -1,6 +1,6 @@
 <?php
 session_start();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 $bahnhoefe = array(
     array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
@@ -96,7 +96,7 @@ $bahnhoefe = array(
     <div class="navigation">
         <div class="navigation-innen">
             <form action="static/php/startseite_handler.php" method="post" class="button-form">
-                <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket" >
+                <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Monats Ticket">
                 <input type="submit" class="button-gruen" name="tarif" value="Jahres Ticket">
             </form>

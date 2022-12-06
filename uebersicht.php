@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (isset($_SESSION['ziel'])){
     $startort = $_SESSION['start'];
     $zielort = $_SESSION['ziel'];
@@ -50,7 +49,7 @@ $rechenwerte = array("Einzelticket" => (float) $json_data['einzelticket'],
                     "klasse1" => (float) $json_data['klasse1'] * 0.01,
                     "klasse2" => (float) $json_data['klasse2'] * 0.01);
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 if ($anzErwachsene != 0){
 

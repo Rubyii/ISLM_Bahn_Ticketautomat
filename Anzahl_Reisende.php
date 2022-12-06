@@ -6,7 +6,7 @@ foreach($_SESSION as $key => $value) {                                          
     echo "<br> Session parameter '$key' has '$value' <br>";
 }
 */
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 if (!empty($_POST['navi-abbrechen'])) {
     session_unset();
@@ -184,9 +184,6 @@ if (!empty($_POST['navi-weiter'])) {
                     <div>
                         <input type="button" <?php if($count == 10) {echo 'disabled';} ?> id="plus_kinder" class="button-gruen" value="+" onclick="increment(this)">
                     </div>
-
-
-
 
                     <div>
 
