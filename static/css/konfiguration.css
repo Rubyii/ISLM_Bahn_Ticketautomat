@@ -1,0 +1,101 @@
+.zurückArea {
+    margin: 30px 50px auto auto;
+}
+#zurück {
+
+    background-color: white;
+    color: black;
+    border-radius: 5px 5px 5px 5px;
+    width: 125px;
+    height: 45px;
+}
+.top-navigation {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+*:not(h3) {
+    font-size: 20px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+.left-grid {
+    display: grid;
+    grid-auto-rows: auto;
+
+}
+
+input {
+    width: 75px;
+    border: 2px solid black;
+}
+.status-kunde {
+    display: grid;
+    grid-template-columns: 35% 10%;
+    grid-gap: 3px;
+}
+
+.bottom-navigation {
+    position: relative;
+    align-items: end;
+    padding-bottom: 150px;
+}
+#bestätigen {
+    width: 175px;
+    height: 50px;
+    border-radius: 5px 5px 5px 5px;
+    background-color: green;
+    color: white;
+    position: absolute;
+    left: auto;
+    right: 50px;
+    bottom: 0;
+    top: auto;
+}
+
+#status-kunde {
+    font-size: 11px;
+    color: red;
+}
+
+#dauer {
+    font-size: 11px;
+    color: red;
+}
+#klasse {
+    font-size: 11px;
+    color: red;
+}
+#einzelticketP {
+    font-size: 11px;
+    color: red;
+}
+#viererticketP {
+    font-size: 11px;
+    color: red;
+}
+#gruppenticket5P {
+    font-size: 11px;
+    color: red;
+}
+#gruppenticket10P {
+    font-size: 11px;
+    color: red;
+}
+#tagesticketP {
+    font-size: 11px;
+    color: red;
+}
+#monatsticketP {
+    font-size: 11px;
+    color: red;
+}
+#jahresticketP {
+    font-size: 11px;
+    color: red;
+}

@@ -1,0 +1,41 @@
+
+
+.main-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto ;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    grid-gap: 40px;
+    transform: translate(-50%, -50%);
+}
+
+.fields {
+    border: 1px solid black;
+    margin-left: 50px;
+    width: 350px;
+}
+#button {
+    border: 1px solid black;
+    width: 100px;
+}
+.buttons {
+    margin-left: auto;
+    margin-right: 0;
+}
+.errMsg {
+    color: red;
+    position: absolute;
+    margin-top: 135px;
+    margin-left: 100px;
+}
+* {
+    font-size: 20px;
+}
