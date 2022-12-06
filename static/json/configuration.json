@@ -1,18 +1,18 @@
 {
-    "erwachsene": "10",
-    "kinder": "-45",
+    "erwachsene": "0",
+    "kinder": "-40",
     "senioren": "-10",
     "ermaessigt": "-20",
     "kurz": "0",
-    "mittel": "15",
+    "mittel": "10",
     "lang": "20",
     "klasse2": "0",
     "klasse1": "10",
     "einzelticket": "10.00",
-    "viererticket": "30.00",
-    "gruppenticket5": "5.00",
-    "gruppenticket10": "7.00",
-    "tagesticket": "5.00",
-    "monatsticket": "10.00",
-    "jahresticket": "10.00"
+    "viererticket": "36.00",
+    "gruppenticket5": "8.50",
+    "gruppenticket10": "8.00",
+    "tagesticket": "10.00",
+    "monatsticket": "50.00",
+    "jahresticket": "250.00"
 }
