@@ -21,7 +21,19 @@
     grid-template-rows: auto auto 60vh auto;
 
 }
+.info {
+    position: fixed;
+    background-color: #ed8c08;
+    padding-right: 100%;
+    padding-bottom: 1.1%;
+}
+.infotext {
+    position: absolute;
+    margin-left: 40%;
+    background-color: #ed8c08;
+    font-weight: bold;
 
+}
 /*Rechteck und Dreiecke für die Flügel*/
 .rechteck{
     height: 148px;

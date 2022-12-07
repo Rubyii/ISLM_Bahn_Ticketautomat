@@ -97,7 +97,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
             $longTo = $bahnhoefe[$i][2];
             $distanz = getDistance($latFrom, $longFrom, $latTo, $longTo);
             /*echo "<br><br>Distanz ist ".getDistance($latFrom, $longFrom, $latTo, $longTo)."km";*/
-
+            $_SESSION['showinfo'] = true;
             //Setzt je nach Distanz die Dauer auf kurz, mittel oder lang
             switch ($distanz) {
                 case $distanz < 20:

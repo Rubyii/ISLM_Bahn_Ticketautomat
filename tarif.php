@@ -45,6 +45,13 @@ session_start();
 <div  class="dreieckleft" style="margin-top: 300px;top:124px;right:0px;transform: scaleY(-1);"></div>
 <div  class="dreieckright" style="margin-top: 300px;top:124px;right:0px;transform: scaleY(-1);"></div>
 
+<!--
+    <?php if($_SESSION['showinfo']): ?>
+        <div class="info">
+            <span class="infotext"> &#9432; Achtung! Sie befinden sich in einem laufenden Kaufprozess!</span>
+        </div>
+    <?php endif; ?>
+    !-->
 
 <div class="grid-container">
     <div class="ueberschrift">

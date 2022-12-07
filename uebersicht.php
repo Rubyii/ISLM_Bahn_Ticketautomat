@@ -87,8 +87,31 @@ if ($anzErmaessigt != 0){
 
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
 
+var_dump($_POST);
 
+if (!empty($_POST['abbrechen'])) {
+    session_unset();
+    session_destroy();
+    session_regenerate_id();
+    header('Location: startseite.php'); // ZUR STARTSEITE HIER LEITEN
+    exit();
+}
 
+if (!empty($_POST['startseiteÄndern'])) {
+    $_SESSION['showinfo'] = true;
+    header('Location: startseite.php');
+    exit();
+}
+if (!empty($_POST['reisendeÄndern'])) {
+    $_SESSION['showinfo'] = true;
+    header('Location: Anzahl_Reisende.php');
+    exit();
+}
+if (!empty($_POST['tarifÄndern'])) {
+    $_SESSION['showinfo'] = true;
+    header('Location: tarif.php');
+    exit();
+}
 ?>
 
 
@@ -101,7 +124,7 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
     <link rel="stylesheet" href="static/css/uebersicht.css">
 </head>
 <body>
-
+<form method="post">
 
 <!--Flügel links-->
 <div  class="rechteck"></div>
@@ -155,7 +178,7 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
                     if (!$isAboTicket):
                         if (isset($startort) && isset($zielort))echo '<p >'.$startort.' - '.$zielort.'</p>';
                     ?>
-                    <button class="button-gruen" type="button" onclick="location.href='startseite.php'">Ändern</button>
+                    <input class="button-gruen" type="submit" value="Ändern" name="startseiteÄndern"></input>
                     <?php endif ?>
 
                 </div>
@@ -164,23 +187,23 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
                     <?php
                     echo '<p>'.$klasse.'</p>';
                     ?>
-                    <button class="button-gruen" type="button" onclick="location.href='Anzahl_Reisende.php'">Ändern</button>
+                    <input class="button-gruen" value="Ändern" type="submit" name="reisendeÄndern"></input>
                 </div>
                 <div class="innerinner">
                     <?php
                     if (isset($ticketart)) echo '<p>'.$ticketart.'</p>';
 
                     if (!$isAboTicket){
-                        echo '<button class="button-gruen" type="button" onclick="location.href=';
-                        echo "'tarif.php'";
+                        echo '<input class="button-gruen" type="submit" value="Ändern" name=';
+                        echo "'tarifÄndern'";
                         echo '">';
-                        echo 'Ändern</button>';
+                        echo '</input>';
                     }else{
                         //unset($_SESSION['tarif']);
-                        echo '<button class="button-gruen" type="button" onclick="location.href=';
-                        echo "'startseite.php'";
+                        echo '<input class="button-gruen" type="submit" value="Ändern" name=';
+                        echo "'startseiteÄndern'";
                         echo '">';
-                        echo 'Ändern</button>';
+                        echo '</input>';
                     }
 
                     ?>
@@ -190,7 +213,7 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
             </div>
         <div class="right">
             <div class="innerinner"><p>Anzahl Reisende</p>
-                <button class="button-gruen" type="button" onclick="location.href='Anzahl_Reisende.php'">Ändern</button>
+                <input class="button-gruen" type="submit" value="Ändern" name="reisendeÄndern"></input>
             </div>
 
 
@@ -241,20 +264,20 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
 
     <div class="navigation">
         <div class="navigation-innen">
-            <form method="post" action=static/php/abbrechen_uebersicht.php>
-                <input type="submit" class="button-orange" value="Abbrechen">
-            </form>
+
+            <input type="submit" class="button-orange" value="Abbrechen" name="abbrechen">
+
 
             <?php
             if ($isAboTicket){
-                echo '<button class="button-orange" style="left: 300px; position: relative" type="button" onclick="location.href=';
-                echo "'Anzahl_Reisende.php'";
-                echo '">Zurück</button>';
+                echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
+                echo "'reisendeÄndern'";
+                echo '"></input>';
 
             }else{
-                echo '<button class="button-orange" style="left: 300px; position: relative" type="button" onclick="location.href=';
-                echo "'tarif.php'";
-                echo '">Zurück</button>';
+                echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
+                echo "'tarifÄndern'";
+                echo '"></input>';
             }
             ?>
             <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
@@ -263,7 +286,7 @@ $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind *
 </div>
 
 
-
+</form>
 </body>
 <script src="static/js/zeit.js"></script>
 </html>

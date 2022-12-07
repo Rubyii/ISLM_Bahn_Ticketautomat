@@ -18,7 +18,19 @@
 
 }
 
+.info {
+    position: fixed;
+    background-color: #ed8c08;
+    padding-right: 100%;
+    padding-bottom: 1.1%;
+}
+.infotext {
+    position: absolute;
+    margin-left: 40%;
+    background-color: #ed8c08;
+    font-weight: bold;
 
+}
 .rechteck{
     /* ein grünes rechteck mit zwei weißen Dreicecken: eins mit  */
     /* großes rechteck mittels &::after setzt kann man direkt ein zweites erzeugen ohne zweute klasse */
