@@ -45,6 +45,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
     unset($_SESSION['dauer']);
     unset($_SESSION['start']);
     unset($_SESSION['ziel']);
+    $_SESSION['showinfo'] = true;
     header('Location: ../../Anzahl_Reisende.php');
     /*echo $_SESSION['tarif'];*/
 } else if ((isset($_POST['start']) && isset($_POST['ziel'])) || (isset($_SESSION['start']) && isset($_SESSION['ziel']))){ //Start Ziel ausgewaehlt
@@ -66,6 +67,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
         unset($_SESSION['tarif']);
         unset($_POST['ziel']);
         $_SESSION['error'] = true;
+        $_SESSION['showinfo'] = true;
         header('Location: ../../startseite.php');
     }
 
