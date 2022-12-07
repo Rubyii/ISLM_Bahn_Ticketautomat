@@ -1,0 +1,50 @@
+.zurückArea {
+    margin: 30px 50px auto auto;
+}
+#zurück {
+
+    background-color: white;
+    color: black;
+    border-radius: 5px 5px 5px 5px;
+    width: 125px;
+    height: 45px;
+}
+.top-navigation {
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+*:not(h2) {
+    font-size: 20px;
+}
+main {
+    position: absolute;
+    left: 18%;
+    top: 40%;
+}
+ table, td{
+    border: 1px solid black;
+    text-align: center;
+    border-collapse: collapse;
+}
+ td {
+     padding-bottom: 3%;
+ }
+.custom-table {
+    width: 400px;
+    font-weight: bold;
+}
+.custom-table-data {
+    text-align: right;
+}
+.custom-table-data-bold {
+    font-weight: bold;
+}
+#tarif-cell {
+    width: 200px;
+}
+header {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}

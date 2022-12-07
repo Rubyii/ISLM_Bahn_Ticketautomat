@@ -49,7 +49,7 @@ if (!empty($_POST['abmelden'])) {
     <div>
         <div class="selectItem">
             <form method="post" action="statistik.php">
-                <input type="submit" value="Statistiken W.I.P" name="statistiken" class="items" disabled>
+                <input type="submit" value="Statistiken W.I.P" name="statistiken" class="items">
             </form>
         </div>
     </div>
