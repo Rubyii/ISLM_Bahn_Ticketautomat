@@ -29,60 +29,84 @@ $json_data = json_decode($json, true);
 
 
 // !!!!ALLE WERTE MUESSEN AUS DER JSON GELESEN WERDEN!!!!
-$rechenwerte = array("Einzelticket" => (float) $json_data['einzelticket'],
-                    "Viererticket" => (float) $json_data['viererticket'],
-                    "5erGruppenticket" => (float) $json_data['gruppenticket5'],
-                    "10erGruppenticket" => (float) $json_data['gruppenticket10'],
-                    "Tages Ticket" => (float) $json_data['tagesticket'],
-                    "Monats Ticket" => (float) $json_data['monatsticket'],
-                    "Jahres Ticket" => (float) $json_data['jahresticket'],
+$rechenwerte = array(
+        "Einzelticket" => (float) $json_data['einzelticket'],
+        "Viererticket" => (float) $json_data['viererticket'],
+        "5erGruppenticket" => (float) $json_data['gruppenticket5'],
+        "10erGruppenticket" => (float) $json_data['gruppenticket10'],
+        "Tages Ticket" => (float) $json_data['tagesticket'],
+        "Monats Ticket" => (float) $json_data['monatsticket'],
+        "Jahres Ticket" => (float) $json_data['jahresticket'],
 
-                    "prozentErwachsene" => (float) $json_data['erwachsene'] * 0.01,
-                    "prozentKind" => (float) $json_data['kinder'] * 0.01,
-                    "prozentSenior" => (float) $json_data['senioren'] * 0.01,
-                    "prozentErmaessigt" => (float) $json_data['ermaessigt'] * 0.01,
+        "prozentErwachsene" => (float) $json_data['erwachsene'] * 0.01,
+        "prozentKind" => (float) $json_data['kinder'] * 0.01,
+        "prozentSenior" => (float) $json_data['senioren'] * 0.01,
+        "prozentErmaessigt" => (float) $json_data['ermaessigt'] * 0.01,
 
-                    "kurz" => (float) $json_data['kurz'] * 0.01,
-                    "mittel" => (float) $json_data['mittel'] * 0.01,
-                    "lang" => (float) $json_data['lang'] * 0.01,
+        "kurz" => (float) $json_data['kurz'] * 0.01,
+        "mittel" => (float) $json_data['mittel'] * 0.01,
+        "lang" => (float) $json_data['lang'] * 0.01,
 
-                    "klasse1" => (float) $json_data['klasse1'] * 0.01,
-                    "klasse2" => (float) $json_data['klasse2'] * 0.01);
+        "klasse1" => (float) $json_data['klasse1'] * 0.01,
+        "klasse2" => (float) $json_data['klasse2'] * 0.01
+);
 
 //var_dump($_SESSION);
 
-if ($anzErwachsene != 0){
-
+function erwachsenePreisBerechnung($_rechenwerte): float
+{
     if (isset($_SESSION['ziel'])){
-        $preisPPErwachsene =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]),2);
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
     }elseif(isset($_SESSION['tarif'])){
-        $preisPPErwachsene =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }else $preisPPErwachsene = 0;
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }else return 0;
+}
 
+function kinderPreisBerechnung($_rechenwerte): float
+{
+    if (isset($_SESSION['ziel'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }elseif(isset($_SESSION['tarif'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }else return 0;
+}
+
+function seniorPreisBerechnung($_rechenwerte): float
+{
+    if (isset($_SESSION['ziel'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }elseif(isset($_SESSION['tarif'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }else return 0;
+}
+
+function ermaessigtPreisBerechnung($_rechenwerte): float
+{
+    if (isset($_SESSION['ziel'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }elseif(isset($_SESSION['tarif'])){
+        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+    }else return 0;
+}
+
+
+if ($anzErwachsene != 0){
+    $preisPPErwachsene = erwachsenePreisBerechnung($rechenwerte);
 }else $preisPPErwachsene = 0;
 
+
 if ($anzKind != 0){
-    if (isset($_SESSION['ziel'])){
-        $preisPPKind =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }elseif(isset($_SESSION['tarif'])){
-        $preisPPKind =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }else $preisPPErwachsene = 0;
+    $preisPPKind = kinderPreisBerechnung($rechenwerte);
 }else $preisPPKind = 0;
 
+
 if ($anzSenior != 0){
-    if (isset($_SESSION['ziel'])){
-        $preisPPSenior =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }elseif(isset($_SESSION['tarif'])){
-        $preisPPSenior =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }else $preisPPErwachsene = 0;
+    $preisPPSenior = seniorPreisBerechnung($rechenwerte);
 }else $preisPPSenior = 0;
 
+
 if ($anzErmaessigt != 0){
-    if (isset($_SESSION['ziel'])){
-        $preisPPErmaessigt =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }elseif(isset($_SESSION['tarif'])){
-        $preisPPErmaessigt =  number_format($rechenwerte[$_SESSION['tarif']] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['klasse']]),2);
-    }else $preisPPErwachsene = 0;
+    $preisPPErmaessigt = ermaessigtPreisBerechnung($rechenwerte);
 }else $preisPPErmaessigt = 0;
 
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
@@ -269,18 +293,16 @@ if (!empty($_POST['tarifÄndern'])) {
 
 
             <?php
+            echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
             if ($isAboTicket){
-                echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
                 echo "'reisendeÄndern'";
-                echo '"></input>';
 
             }else{
-                echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
                 echo "'tarifÄndern'";
-                echo '"></input>';
             }
+            echo '"></input>';
             ?>
-            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='BEZAHLEN'">Weiter</button>
+            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='TicketToPDF.php'">Weiter</button>
         </div>
     </div>
 </div>

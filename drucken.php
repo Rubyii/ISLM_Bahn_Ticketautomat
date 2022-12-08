@@ -1,3 +1,7 @@
+<?php
+session_start();
+//var_dump($_SESSION);
+?>
 
 <!DOCTYPE html>
 <html lang="de">
@@ -63,7 +67,7 @@
             <!-- Start -->
             <!-- Bitte nur innerhalb der div arbeiten -->
 
-            <object data="tickets/ISLM_Ticket.pdf#toolbar=0" width="1150" height="540px"></object>
+            <object data="ISLM_Ticket.pdf#toolbar=0" width="1150" height="540px"></object>
 
 
 
@@ -78,11 +82,9 @@
             <!-- Bitte nur innerhalb der div arbeiten -->
 
 
-            <form action="static/php/startseite.php" method="post">
+            <form action="static/php/abbrechen_uebersicht.php" method="post">
                 <input type="submit" class="input" value="Drucken">
             </form>
-
-
 
             <!-- Ende -->
         </div>

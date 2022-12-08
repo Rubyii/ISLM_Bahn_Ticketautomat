@@ -32,13 +32,41 @@ function getDistance($latitude1, $longitude1, $latitude2, $longitude2): float|in
     return $d;
 }
 
+function distanzSetzen_Weiterleiten($_distanz): void
+{
+    switch ($_distanz) {
+        case $_distanz < 20:
+            $_SESSION['dauer'] = "kurz";
+            header('Location: ../../Anzahl_Reisende.php');
+            break;
+        case ($_distanz >= 20 && $_distanz<= 50):
+            $_SESSION['dauer'] = "mittel";
+            header('Location: ../../Anzahl_Reisende.php');
+            break;
+        case $_distanz > 50:
+            $_SESSION['dauer'] = "lang";
+            header('Location: ../../Anzahl_Reisende.php');
+            break;
+        default:
+            echo "FEHLER: MITARBEITER KONTAKTIEREN!!!";
+            break;
+    }
+}
 
-/*foreach($_POST as $key => $value) {                                                 //TESTEN
-    echo "<br> POST parameter '$key' has '$value' <br>";
-}*/
 
-//Tarif ausgewaehlt
-if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'])){
+function zielValidieren($_bahnhoefe): bool
+{
+    for ($i = 0; $i < sizeof($_bahnhoefe); $i++){
+        if ( ($_POST['start']!= $_POST['ziel']) && ($_bahnhoefe[$i][0] == $_POST['ziel'])){
+            $_SESSION['error'] = false;
+            return true;
+        }
+    }
+    return false;
+}
+
+function tarifAusgewaehlt(): void
+{
     $_SESSION['tarif'] = $_POST['tarif'];
     $_SESSION['error'] = false;
     //Start-Ziel zurücksetzen
@@ -48,16 +76,17 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
     $_SESSION['showinfo'] = true;
     header('Location: ../../Anzahl_Reisende.php');
     /*echo $_SESSION['tarif'];*/
+}
+
+
+//Tarif ausgewaehlt
+if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'])){
+    tarifAusgewaehlt();
 } else if ((isset($_POST['start']) && isset($_POST['ziel'])) || (isset($_SESSION['start']) && isset($_SESSION['ziel']))){ //Start Ziel ausgewaehlt
 
     //ZIEL VALIDIERUNG
-    for ($i = 0; $i < sizeof($bahnhoefe); $i++){
-        if ( ($_POST['start']!= $_POST['ziel']) && ($bahnhoefe[$i][0] == $_POST['ziel'])){
-            $zielkorrekt = true;
-            $_SESSION['error'] = false;
-            break;
-        }
-    }
+    $zielkorrekt = zielValidieren($bahnhoefe);
+
 
     //UMLEITUNG WENN FALSCH
     if (!$zielkorrekt){
@@ -90,6 +119,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
         }
     }
 
+
     for ($i = 0; $i < sizeof($bahnhoefe); $i++){
         if ($bahnhoefe[$i][0] == $_SESSION['ziel']){
             //echo ('JAZiel '."\n");
@@ -101,23 +131,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
             /*echo "<br><br>Distanz ist ".getDistance($latFrom, $longFrom, $latTo, $longTo)."km";*/
             $_SESSION['showinfo'] = true;
             //Setzt je nach Distanz die Dauer auf kurz, mittel oder lang
-            switch ($distanz) {
-                case $distanz < 20:
-                    $_SESSION['dauer'] = "kurz";
-                    header('Location: ../../Anzahl_Reisende.php');
-                    break;
-                case ($distanz >= 20 && $distanz<= 50):
-                    $_SESSION['dauer'] = "mittel";
-                    header('Location: ../../Anzahl_Reisende.php');
-                    break;
-                case $distanz > 50:
-                    $_SESSION['dauer'] = "lang";
-                    header('Location: ../../Anzahl_Reisende.php');
-                    break;
-                default:
-                    echo "FEHLER: MITARBEITER KONTAKTIEREN!!!";
-                    break;
-            }
+            distanzSetzen_Weiterleiten($distanz);
             break;
         }
     }
