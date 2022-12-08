@@ -12,6 +12,7 @@ if($_SESSION['klasse'] == 'klasse2'){
 }
 
 
+
 $isAboTicket = false;
 // Vorverarbeitung
 if ($_SESSION['tarif'] == "Tages Ticket" || $_SESSION['tarif'] == "Monats Ticket" || $_SESSION['tarif'] == "Jahres Ticket") {
@@ -23,7 +24,13 @@ $ticketart = $_SESSION['tarif'];
 if (!$isAboTicket){
     $standort = $_SESSION['start'];
     $zielort = $_SESSION['ziel'];
+    if ($_SESSION['tarif'] == "5erGruppenticket" || $_SESSION['tarif'] == "10erGruppenticket"){
+        $ticketart = "Gruppenticket";
+    }
 }
+
+
+
 
 
 $anzErwachsene = $_SESSION['anzErwachsene'];
@@ -66,15 +73,7 @@ $preis_Einzelticket_Senior = $rechenwerte['Einzelticket'] * (1+$rechenwerte['pro
 $preis_Einzelticket_Kind = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Einzelticket_Ermaessigt = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 
-$preis_5erGruppenticket_Erwachsen = $rechenwerte['5erGruppenticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_5erGruppenticket_Senior = $rechenwerte['5erGruppenticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_5erGruppenticket_Kind = $rechenwerte['5erGruppenticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_5erGruppenticket_Ermaessigt = $rechenwerte['5erGruppenticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-
-$preis_10erGruppenticket_Erwachsen = $rechenwerte['10erGruppenticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_10erGruppenticket_Senior = $rechenwerte['10erGruppenticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_10erGruppenticket_Kind = $rechenwerte['10erGruppenticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_10erGruppenticket_Ermaessigt = $rechenwerte['10erGruppenticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Gruppenticket = 10; // BERECHNETEN WERT AUSLESEN
 
 $preis_Viererticket_Erwachsen = $rechenwerte['Viererticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Viererticket_Senior = $rechenwerte['Viererticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
@@ -1017,7 +1016,7 @@ if ($ticketart == "Einzelticket") {
     }
 
 }
-else if ($ticketart == "5erGruppenticket") {
+else if ($ticketart == "Gruppenticket") {
     // Oberer Teil ////////////////////////////////////////
     $pdf->SetXY(10, $pdf->GetY() + 10);
     $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
@@ -1063,7 +1062,7 @@ else if ($ticketart == "5erGruppenticket") {
 
     // Gruppenticket
     $pdf->SetXY(118 , 47);
-    $pdf->Write(0,"5erGruppenticket");
+    $pdf->Write(0,"Gruppenticket");
     $pdf->SetFont('Arial','',16);
     $pdf->SetXY(160 , 45);
     if ($anzErwachsene != "0") {
@@ -1119,11 +1118,11 @@ else if ($ticketart == "5erGruppenticket") {
     $pdf->SetXY(75, $saveY + 6);
     $pdf->Write(3, "MwSt D:");
     $pdf->SetXY(75, $saveY + 10);
-    $pdf->Write(3, "**".number_format($preis_5erGruppenticket,2));
+    $pdf->Write(3, "**".number_format($preis_Gruppenticket,2));
     $pdf->SetXY(95, $saveY + 10);
     $pdf->Write(3, "19,00% = ");
     $pdf->SetXY(130, $saveY + 10);
-    $pdf->Write(3, "***".number_format($preis_5erGruppenticket * 0.19,2));
+    $pdf->Write(3, "***".number_format($preis_Gruppenticket * 0.19,2));
 
     // Line
     $pdf->Line(160,$saveY ,160,$saveY + 20);
@@ -1131,130 +1130,7 @@ else if ($ticketart == "5erGruppenticket") {
     // Betrag
     $pdf->SetFont('Arial', 'B', 18);
     $pdf->SetXY(162, $saveY + 5);
-    $pdf->Write(3, "EUR**".number_format($preis_5erGruppenticket,2));
-
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->SetXY(175, $saveY + 13);
-    $pdf->Write(3, "Barzahlung");
-
-
-
-}
-else if ($ticketart == "10erGruppenticket") {
-    // Oberer Teil ////////////////////////////////////////
-    $pdf->SetXY(10, $pdf->GetY() + 10);
-    $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
-    $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-    $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
-
-    $saveY = $pdf->GetY();
-
-    // ISLM-Bahn
-    $pdf->SetFont('Arial','BI',16);
-    $pdf->SetXY(28,$saveY + 10);
-    $pdf->Write(0,"ISLM-Bahn");
-
-    // Gültigkeit
-    $pdf->SetFont('Arial', '', 13);
-    $pdf->SetXY(88,$saveY + 7);
-    $pdf->Write(0,"Gueltigkeit: ");
-    $pdf->SetXY(85,$saveY + 15);
-    $pdf->Write(0,"ab ".$date);
-
-    // Datum
-    $pdf->SetFont('Arial','',16);
-    $pdf->SetXY(163,$saveY + 8);
-    $pdf->Write(0,$date);
-
-    // Hauptteil ////////////////////////////////////////////////
-    $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-    $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
-
-    $saveY = $pdf->GetY();
-
-    // ISLM Fahrkarte
-    $pdf->SetFont('Arial','',16);
-    $pdf->SetXY(12 , $saveY + 8);
-    $pdf->Write(0,"ISLM");
-    $pdf->SetFont('Arial','B',16);
-    $pdf->SetXY(28 , $saveY + 8);
-    $pdf->Write(0,"Fahrkarte");
-
-    // Klasse
-    $pdf->SetXY(86 , $saveY + 8);
-    $pdf->Write(0,"Klasse ".$klasse);
-
-    // Gruppenticket
-    $pdf->SetXY(118 , 47);
-    $pdf->Write(0,"10erGruppenticket");
-    $pdf->SetFont('Arial','',16);
-    $pdf->SetXY(160 , 45);
-    if ($anzErwachsene != "0") {
-        $pdf->Write(3,$anzErwachsene." Erwachsene");
-        $pdf->SetXY(160 , $pdf->GetY() +7 );
-    }
-    if ($anzKinder != "0") {
-        $pdf->Write(3,$anzKinder." Kinder");
-        $pdf->SetXY(160 , $pdf->GetY() + 7);
-    }
-    if ($anzErmaesigt != "0") {
-        $pdf->Write(3,$anzErmaesigt." Ermaessigt");
-        $pdf->SetXY(160 , $pdf->GetY() + 7);
-    }
-    if ($anzSenior != "0") {
-        $pdf->Write(3,$anzSenior." Senioren");
-        $pdf->SetXY(160 , $pdf->GetY() + 7);
-    }
-
-    // Strecke
-    $pdf->SetFont('Arial', '', 16);
-    $pdf->SetXY(12, $saveY + 20);
-    $pdf->Write(3, "ISLM-Bahn Von: ");
-
-    $pdf->SetFont('Arial', 'B', 16);
-    $pdf->SetXY(55, $saveY + 20);
-    $pdf->Write(3, $standort);
-
-    $pdf->SetFont('Arial', '', 16);
-    $pdf->SetXY(42, $saveY + 27);
-    $pdf->Write(3, "Nach: ");
-
-    $pdf->SetFont('Arial', 'B', 16);
-    $pdf->SetXY(58, $saveY + 27);
-    $pdf->Write(3, $zielort);
-
-    // Unterer Teil ////////////////////////////////////////////////
-
-    $pdf->SetXY(10, $saveY + $cellHeightMain);
-    $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
-
-    $saveY = $pdf->GetY();
-
-    // Datum und Uhrzeit
-    $pdf->SetXY(10 , $saveY + 8);
-    $pdf->SetFont('Arial', '', 12);
-    $pdf->SetXY(18, $saveY + 8);
-    $pdf->Write(3, $date);
-    $pdf->SetXY(45, $saveY + 8);
-    $pdf->Write(3, $time);
-
-    // Mehrwertsteuerberechnung
-    $pdf->SetXY(75, $saveY + 6);
-    $pdf->Write(3, "MwSt D:");
-    $pdf->SetXY(75, $saveY + 10);
-    $pdf->Write(3, "**".number_format($preis_10erGruppenticket,2));
-    $pdf->SetXY(95, $saveY + 10);
-    $pdf->Write(3, "19,00% = ");
-    $pdf->SetXY(130, $saveY + 10);
-    $pdf->Write(3, "***".number_format($preis_10erGruppenticket * 0.19,2));
-
-    // Line
-    $pdf->Line(160,$saveY ,160,$saveY + 20);
-
-    // Betrag
-    $pdf->SetFont('Arial', 'B', 18);
-    $pdf->SetXY(162, $saveY + 5);
-    $pdf->Write(3, "EUR**".number_format($preis_10erGruppenticket,2));
+    $pdf->Write(3, "EUR**".number_format($preis_Gruppenticket,2));
 
     $pdf->SetFont('Arial', '', 12);
     $pdf->SetXY(175, $saveY + 13);
