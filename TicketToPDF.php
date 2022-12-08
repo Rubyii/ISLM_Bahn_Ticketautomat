@@ -115,6 +115,7 @@ $result = $expired->format('d.m.Y');
 $cellHeightTopBottom = 20;
 $cellHeightMain = 40;
 $gapBetweenTickets = 15;
+$gaprechts = 8;
 
 if ($ticketart == "Einzelticket") {
     $count = 0;
@@ -126,7 +127,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -149,7 +150,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -192,7 +193,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -237,7 +238,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -261,7 +262,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -304,7 +305,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -348,7 +349,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -371,7 +372,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -414,7 +415,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -459,7 +460,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -482,7 +483,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -525,7 +526,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -569,7 +570,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -592,7 +593,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -635,7 +636,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -679,7 +680,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -702,7 +703,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -745,7 +746,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -789,7 +790,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -812,7 +813,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -855,7 +856,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -899,7 +900,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -922,7 +923,7 @@ if ($ticketart == "Einzelticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -965,7 +966,7 @@ if ($ticketart == "Einzelticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1013,7 +1014,7 @@ else if ($ticketart == "Gruppenticket") {
     $pdf->SetXY(10, $pdf->GetY() + 10);
     $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
     $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-    $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+    $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
     $saveY = $pdf->GetY();
 
@@ -1036,7 +1037,7 @@ else if ($ticketart == "Gruppenticket") {
 
     // Hauptteil ////////////////////////////////////////////////
     $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-    $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+    $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
     $saveY = $pdf->GetY();
 
@@ -1094,7 +1095,7 @@ else if ($ticketart == "Gruppenticket") {
     // Unterer Teil ////////////////////////////////////////////////
 
     $pdf->SetXY(10, $saveY + $cellHeightMain);
-    $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+    $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
     $saveY = $pdf->GetY();
 
@@ -1141,7 +1142,7 @@ else if ($isAboTicket) {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1166,7 +1167,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1199,7 +1200,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1266,7 +1267,7 @@ else if ($isAboTicket) {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1291,7 +1292,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1324,7 +1325,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1391,7 +1392,7 @@ else if ($isAboTicket) {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1416,7 +1417,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1449,7 +1450,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1519,7 +1520,7 @@ else if ($isAboTicket) {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1544,7 +1545,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1577,7 +1578,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1647,7 +1648,7 @@ else if ($isAboTicket) {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1672,7 +1673,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1705,7 +1706,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1777,7 +1778,7 @@ else if ($isAboTicket) {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1802,7 +1803,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1835,7 +1836,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1907,7 +1908,7 @@ else if ($isAboTicket) {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1932,7 +1933,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -1965,7 +1966,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2037,7 +2038,7 @@ else if ($isAboTicket) {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2062,7 +2063,7 @@ else if ($isAboTicket) {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2095,7 +2096,7 @@ else if ($isAboTicket) {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2175,7 +2176,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2198,7 +2199,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2231,7 +2232,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2276,7 +2277,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2299,7 +2300,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2332,7 +2333,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2377,7 +2378,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2400,7 +2401,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2433,7 +2434,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2478,7 +2479,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2501,7 +2502,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2534,7 +2535,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2579,7 +2580,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2602,7 +2603,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2635,7 +2636,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2680,7 +2681,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2703,7 +2704,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2736,7 +2737,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2781,7 +2782,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY(10, $pdf->GetY() + 10);
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2804,7 +2805,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2837,7 +2838,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2882,7 +2883,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->SetXY($pdf->GetX(), $pdf->GetY());
             $pdf->Cell(70, $cellHeightTopBottom, "", 1, 0, 'C');
             $pdf->Cell(40, $cellHeightTopBottom, "", 1, 0, 'C');
-            $pdf->Cell(80, $cellHeightTopBottom, "", 1, 0, 'C');
+            $pdf->Cell(80 + $gaprechts, $cellHeightTopBottom, "", 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2905,7 +2906,7 @@ else if ($ticketart == "Viererticket") {
 
             // Hauptteil ////////////////////////////////////////////////
             $pdf->SetXY(10+ 200, $saveY + $cellHeightTopBottom);
-            $pdf->Cell(190, $cellHeightMain, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightMain, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
@@ -2938,7 +2939,7 @@ else if ($ticketart == "Viererticket") {
             // Unterer Teil ////////////////////////////////////////////////
 
             $pdf->SetXY(10+ 200, $saveY + $cellHeightMain);
-            $pdf->Cell(190, $cellHeightTopBottom, '', 1, 0, 'C');
+            $pdf->Cell(190 + $gaprechts, $cellHeightTopBottom, '', 1, 0, 'C');
 
             $saveY = $pdf->GetY();
 
