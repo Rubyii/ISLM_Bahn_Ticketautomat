@@ -3,15 +3,13 @@ session_start();
 require ('fpdf/fpdf.php');
 date_default_timezone_set('Europe/Berlin');
 $date = date('d.m.Y');
-$time = date('h:i');
+$time = date('H:i');
 
 if($_SESSION['klasse'] == 'klasse2'){
     $klasse = "2";
 }else{
     $klasse = "1";
 }
-
-
 
 $isAboTicket = false;
 // Vorverarbeitung
@@ -28,16 +26,6 @@ if (!$isAboTicket){
         $ticketart = "Gruppenticket";
     }
 }
-
-
-
-
-
-$anzErwachsene = $_SESSION['anzErwachsene'];
-$anzKinder = $_SESSION['anzKinder'];
-$anzSenior = $_SESSION['anzSenioren'];
-$anzErmaesigt = $_SESSION['anzErmaessigt'];
-
 
 $json = file_get_contents('static/json/configuration.json');
 
@@ -67,13 +55,17 @@ $rechenwerte = array(
 );
 
 
+$anzErwachsene = $_SESSION['anzErwachsene'];
+$anzKinder = $_SESSION['anzKinder'];
+$anzSenior = $_SESSION['anzSenioren'];
+$anzErmaesigt = $_SESSION['anzErmaessigt'];
 
 $preis_Einzelticket_Erwachsen = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Einzelticket_Senior = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Einzelticket_Kind = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Einzelticket_Ermaessigt = $rechenwerte['Einzelticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 
-$preis_Gruppenticket = 10; // BERECHNETEN WERT AUSLESEN
+$preis_Gruppenticket = $_SESSION['preisGesamt'];
 
 $preis_Viererticket_Erwachsen = $rechenwerte['Viererticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 $preis_Viererticket_Senior = $rechenwerte['Viererticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);

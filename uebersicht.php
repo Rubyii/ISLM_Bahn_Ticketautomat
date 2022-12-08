@@ -56,62 +56,64 @@ $rechenwerte = array(
 function erwachsenePreisBerechnung($_rechenwerte): float
 {
     if (isset($_SESSION['ziel'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }elseif(isset($_SESSION['tarif'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErwachsene']) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }else return 0;
 }
 
 function kinderPreisBerechnung($_rechenwerte): float
 {
     if (isset($_SESSION['ziel'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }elseif(isset($_SESSION['tarif'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentKind']) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }else return 0;
 }
 
 function seniorPreisBerechnung($_rechenwerte): float
 {
     if (isset($_SESSION['ziel'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }elseif(isset($_SESSION['tarif'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentSenior']) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }else return 0;
 }
 
 function ermaessigtPreisBerechnung($_rechenwerte): float
 {
     if (isset($_SESSION['ziel'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['dauer']]) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }elseif(isset($_SESSION['tarif'])){
-        return number_format($_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['klasse']]),2);
+        return $_rechenwerte[$_SESSION['tarif']] * (1+$_rechenwerte['prozentErmaessigt']) * (1+$_rechenwerte[$_SESSION['klasse']]);
     }else return 0;
 }
 
 
 if ($anzErwachsene != 0){
-    $preisPPErwachsene = erwachsenePreisBerechnung($rechenwerte);
+    $preisPPErwachsene = number_format(erwachsenePreisBerechnung($rechenwerte),2);
 }else $preisPPErwachsene = 0;
 
 
 if ($anzKind != 0){
-    $preisPPKind = kinderPreisBerechnung($rechenwerte);
+    $preisPPKind = number_format(kinderPreisBerechnung($rechenwerte),2);
 }else $preisPPKind = 0;
 
 
 if ($anzSenior != 0){
-    $preisPPSenior = seniorPreisBerechnung($rechenwerte);
+    $preisPPSenior = number_format(seniorPreisBerechnung($rechenwerte),2);
 }else $preisPPSenior = 0;
 
 
 if ($anzErmaessigt != 0){
-    $preisPPErmaessigt = ermaessigtPreisBerechnung($rechenwerte);
+    $preisPPErmaessigt = number_format(ermaessigtPreisBerechnung($rechenwerte),2);
 }else $preisPPErmaessigt = 0;
 
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
 
-var_dump($_POST);
+$_SESSION['preisGesamt'] = $preisGesamt;
+
+//var_dump($_POST);
 
 if (!empty($_POST['abbrechen'])) {
     session_unset();
