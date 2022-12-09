@@ -17,7 +17,20 @@ if ($_SESSION['tarif'] == "Tages Ticket" || $_SESSION['tarif'] == "Monats Ticket
     $isAboTicket = true;
 }
 
-$ticketart = $_SESSION['tarif'];
+if ($_SESSION['tarif'] == "Tages Ticket") {
+    $ticketart = "Tagesticket";
+}
+else if ($_SESSION['tarif'] == "Monats Ticket") {
+    $ticketart = "Monatsticket";
+}
+else if ($_SESSION['tarif'] == "Jahres Ticket") {
+    $ticketart = "Jahresticket";
+}
+else {
+    $ticketart = $_SESSION['tarif'];
+}
+
+
 
 if (!$isAboTicket){
     $standort = $_SESSION['start'];
@@ -73,20 +86,19 @@ $preis_Viererticket_Kind = $rechenwerte['Viererticket'] * (1+$rechenwerte['proze
 $preis_Viererticket_Ermaessigt = $rechenwerte['Viererticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['dauer']]) * (1+$rechenwerte[$_SESSION['klasse']]);
 
 $preis_Tagesticket_Erwachsen = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Tagesticket_Senior = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Tagesticket_Kind = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Tagesticket_Ermaessigt = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Tagesticket_Senior = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Tagesticket_Kind = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Tagesticket_Ermaessigt = $rechenwerte['Tages Ticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['klasse']]);
 
 $preis_Monatsticket_Erwachsen = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Monatsticket_Senior = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Monatsticket_Kind = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Monatsticket_Ermaessigt = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Monatsticket_Senior = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Monatsticket_Kind = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Monatsticket_Ermaessigt = $rechenwerte['Monats Ticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['klasse']]);
 
 $preis_Jahresticket_Erwachsen = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Jahresticket_Senior = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Jahresticket_Kind = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-$preis_Jahresticket_Ermaessigt = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentErwachsene']) * (1+$rechenwerte[$_SESSION['klasse']]);
-
+$preis_Jahresticket_Senior = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentSenior']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Jahresticket_Kind = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentKind']) * (1+$rechenwerte[$_SESSION['klasse']]);
+$preis_Jahresticket_Ermaessigt = $rechenwerte['Jahres Ticket'] * (1+$rechenwerte['prozentErmaessigt']) * (1+$rechenwerte[$_SESSION['klasse']]);
 
 
 

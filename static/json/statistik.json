@@ -1,12 +1,12 @@
 {
-    "gesamt_euro": 843.63,
-    "gesamt_anzahl": 75,
-    "einzeltickets_euro": 270.6,
-    "einzeltickets_anzahl": 30,
-    "vierertickets_euro": 350.28,
-    "vierertickets_anzahl": 10,
-    "gruppenticket5_euro": 46.75,
-    "gruppenticket5_anzahl": 5,
+    "gesamt_euro": 1195,
+    "gesamt_anzahl": 97,
+    "einzeltickets_euro": 339.90000000000003,
+    "einzeltickets_anzahl": 38,
+    "vierertickets_euro": 598.68,
+    "vierertickets_anzahl": 19,
+    "gruppenticket5_euro": 80.42,
+    "gruppenticket5_anzahl": 10,
     "gruppenticket10_euro": 176,
     "gruppenticket10_anzahl": 30
 }
