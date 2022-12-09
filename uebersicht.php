@@ -304,7 +304,7 @@ if (!empty($_POST['tarifÄndern'])) {
             }
             echo '"></input>';
             ?>
-            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='TicketToPDF.php'">Weiter</button>
+            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='/static/php/statistik_handler.php'">Weiter</button>
         </div>
     </div>
 </div>
