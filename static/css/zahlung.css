@@ -1,0 +1,288 @@
+/* EIGENER CODE UNTER DEN JEWEILIGEN GRIDS FÜR ÜBERSICHT */
+
+/* ZENTRIET ALLES NICHT VERÄNDERN */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #F0F0F0;
+    font-family: helvetica, serif;
+}
+
+/* GRID UNTERTEILUNG NICHT VERÄNDERN */
+.grid-container {
+    display: grid;
+    background-color: #F0F0F0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2.5%;
+    height: 100vh;
+    width: 100vw;
+    grid-template-rows: auto auto 60vh auto;
+
+}
+
+
+/*Rechteck und Dreiecke für die Flügel*/
+.rechteck{
+    height: 148px;
+    width: 77px;
+    background-color: #1a7c1b;
+    position: absolute; top:126px;
+
+}
+.dreieckleft {
+    height: 150px;
+    background-color: transparent;
+    border-left: 77px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-top: 55px solid #F0F0F0;
+    position: absolute; top:124px;
+}
+.dreieckright{
+    height: 150px;
+    background-color: transparent;
+    border-right: 77px solid transparent;
+    border-top: 40px solid transparent;
+    border-bottom: 50px solid #F0F0F0;
+    position: absolute; top:125px;
+}
+
+/* GRID 1  */
+/* NICHT VERÄNDERN */
+.ueberschrift {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 20px;
+    text-align: right;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+/* NICHT VERÄNDERN */
+.logo{
+    height: 80px;
+    width: 80px;
+}
+/* NICHT VERÄNDERN */
+.uhrzeitdatum{
+    text-align: center;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 2 */
+/* NICHT VERÄNDERN */
+.hinweistext {
+    padding: 20px;
+    font-size: 40px;
+    text-align: left;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    border-color: #ed8c08;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+}
+
+/* NICHT VERÄNDERN */
+.hinweistext-innen{
+    margin-left: 2.5vh;
+    display: grid;
+    grid-template-columns: 60% auto;
+
+}
+.hinweistext-innen span {
+    color: red;
+    font-size: x-large;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 3 */
+/* NICHT VERÄNDERN */
+.hauptfunktion {
+    padding: 20px;
+    text-align: left;
+    font-size: 40px;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    border-color: #ed8c08;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: 100px;
+}
+
+/* NICHT VERÄNDERN */
+.hauptfunktion-innen{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+/* WEITER KNOPF */
+/* NICHT VERÄNDERN */
+.input[type=submit] {
+    /* RELATIV WEITER KNOPF IST FREI VON ELTERN KLASSEN */
+    position: absolute;
+    padding: 20px;
+    width: 226px;
+
+    font-size: 40px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+
+    /* HIER POSITION ÄNDERN */
+    top: 80vh;
+    left: 150vh;
+}
+
+/* WEITER KNOPF:AKTIV */
+/* NICHT VERÄNDERN */
+.input[type=submit]:active {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* GRID 4 */
+/* NICHT VERÄNDERN */
+.navigation {
+    padding: 20px;
+    text-align: left;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-color: #ed8c08;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 5px;
+    display: grid;
+}
+
+/* NICHT VERÄNDERN */
+.navigation-innen{
+    margin-left: 2.5vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* START */
+
+/* ENDE */
+
+
+/* BUTTON GRÜN */
+/* NICHT VERÄNDERN */
+.button-gruen {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #1a7c1b  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 180px;
+    height: 80px;
+
+
+}
+
+/* NICHT VERÄNDERN */
+.button-gruen:active {
+    background-color: #0B330C ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+
+/* BUTTON ORANGE */
+/* NICHT VERÄNDERN */
+.button-orange {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #ed8c08   ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 226px;
+    height: 100px;
+}
+
+/* NICHT VERÄNDERN */
+.button-orange:active {
+    background-color: #9E5D05 ;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+.münzen-grid {
+    display: grid;
+    grid-template-columns: 15% 21% 21% 21% 21%;
+    align-items: center;
+}
+.banknoten-grid {
+    display: grid;
+    grid-template-columns: 15% 21% 21% 21% 21%;
+    align-items: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 160% auto;
+}
+.number {
+    border: none;
+    width: 70px;
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: right;
+
+}
+
+.abbruch {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
+.abbruch2 {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
