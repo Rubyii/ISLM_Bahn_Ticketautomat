@@ -1,6 +1,5 @@
 <?php
 session_start();
-//var_dump($_SESSION);
 
 $bahnhoefe = array(
     array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$gesamtpreis = number_format($_SESSION['preisGesamt'],2); // AUSLESEN
+$gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
 
 
 
