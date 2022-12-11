@@ -96,7 +96,7 @@ if (isset($_POST['tarif']) || isset($_SESSION['tarif']) && empty($_POST['weiter'
         unset($_SESSION['tarif']);
         unset($_POST['ziel']);
         $_SESSION['error'] = true;
-        $_SESSION['showinfo'] = true;
+        //$_SESSION['showinfo'] = true;
         header('Location: ../../startseite.php');
     }
 
