@@ -19,6 +19,27 @@ $bahnhoefe = array(
     <link rel="stylesheet" href="static/css/startseite.css">
 </head>
 <body>
+<!--Page Load-->
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
+
 <!--Flügel links-->
 <div  class="rechteck"></div>
 <div  class="dreieckleft"></div>
@@ -93,7 +114,7 @@ $bahnhoefe = array(
                     ?>
                 </datalist>
                 <br><br>
-                <input type="submit" class="input" value="Weiter" name="weiter">
+                <input type="submit" id="weiter" class="input" value="Weiter" name="weiter">
             </form>
         </div>
     </div>

@@ -92,24 +92,45 @@ function ermaessigtPreisBerechnung($_rechenwerte): float
 
 if ($anzErwachsene != 0){
     $preisPPErwachsene = number_format(erwachsenePreisBerechnung($rechenwerte),2);
-}else $preisPPErwachsene = 0;
+    $preisPPErwachseneKomma = str_replace(".",",",$preisPPErwachsene);
+}else {
+    $preisPPErwachsene = 0;
+    $preisPPErwachseneKomma = 0;
+}
 
 
 if ($anzKind != 0){
     $preisPPKind = number_format(kinderPreisBerechnung($rechenwerte),2);
-}else $preisPPKind = 0;
+    $preisPPKindKomma = str_replace(".",",",$preisPPKind);
+}else {
+    $preisPPKind = 0;
+    $preisPPKindKomma = 0;
+}
 
 
 if ($anzSenior != 0){
     $preisPPSenior = number_format(seniorPreisBerechnung($rechenwerte),2);
-}else $preisPPSenior = 0;
+    $preisPPSeniorKomma = str_replace(".",",",$preisPPSenior);
+}else {
+    $preisPPSenior = 0;
+    $preisPPSeniorKomma = 0;
+}
 
 
 if ($anzErmaessigt != 0){
     $preisPPErmaessigt = number_format(ermaessigtPreisBerechnung($rechenwerte),2);
-}else $preisPPErmaessigt = 0;
+    $preisPPErmaessigtKomma = str_replace(".",",",$preisPPErmaessigt);
+}else {
+    $preisPPErmaessigt = 0;
+    $preisPPErmaessigtKomma = 0;
+}
 
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
+
+$preisGesamtKomma = number_format($preisGesamt,2, ",",".");
+
+
+
 
 $_SESSION['preisGesamt'] = $preisGesamt;
 
@@ -150,6 +171,28 @@ if (!empty($_POST['tarifÄndern'])) {
     <link rel="stylesheet" href="static/css/uebersicht.css">
 </head>
 <body>
+
+<!--Page Load-->
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
+
 <form method="post">
 
 <!--Flügel links-->
@@ -266,22 +309,22 @@ if (!empty($_POST['tarifÄndern'])) {
                 <div style="position: relative; font-size: 30px; right: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
-                        echo '<p>'."p.P ".$preisPPErwachsene.'€'.'</p>';
+                        echo '<p>'."p.P ".$preisPPErwachseneKomma.'</p>';
                     }
                     if ($anzKind != 0) {
-                        echo '<p>'."p.P ".$preisPPKind.'€'.'</p>';
+                        echo '<p>'."p.P ".$preisPPKindKomma.'</p>';
                     }
                     if ($anzSenior != 0) {
-                        echo '<p>'."p.P ".$preisPPSenior.'€'.'</p>';
+                        echo '<p>'."p.P ".$preisPPSeniorKomma.'</p>';
                     }
                     if ($anzErmaessigt != 0) {
-                        echo '<p>'."p.P ".$preisPPErmaessigt.'€'.'</p>';
+                        echo '<p>'."p.P ".$preisPPErmaessigtKomma.'</p>';
                     }
                     ?>
                 </div>
                 <div></div>
-                <div></div>
-                <div><em class="preis">Preis: <?php echo $preisGesamt?>€</em></div>
+                <div style="font-size: 20px">Alle Angaben sind in Euro €</div>
+                <div><em class="preis">Preis: <?php echo $preisGesamtKomma?>€</em></div>
             </div>
 
         </div>

@@ -52,6 +52,6 @@ $file = fopen('../json/statistik.json','w');
 fwrite($file, $jsonString);
 fclose($file);
 
-header('Location: /islm_bahn_ticketautomat/Zahlungsabwicklung.php');
+header('Location: /SWE_B6_git/Zahlungsabwicklung.php');
 exit();
 

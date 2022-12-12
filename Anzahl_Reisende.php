@@ -81,9 +81,32 @@ if (!empty($_POST['navi-weiter'])) {
     <meta charset="UTF-8">
     <title>Anzahl Reisende</title>
     <link rel="stylesheet" href="static/css/anzahl_reisende.css">
-    <script src="static/js/anzReisende.js"></script>
+    <script async defer src="static/js/anzReisende.js"></script>
+
+
 </head>
 <body>
+<!--Page Load-->
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
 
 <form method="post" action="Anzahl_Reisende.php">
     <!--Flügel links-->

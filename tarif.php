@@ -19,6 +19,7 @@ session_start();
 </head>
 <body>
 
+
 <!--Flügel links-->
 <div  class="rechteck"></div>
 <div  class="dreieckleft"></div>
@@ -136,6 +137,28 @@ session_start();
         </div>
     </div>
 </div>
+
+<!--Page Load-->
+<script async defer>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
+
 </body>
 <script src="static/js/zeit.js"></script>
 </html>

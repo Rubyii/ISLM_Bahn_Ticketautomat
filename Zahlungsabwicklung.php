@@ -3,7 +3,7 @@ session_start();
 
 $gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
 
-
+//$preisGesamtKomma = number_format($gesamtpreis,2, ",",".");
 
 ?>
 
@@ -62,10 +62,6 @@ $gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
                 <span> Es werden keine Scheine über 100€ angenommen!</span>
 
             </div>
-
-
-
-
 
         </div>
     </div>
@@ -175,6 +171,27 @@ $gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
 <div class="abbruch2" id="abbruch2">
     <iframe src="popup_2.php" width="1400px" height="700px" id="popup_2"></iframe>
 </div>
+
+<!--Page Load-->
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
+
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
 
 </body>
 <script src="static/js/zeit.js"></script>

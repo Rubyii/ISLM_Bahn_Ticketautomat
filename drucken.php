@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Ticket drucken</title>
-    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/drucken.css">
 </head>
 <body>
 
@@ -91,7 +91,26 @@ session_start();
     </div>
 </div>
 
+<!--Page Load-->
+<script>
+    document.onreadystatechange = function() {
+        if (document.readyState !== "complete") {
 
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader-container").style.visibility = "visible";
+
+        } else {
+            document.querySelector("#loader-container").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+        }
+    };
+</script>
+
+<div class="loadingscreen" id="loader-container" >
+    <div class="loadingscreen" id="loader"></div>
+    <div class="loadingscreen" id="loading-text">Lädt...</div>
+</div>
+<!--Page Load-->
 
 </body>
 <script src="static/js/zeit.js"></script>
