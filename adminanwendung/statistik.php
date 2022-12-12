@@ -52,28 +52,28 @@ $json_data = json_decode($json, true);
         </tr>
         <tr>
             <td class="custom-table-data custom-table-data-bold">Gesamt</td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gesamt_euro'],2,'.').'€'?></td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gesamt_anzahl'],0,'.','.')?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gesamt_euro'],2,',','.').'€'?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gesamt_anzahl'],0,',','.')?></td>
         </tr>
         <tr>
             <td class="custom-table-data custom-table-data-bold">Einzeltickets</td>
-            <td class="custom-table-data"><?php echo number_format($json_data['einzeltickets_euro'],2,'.').'€'?></td>
-            <td class="custom-table-data"><?php echo number_format($json_data['einzeltickets_anzahl'],0,'.','.')?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['einzeltickets_euro'],2,',','.').'€'?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['einzeltickets_anzahl'],0,',','.')?></td>
         </tr>
         <tr>
             <td class="custom-table-data custom-table-data-bold">Viererticket</td>
-            <td class="custom-table-data"><?php echo number_format($json_data['vierertickets_euro'],2,'.').'€'?></td>
-            <td class="custom-table-data"><?php echo number_format($json_data['vierertickets_anzahl'],0,'.','.')?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['vierertickets_euro'],2,',','.').'€'?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['vierertickets_anzahl'],0,',','.')?></td>
         </tr>
         <tr>
             <td class="custom-table-data custom-table-data-bold">5er Gruppenticket</td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket5_euro'],2,'.').'€'?></td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket5_anzahl'],0,'.','.')?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket5_euro'],2,',','.').'€'?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket5_anzahl'],0,',','.')?></td>
         </tr>
         <tr>
             <td class="custom-table-data custom-table-data-bold">10er Gruppenticket</td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket10_euro'],2,'.').'€'?></td>
-            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket10_anzahl'],0,'.','.')?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket10_euro'],2,',','.').'€'?></td>
+            <td class="custom-table-data"><?php echo number_format($json_data['gruppenticket10_anzahl'],0,',','.')?></td>
         </tr>
     </table>
 
