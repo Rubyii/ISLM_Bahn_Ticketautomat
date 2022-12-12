@@ -2,9 +2,8 @@ function abbrechenVorgang(thisElement) {
     document.getElementById('grid-container').style = "filter: blur(3px)";
     document.getElementById('abbruch2').style.visibility = 'unset';
     const iframes = document.querySelectorAll('iframe');
-    console.log(document.getElementById('gesamt').value);
-    console.log(document.getElementById('restbetrag').value.replace('€','').replace(',','.'));
-    let rückgeld = document.getElementById('gesamt').value - parseFloat(document.getElementById('restbetrag').value.replace('€','').replace(',','.'));
+
+    let rückgeld = parseFloat(document.getElementById('gesamt').value.replace(',','')) - parseFloat(document.getElementById('restbetrag').value.replace('€','').replace('.','').replace(',','.'));
     iframes[1].contentDocument.getElementById('rückgeld').innerHTML = "Ihr Rückgeld beträgt " + (rückgeld.toFixed(2) + '€').replace('.',',');
     const z = Array.from(document.getElementsByClassName('button-orange'));
     z.forEach( element => {
@@ -258,7 +257,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.01;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "2cent") {
         if (restbetrag - 0.02 <= 0) {
@@ -375,7 +374,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.02;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "5cent") {
         if (restbetrag - 0.05 <= 0) {
@@ -492,7 +491,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.05;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "10cent") {
         if (restbetrag - 0.1 <= 0) {
@@ -609,7 +608,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.10;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "20cent") {
         if (restbetrag - 0.2 <= 0) {
@@ -726,7 +725,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.20;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "50cent") {
         if (restbetrag - 0.5 <= 0) {
@@ -843,7 +842,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 0.50;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "1euro") {
         if (restbetrag - 1 <= 0) {
@@ -960,7 +959,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 1;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "2euro") {
         if (restbetrag - 2 <= 0) {
@@ -1077,7 +1076,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 2;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "5euro") {
         if (restbetrag - 5 <= 0) {
@@ -1194,7 +1193,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 5;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "10euro") {
         if (restbetrag - 10 <= 0) {
@@ -1311,7 +1310,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 10;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "20euro") {
         if (restbetrag - 20 <= 0) {
@@ -1428,7 +1427,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 20;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "50euro") {
         if (restbetrag - 50 <= 0) {
@@ -1545,7 +1544,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 50;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
     else  if(value.name === "100euro") {
         if (restbetrag - 100 <= 0) {
@@ -1663,7 +1662,7 @@ function buttonClicked(value){
             return;
         }
         restbetrag -= 100;
-        document.getElementById('restbetrag').value = (restbetrag.toFixed(2) + '€').replace('.',',');
+        document.getElementById('restbetrag').value = ((restbetrag.toFixed(2) + '€').replace('.',',')).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
 }
