@@ -82,24 +82,12 @@ if (!empty($_POST['navi-weiter'])) {
     <title>Anzahl Reisende</title>
     <link rel="stylesheet" href="static/css/anzahl_reisende.css">
     <script async defer src="static/js/anzReisende.js"></script>
-
+    <script async defer src="static/js/pageloader.js"></script>
 
 </head>
 <body>
 <!--Page Load-->
-<script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
 
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader-container").style.visibility = "visible";
-
-        } else {
-            document.querySelector("#loader-container").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-</script>
 
 
 <div class="loadingscreen" id="loader-container" >
