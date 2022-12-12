@@ -252,6 +252,8 @@
     transform: translateY(2px);
 }
 
+
+
 .inner {
     display: grid;
 
@@ -311,6 +313,7 @@ grid-template-rows: auto auto auto;
 }
 
 .loadingscreen {
+    z-index: 999;
     background-color: #f3f3f3;
     position: absolute;
     top: 0;

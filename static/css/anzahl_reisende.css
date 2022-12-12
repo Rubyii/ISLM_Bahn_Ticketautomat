@@ -281,7 +281,6 @@
     box-shadow: 0 2px #999;
     width: 75px;
 
-
 }
 
 /* NICHT VERÄNDERN */
@@ -495,6 +494,7 @@ input[type="number"] {
 }
 
 .loadingscreen {
+    z-index: 999;
     background-color: #f3f3f3;
     position: absolute;
     top: 0;

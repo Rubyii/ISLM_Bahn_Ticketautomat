@@ -259,6 +259,7 @@
 }
 
 .loadingscreen {
+    z-index: 999;
     background-color: #f3f3f3;
     position: absolute;
     top: 0;
