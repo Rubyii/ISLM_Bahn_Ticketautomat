@@ -169,23 +169,12 @@ if (!empty($_POST['tarifÄndern'])) {
     <meta charset="UTF-8">
     <title>Uebersicht</title>
     <link rel="stylesheet" href="static/css/uebersicht.css">
+    <script async defer src="static/js/pageloader.js"></script>
 </head>
 <body>
 
 <!--Page Load-->
-<script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
 
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader-container").style.visibility = "visible";
-
-        } else {
-            document.querySelector("#loader-container").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-</script>
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>

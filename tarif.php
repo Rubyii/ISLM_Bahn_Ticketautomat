@@ -16,6 +16,7 @@ session_start();
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/tarif.css">
     <script async defer src="static/js/tarif_handler.js"></script>
+    <script async defer src="static/js/pageloader.js"></script>
 </head>
 <body>
 
@@ -139,19 +140,7 @@ session_start();
 </div>
 
 <!--Page Load-->
-<script async defer>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
 
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader-container").style.visibility = "visible";
-
-        } else {
-            document.querySelector("#loader-container").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-</script>
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>

@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Ticket drucken</title>
     <link rel="stylesheet" href="static/css/drucken.css">
+    <script async defer src="static/js/pageloader.js"></script>
 </head>
 <body>
 
@@ -92,19 +93,7 @@ session_start();
 </div>
 
 <!--Page Load-->
-<script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
 
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader-container").style.visibility = "visible";
-
-        } else {
-            document.querySelector("#loader-container").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-</script>
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>

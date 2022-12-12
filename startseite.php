@@ -17,22 +17,11 @@ $bahnhoefe = array(
     <meta charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/startseite.css">
+    <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/vorschlaege.js"></script>
 </head>
 <body>
 <!--Page Load-->
-<script>
-    document.onreadystatechange = function() {
-        if (document.readyState !== "complete") {
-
-            document.querySelector("body").style.visibility = "hidden";
-            document.querySelector("#loader-container").style.visibility = "visible";
-
-        } else {
-            document.querySelector("#loader-container").style.display = "none";
-            document.querySelector("body").style.visibility = "visible";
-        }
-    };
-</script>
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>
