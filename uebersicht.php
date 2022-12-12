@@ -127,7 +127,7 @@ if ($anzErmaessigt != 0){
 
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
 
-$preisGesamtKomma = number_format($preisGesamt,2, ",",".");
+$preisGesamtKomma =  number_format(str_replace(',','',$preisGesamt),2, ",",".");
 
 
 
@@ -306,7 +306,7 @@ if (!empty($_POST['tarifÄndern'])) {
 
                     ?>
                 </div>
-                <div style="position: relative; font-size: 30px; right: 35px">
+                <div style="position: relative; font-size: 35px; right: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
                         echo '<p>'."p.P ".$preisPPErwachseneKomma.'</p>';
@@ -347,7 +347,7 @@ if (!empty($_POST['tarifÄndern'])) {
             }
             echo '"></input>';
             ?>
-            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='/static/php/statistik_handler.php'">Weiter</button>
+            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='Zahlungsabwicklung.php'">Weiter</button>
         </div>
     </div>
 </div>

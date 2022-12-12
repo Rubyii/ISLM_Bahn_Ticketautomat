@@ -3,7 +3,7 @@ session_start();
 
 $gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
 
-//$preisGesamtKomma = number_format($gesamtpreis,2, ",",".");
+$preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
 
 ?>
 
@@ -144,7 +144,7 @@ $gesamtpreis = $_SESSION['preisGesamt']; // AUSLESEN
             </div>
             <div>
 
-                <input type="text" class="number" style="pointer-events: none; width: 200px" name="restbetrag" id="restbetrag" value=" <?php echo $gesamtpreis ?>€">
+                <input type="text" class="number" style="pointer-events: none; width: 200px" name="restbetrag" id="restbetrag" value=" <?php echo $preisGesamtKomma ?>€">
             </div>
         </div>
 

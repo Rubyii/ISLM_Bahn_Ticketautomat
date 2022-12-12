@@ -3,7 +3,7 @@ session_start();
 if (!empty($_POST['weiter'])) {
 
     echo '<script type="text/javascript">'.
-        'parent.window.location = "TicketToPDF.php";',
+        'parent.window.location = "/static/php/statistik_handler.php";',
     '</script>';
 }
 ?>

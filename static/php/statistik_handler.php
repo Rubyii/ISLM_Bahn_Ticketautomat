@@ -52,6 +52,6 @@ $file = fopen('../json/statistik.json','w');
 fwrite($file, $jsonString);
 fclose($file);
 
-header('Location: /SWE_B6_git/Zahlungsabwicklung.php');
+header('Location: ../../TicketToPDF.php');
 exit();
 
