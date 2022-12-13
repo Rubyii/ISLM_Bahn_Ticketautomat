@@ -83,10 +83,11 @@ $bahnhoefe = array(
                 <input type="text" id="start" name = "start" value="AachenHauptbahnhof" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
-                <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off"
-                    <?php if (isset($_SESSION['ziel'])){echo "value=".'"'.$_SESSION['ziel'].'"';}?>
-                >
-
+                <div class="autocomplete" style="width:300px;">
+                    <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off"
+                        <?php if (isset($_SESSION['ziel'])){echo "value=".'"'.$_SESSION['ziel'].'"';}?>
+                    >
+                </div>
                 <?php
                 if(isset($_SESSION['error'])){
                     if ($_SESSION['error']){
@@ -95,13 +96,7 @@ $bahnhoefe = array(
 
                 }
                 ?>
-                <datalist id="ziele">
-                    <?php
-                    for ($i = 0; $i < sizeof($bahnhoefe); $i++){
-                        echo "<option value=".$bahnhoefe[$i][0].">";
-                    }
-                    ?>
-                </datalist>
+
                 <br><br>
                 <input type="submit" id="weiter" class="input" value="Weiter" name="weiter">
             </form>
