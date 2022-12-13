@@ -1,14 +1,6 @@
 <?php
 session_start();
 
-$bahnhoefe = array(
-    array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
-    array("AachenRotheErde", 50.77018640899706, 6.116490727116905),
-    array("Dueren", 50.80930664580822, 6.48204588509695),
-    array("KoelnHauptbahnhof", 50.943288440980105, 6.958548054110135),
-    array("KoelnEhrenfeld", 50.95172918094622, 6.91836526945143),
-);
-
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +72,7 @@ $bahnhoefe = array(
         <div class="hauptfunktion-innen">
             <form action="static/php/startseite_handler.php" method="post">
                 <label for="start" class="label">Start</label>
-                <input type="text" id="start" name = "start" value="KoelnHauptbahnhof" class="input" readonly>
+                <input type="text" id="start" name = "start" value="Köln Hauptbahnhof" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
                 <div class="autocomplete" style="width:300px;">

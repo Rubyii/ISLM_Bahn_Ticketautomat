@@ -96,7 +96,7 @@ function autocomplete(inp, arr) {
 }
 
 /*An array containing all the country names in the world:*/
-var ziele = ["AachenHauptbahnhof", "AachenRotheErde","Dueren", "KoelnHauptbahnhof", "KoelnEhrenfeld"];
+var ziele = ["Aachen Hauptbahnhof", "Aachen RotheErde","Düren", "Köln Hauptbahnhof", "Köln Ehrenfeld"];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("ziel"), ziele);

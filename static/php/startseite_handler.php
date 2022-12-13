@@ -2,11 +2,11 @@
 session_start();
 
 $bahnhoefe = array(
-    array("AachenHauptbahnhof", 50.76763697947344, 6.0909034446067825),
-    array("AachenRotheErde", 50.77018640899706, 6.116490727116905),
-    array("Dueren", 50.80930664580822, 6.48204588509695),
-    array("KoelnHauptbahnhof", 50.943288440980105, 6.958548054110135),
-    array("KoelnEhrenfeld", 50.95172918094622, 6.91836526945143),
+    array("Aachen Hauptbahnhof", 50.76763697947344, 6.0909034446067825),
+    array("Aachen RotheErde", 50.77018640899706, 6.116490727116905),
+    array("Düren", 50.80930664580822, 6.48204588509695),
+    array("Köln Hauptbahnhof", 50.943288440980105, 6.958548054110135),
+    array("Köln Ehrenfeld", 50.95172918094622, 6.91836526945143),
 );
 
 $zielkorrekt = false;
