@@ -78,7 +78,7 @@ if (!empty($_POST['navi-weiter'])) {
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <title>Anzahl Reisende</title>
     <link rel="stylesheet" href="static/css/anzahl_reisende.css">
     <script async defer src="static/js/anzReisende.js"></script>

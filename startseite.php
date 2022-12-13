@@ -14,7 +14,7 @@ $bahnhoefe = array(
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/startseite.css">
     <script async defer src="static/js/pageloader.js"></script>
@@ -80,7 +80,7 @@ $bahnhoefe = array(
         <div class="hauptfunktion-innen">
             <form action="static/php/startseite_handler.php" method="post">
                 <label for="start" class="label">Start</label>
-                <input type="text" id="start" name = "start" value="AachenHauptbahnhof" class="input" readonly>
+                <input type="text" id="start" name = "start" value="KoelnHauptbahnhof" class="input" readonly>
                 <br><br>
                 <label for="ziel" class="label">Ziel</label>
                 <div class="autocomplete" style="width:300px;">

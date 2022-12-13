@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <title>Ticket drucken</title>
     <link rel="stylesheet" href="static/css/drucken.css">
     <script async defer src="static/js/pageloader.js"></script>

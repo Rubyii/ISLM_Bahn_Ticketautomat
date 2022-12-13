@@ -166,7 +166,7 @@ if (!empty($_POST['tarifÄndern'])) {
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <title>Uebersicht</title>
     <link rel="stylesheet" href="static/css/uebersicht.css">
     <script async defer src="static/js/pageloader.js"></script>
@@ -290,7 +290,7 @@ if (!empty($_POST['tarifÄndern'])) {
                         echo '<p>'.$anzSenior."x Senior".'</p>';
                     }
                     if ($anzErmaessigt != 0) {
-                        echo '<p>'.$anzErmaessigt."x Ermaessigt".'</p>';
+                        echo '<p>'.$anzErmaessigt."x Ermäßigt".'</p>';
                     }
 
                     ?>

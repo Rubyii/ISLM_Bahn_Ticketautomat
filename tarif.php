@@ -12,7 +12,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <title>Startseite</title>
     <link rel="stylesheet" href="static/css/tarif.css">
     <script async defer src="static/js/tarif_handler.js"></script>
