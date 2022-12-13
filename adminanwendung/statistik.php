@@ -32,13 +32,7 @@ $json_data = json_decode($json, true);
     </form>
 </div>
 
-<header>
-    <h2>Bitte wählen Sie den Anwendungszeitraum aus</h2>
-    <span>Von</span>
-    <input type="date" name="startzeitraum">
-    <span>bis</span>
-    <input type="date" name="endzeitraum">
-</header>
+
 
 <main>
     <table>
