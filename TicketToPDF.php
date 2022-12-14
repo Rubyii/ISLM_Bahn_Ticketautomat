@@ -33,8 +33,13 @@ else {
 
 
 if (!$isAboTicket){
-    $standort = $_SESSION['start'];
-    $zielort = $_SESSION['ziel'];
+    $standort = stripslashes($_SESSION['start']);
+    $standort = iconv('UTF-8', 'windows-1252', $standort);
+
+    $zielort = stripslashes($_SESSION['ziel']);
+    $zielort = iconv('UTF-8', 'windows-1252', $zielort);
+
+
     if ($_SESSION['tarif'] == "5erGruppenticket" || $_SESSION['tarif'] == "10erGruppenticket"){
         $ticketart = "Gruppenticket";
     }
@@ -3108,6 +3113,6 @@ $pdf->SetAuthor("ISLM-Bahn");
 $pdf->SetTitle("Tickets");
 $pdf->Output('F',"ISLM_Ticket.pdf",true);
 
-header('Location: SWE_B6_git/drucken.php');
+header('Location: islm_bahn_ticketautomat/drucken.php');
 
 ?>
