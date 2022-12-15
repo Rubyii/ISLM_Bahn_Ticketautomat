@@ -81,7 +81,7 @@ function autocomplete(inp, arr) {
 
 }
 
-/*An array containing all the country names in the world:*/
+/*Array mit allen Bahnhoefen:*/
 let ziele = ["Aachen Hauptbahnhof", "Aachen RotheErde",
              "Berlin Hauptbahnhof", "Bonn Hauptbahnhof",
              "Dortmund Hauptbahnhof", "Duisburg Hauptbahnhof", "Düsseldorf Hauptbahnhof", "Düren",
@@ -92,6 +92,6 @@ let ziele = ["Aachen Hauptbahnhof", "Aachen RotheErde",
              "München Hauptbahnhof"];
 
 
-/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+/*initiate the autocomplete function on the "ziel" element, and pass along the ziele array as possible autocomplete values:*/
 autocomplete(document.getElementById("ziel"), ziele);
 
