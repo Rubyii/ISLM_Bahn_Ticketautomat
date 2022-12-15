@@ -3113,6 +3113,7 @@ $pdf->SetAuthor("ISLM-Bahn");
 $pdf->SetTitle("Tickets");
 $pdf->Output('F',"ISLM_Ticket.pdf",true);
 
-header('Location: islm_bahn_ticketautomat/drucken.php');
+
+header('Location: drucken.php');
 
 ?>
