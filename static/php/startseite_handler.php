@@ -4,9 +4,18 @@ session_start();
 $bahnhoefe = array(
     array("Aachen Hauptbahnhof", 50.76763697947344, 6.0909034446067825),
     array("Aachen RotheErde", 50.77018640899706, 6.116490727116905),
+    array("Berlin Hauptbahnhof", 52.52518832088361, 13.369423456001314),
     array("Düren", 50.80930664580822, 6.48204588509695),
+    array("Essen Hauptbahnhof", 51.4513402677905, 7.012780070875386),
     array("Köln Hauptbahnhof", 50.943288440980105, 6.958548054110135),
     array("Köln Ehrenfeld", 50.95172918094622, 6.91836526945143),
+    array("Bonn Hauptbahnhof", 50.73203514271081, 7.097085082939598),
+    array("Düsseldorf Hauptbahnhof", 51.21982787959125, 6.794489827129413),
+    array("Duisburg Hauptbahnhof", 51.42959677713768, 6.776120035655653),
+    array("Dortmund Hauptbahnhof", 51.517743577980475, 7.4592958154902504),
+    array("Hamburg Hauptbahnhof", 53.5530745865483, 10.006584597257172),
+    array("Frankfurt am Main Hauptbahnhof" ,50.1065317604009, 8.661945936125587),
+    array("München Hauptbahnhof", 48.140461076795965, 11.559945471214352)
 );
 
 $zielkorrekt = false;
