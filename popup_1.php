@@ -2,6 +2,15 @@
 session_start();
 if (!empty($_POST['weiter'])) {
 
+    $jsonData = [
+        'bestand' => (float) $_POST['bestand']
+    ];
+
+    $jsonString = json_encode($jsonData, JSON_PRETTY_PRINT);
+    $file = fopen('static/json/bestand.json','w');
+    fwrite($file, $jsonString);
+    fclose($file);
+
     echo '<script type="text/javascript">'.
         'parent.window.location = "/static/php/statistik_handler.php";',
     '</script>';
@@ -86,5 +95,6 @@ if (!empty($_POST['weiter'])) {
 
 <form method="post" >
     <button class="button-gruen1" type="submit" name="weiter" value="weiter" id="entnommen">Rückgeld entnommen</button>
+    <input type="hidden" id="bestand" value="0" name="bestand">
 </form>
 </html>

@@ -286,6 +286,13 @@ form {
     transform: translate(-50%,-50%);
     visibility: hidden;
 }
+.abbruch3 {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
 
 /*Page Loader*/
 #loader {

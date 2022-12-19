@@ -1,0 +1,56 @@
+.top-text {
+    font-size: 50px;
+    text-align: center;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    font-size: 30px;
+    margin-top: 10%;
+    margin-left: 5%;
+    grid-auto-rows: 100px;
+}
+.button-gruen {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    background-color: white  ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 180px;
+    height: 80px;
+
+
+}
+.button-orange {
+    display: inline-block;
+    padding: 20px 10px;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: #ed8c08   ;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px #999;
+    width: 450px;
+    height: 100px;
+}
+form {
+    text-align: center;
+}
+.main {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    grid-gap: 40px;
+    transform: translate(-50%, -50%);
+    color: red;
+    font-size: 35px;
+    text-align: center;
+}

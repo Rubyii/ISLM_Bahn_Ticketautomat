@@ -1,3 +1,4 @@
+
 function abbrechenVorgang(thisElement) {
     document.getElementById('grid-container').style = "filter: blur(3px)";
     document.getElementById('abbruch2').style.visibility = 'unset';
@@ -128,7 +129,6 @@ function getBack() {
 
 function buttonClicked(value){
     let restbetrag = parseFloat((document.getElementById('restbetrag').value).replace('€','').replace('.','').replace(',','.'));
-    console.log(restbetrag);
     let inputCounter = parseInt((document.getElementById(value.name).value).replace('x',''));
     inputCounter++;
     document.getElementById(value.name).value = 'x'+inputCounter;
@@ -136,9 +136,16 @@ function buttonClicked(value){
     let rest = 0;
     let isNegative = false;
 
+    const iframes = document.querySelectorAll('iframe');
 
 
 
+    var request = new XMLHttpRequest();
+    request.open("GET", 'static/json/bestand.json', false);
+    request.send(null)
+    var my_JSON_object = JSON.parse(request.responseText);
+
+    let bestand = my_JSON_object.bestand;
 
 
     if(value.name === "1cent") {
@@ -146,6 +153,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.01;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             (document.getElementById('rest').value) = rest;
@@ -264,6 +281,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.02;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -381,6 +408,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.05;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -498,6 +535,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.1;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -615,6 +662,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.2;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -732,6 +789,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 0.5;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -849,6 +916,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 1;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -966,6 +1043,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 2;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1083,6 +1170,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 5;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1200,6 +1297,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 10;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1317,6 +1424,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 20;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1434,6 +1551,16 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 50;
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1460,7 +1587,6 @@ function buttonClicked(value){
 
             rest *= -1;
             while (rest.toFixed(2) > 0.001) {
-                console.log(rest);
                 if (rest.toFixed(2) >= 100) {
                     _100euroR++;
                     document.querySelector('iframe').contentDocument.getElementById('100euroR').innerHTML = "x" + _100euroR;
@@ -1551,6 +1677,23 @@ function buttonClicked(value){
             document.getElementById('restbetrag').value = 0 + '€';
             isNegative = true;
             rest = restbetrag - 100;
+
+
+
+            if (bestand + rest < 0) {
+                document.getElementById('grid-container').style = "filter: blur(3px)";
+                document.getElementById('abbruch3').style.visibility = 'unset';
+                return;
+            }
+            bestand += rest;
+            bestand += parseFloat(document.getElementById('gesamt').value.replace(',','')) + (rest * -1);
+
+            iframes[0].contentDocument.getElementById('bestand').value = bestand;
+
+
+
+
+
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
@@ -1577,7 +1720,7 @@ function buttonClicked(value){
 
             rest *= -1;
             while (rest.toFixed(2) > 0.001) {
-                console.log(rest);
+
                 if (rest.toFixed(2) >= 100) {
                     _100euroR++;
                     document.querySelector('iframe').contentDocument.getElementById('100euroR').innerHTML = "x" + _100euroR;
