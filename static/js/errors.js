@@ -62,31 +62,31 @@ function testEuro(thisElement) {
         formElemets.forEach(input => {
             if (input.value == thisElement.value && (input.id == "einzelticket"))
             {
-                document.getElementById('einzelticketP').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('einzelticketP').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "viererticket"))
             {
-                document.getElementById('viererticketP').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('viererticketP').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "gruppenticket5"))
             {
-                document.getElementById('gruppenticket5P').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('gruppenticket5P').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "gruppenticket10"))
             {
-                document.getElementById('gruppenticket10P').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('gruppenticket10P').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "tagesticket"))
             {
-                document.getElementById('tagesticketP').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('tagesticketP').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "monatsticket"))
             {
-                document.getElementById('monatsticketP').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('monatsticketP').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
             else if (input.value == thisElement.value && (input.id == "jahresticket"))
             {
-                document.getElementById('jahresticketP').innerHTML = "Bitte geben Sie nur positive Werte ein";
+                document.getElementById('jahresticketP').innerHTML = "Bitte geben Sie nur positive Werte und Werte kleiner 100.000€ ein";
             }
 
         })
