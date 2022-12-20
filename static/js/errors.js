@@ -2,7 +2,7 @@
 
 
 function testProzent(thisElement) {
-    if (parseFloat(thisElement.value.replace('%','')) < -100 || parseFloat(thisElement.value.replace('%','')) > 100 || isNaN(thisElement.value.replace('%','')) ||  !Number.isFinite(parseFloat(thisElement.value.replace('%','')))) {
+    if (parseFloat(thisElement.value.replace('%','')) < -100 || thisElement.value.includes('x') || thisElement.value.includes('b') || parseFloat(thisElement.value.replace('%','')) > 100 || isNaN(thisElement.value.replace('%','')) ||  !Number.isFinite(parseFloat(thisElement.value.replace('%','')))) {
         document.getElementById('bestätigen').disabled = true;
         document.getElementById('bestätigen').style.background = '#FF0000';
 
@@ -51,7 +51,7 @@ function testProzent(thisElement) {
 }
 
 function testEuro(thisElement) {
-    if (parseFloat(thisElement.value.replace('€','')) < 0 || parseFloat(thisElement.value.replace('€','')) > 99999 || isNaN(thisElement.value.replace('€','')) || !Number.isFinite(parseFloat(thisElement.value.replace('€','')))) {
+    if (parseFloat(thisElement.value.replace('€','')) < 0 || thisElement.value.includes('x') || thisElement.value.includes('b') || parseFloat(thisElement.value.replace('€','')) > 99999 || isNaN(thisElement.value.replace('€','')) || !Number.isFinite(parseFloat(thisElement.value.replace('€','')))) {
         document.getElementById('bestätigen').disabled = true;
         document.getElementById('bestätigen').style.background = '#FF0000';
 
