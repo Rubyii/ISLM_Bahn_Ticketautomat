@@ -1,6 +1,12 @@
 <?php
 session_start();
-
+if ((!empty($_SESSION['anzErwachsene']) && $_SESSION['anzErwachsene'] > 0) || (!empty($_SESSION['anzKinder']) && $_SESSION['anzKinder'] > 0) || (!empty($_SESSION['anzErmaessigt']) && $_SESSION['anzErmaessigt'] > 0) ||(!empty($_SESSION['anzSenioren']) && $_SESSION['anzSenioren'] > 0) || $_SESSION['klasse'] == "klasse1" || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Einzelticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Viererticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "5erGruppenticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "10erGruppenticket"))) {
+    $_SESSION['showinfo'] = true;
+}
+else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || empty($_SESSION['anzSenioren']) || empty($_SESSION['anzErmaessigt']) || ($_SESSION['anzErwachsene'] == 0 || $_SESSION['anzErmaessigt'] == 0 || $_SESSION['anzKinder'] == 0 || $_SESSION['anzSenioren'] == 0) && $_SESSION['klasse'] == "klasse2") {
+    unset($_SESSION['showinfo']);
+}
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

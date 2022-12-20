@@ -86,7 +86,6 @@ function tarifAusgewaehlt(): void
     unset($_SESSION['dauer']);
     unset($_SESSION['start']);
     unset($_SESSION['ziel']);
-    $_SESSION['showinfo'] = true;
     header('Location: ../../Anzahl_Reisende.php');
     /*echo $_SESSION['tarif'];*/
 }
