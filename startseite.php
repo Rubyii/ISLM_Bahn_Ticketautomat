@@ -6,7 +6,7 @@ if ((!empty($_SESSION['anzErwachsene']) && $_SESSION['anzErwachsene'] > 0) || (!
 else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || empty($_SESSION['anzSenioren']) || empty($_SESSION['anzErmaessigt']) || ($_SESSION['anzErwachsene'] == 0 || $_SESSION['anzErmaessigt'] == 0 || $_SESSION['anzKinder'] == 0 || $_SESSION['anzSenioren'] == 0) && $_SESSION['klasse'] == "klasse2") {
     unset($_SESSION['showinfo']);
 }
-var_dump($_SESSION);
+//var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
