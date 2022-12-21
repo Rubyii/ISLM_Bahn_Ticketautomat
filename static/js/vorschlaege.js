@@ -60,7 +60,6 @@ function autocomplete(inp, arr) {
                 });
                 a.appendChild(b);
             }
-
         }
     });
 
