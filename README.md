@@ -16,7 +16,7 @@ PHP muss global auf dem System installiert sein.
 ***
 Entpacken Sie die mitgelieferte ZIP-Datei.<br>
 Öffnen Sie ein Terminal Ihrer Wahl.<br>
-Lokalisieren Sie den enptackten Ordner:
+Lokalisieren Sie den entpackten Ordner:
 ```
 $ cd path/to/islm_bahn_ticketautomat
 ```
