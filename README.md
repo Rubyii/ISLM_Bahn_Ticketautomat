@@ -3,7 +3,7 @@
 
 ## Generelle Informationen
 ***
-Die Webanwendung dient am Ticketautomaten zum Verkauf der Tickets der ISLM-Bahn.<br>
+Die Webanwendung dient zum Verkauf der Tickets der ISLM-Bahn.<br>
 Die Admin Anwendung ermöglicht die Änderung der Preise und Prozente zur Preisentstehung und eine Einsicht
 in die Statistik seit Inbetriebnahme des Automaten.
 
@@ -29,13 +29,16 @@ $ php -S localhost:8000
 localhost:8000/startseite.php
 ```
 
-## Installation über Webhosting
-***
-Zur Installation werden zwei Webserver und eine Domain benötigt.<br>
-Hier werden die JSON am Webserver der Admin Anwendung gespeichert und über eine Domain zur Admin Anwendung
-wieder im Ticketautomaten eingelesen.
-
 ## Technologien
 ***
-Der empfohlene Browser ist FireFox ab Version 106.0.1,
-Microsoft Edge ab Version 10 und Google Chrome ab Version 107.0.5304.
+Der empfohlene Browser ist Firefox ab Version 106.0.1,
+Microsoft Edge ab Version 10 und Google Chrome ab Version 107.0.5304. <br>
+Die empfohlene Bildschirmauflösung beträgt 1536x964.
+
+## Adminanwendung
+***
+Für den Zugriff auf die Adminanwendung benötigen Sie einen Benutzernamen und Passwort. <br>
+```
+Benutzername : admin
+Passwort: admin
+```
