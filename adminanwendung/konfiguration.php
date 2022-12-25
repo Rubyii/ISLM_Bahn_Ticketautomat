@@ -140,6 +140,14 @@ $json_data = json_decode($json, true);
 
 
 </div>
+    <div class="message">
+        <?php if(!empty($_POST['submit'])): ?>
+        <div>
+            <p>Ihre Eingaben wurden erfolgreich gespeichert</p>
+        </div>
+        <?php endif; ?>
+
+    </div>
     <div class="bottom-navigation">
         <input type="submit" value="Bestätigen" id="bestätigen" name="submit">
     </div>

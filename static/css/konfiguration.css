@@ -99,3 +99,9 @@ input {
     font-size: 11px;
     color: red;
 }
+
+.message{
+    position: absolute;
+    right: 50px;
+    color: green;
+}
