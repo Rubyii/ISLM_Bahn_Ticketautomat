@@ -114,3 +114,8 @@ function testEuro(thisElement) {
     }
 
 }
+
+setTimeout(function () {
+    document.getElementById("successText").style.opacity = "0";
+    document.getElementById("successText").style.transition = "visibility 0s, opacity 1s linear";
+}, 3000);

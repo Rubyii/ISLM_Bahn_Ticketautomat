@@ -143,7 +143,7 @@ $json_data = json_decode($json, true);
     <div class="message">
         <?php if(!empty($_POST['submit'])): ?>
         <div>
-            <p>Ihre Eingaben wurden erfolgreich gespeichert</p>
+            <p id="successText">Ihre Eingaben wurden erfolgreich gespeichert</p>
         </div>
         <?php endif; ?>
 
