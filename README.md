@@ -24,9 +24,13 @@ Führen Sie anschließend folgenden Befehl aus:
 ```
 $ php -S localhost:8000
 ```
-Öffnen Sie anschließend einen Webbrowser und fügen folgende URL ein:
+Öffnen Sie anschließend einen Webbrowser und fügen folgende URL ein, um den Ticketautomaten zu starten:
 ```
 localhost:8000/startseite.php
+```
+Um die Adminanwedung zu starten, fügen Sie bitte folgende URL ein:
+```
+localhost:8000/adminanwendung/login.php
 ```
 
 ## Technologien
