@@ -56,11 +56,11 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
     <div class="hinweistext">
         <div class="hinweistext-innen">
             <div>
-                <h3>Bitte bezahlen Sie</h3>
+                <h3><?php echo $_SESSION['language']['bittezahlen']?></h3>
             </div>
 
             <div>
-                <span> Es werden keine Scheine über 100€ angenommen!</span>
+                <span> <?php echo $_SESSION['language']['keine100Scheine']?></span>
 
             </div>
 
@@ -70,7 +70,7 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
     <div class="hauptfunktion">
         <div class="münzen-grid">
             <div>
-                <span >Münzen</span>
+                <span ><?php echo $_SESSION['language']['münzen']?></span>
             </div>
             <div>
                 <input type="text" class="number" id="1cent" value="x0" style="pointer-events: none">
@@ -110,7 +110,7 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
         </div>
         <div class="banknoten-grid">
             <div>
-                <span >Banknoten</span>
+                <span ><?php echo $_SESSION['language']['schein']?></span>
             </div>
             <div>
                 <input type="text" class="number" id="5euro" value="x0" style="pointer-events: none">
@@ -141,7 +141,7 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
                 <button class="button-gruen" name="100euro"  onclick="buttonClicked(this)">100€</button>
             </div>
             <div style="text-align: right">
-                <span>Restbetrag: </span>
+                <span><?php echo $_SESSION['language']['restbetrag']?> </span>
             </div>
             <div>
 
@@ -157,8 +157,8 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
     <div class="navigation">
         <div class="navigation-innen">
             <form method="post">
-                <input type="submit" class="button-orange" value="Abbrechen" id="abbrechen" onclick="abbrechenVorgang(this)">
-                <input type="submit" class="button-orange" name="zurück" value="Zurück" onclick="abbrechenVorgang(this)">
+                <input type="submit" class="button-orange" value="Abbrechen" id="<?php echo $_SESSION['language']['abbrechen']?>" onclick="abbrechenVorgang(this)">
+                <input type="submit" class="button-orange" name="zurück" value="<?php echo $_SESSION['language']['zurück']?>" onclick="abbrechenVorgang(this)">
             </form>
 
         </div>

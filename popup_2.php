@@ -29,8 +29,9 @@ if (!empty($_POST['zurück'])) {
 </head>
 <body>
 <div class="top-text">
-    <span>Bezahlung abgebrochen</span> <br>
-    <span id="rückgeld">Ihr Rückgeld beträgt</span>
+    <span><?php echo $_SESSION['language']['bezabgebrochen']?></span> <br>
+    <span><?php echo $_SESSION['language']['rückgeld']?></span>
+    <span id="rückgeld"><?php echo $_SESSION['language']['ruckgeld']?></span>
 
 
 </div>
@@ -95,6 +96,6 @@ if (!empty($_POST['zurück'])) {
 </div>
 
 <form method="post" >
-    <button class="button-orange" type="submit" name="abbrechen" value="abbrechen" id="entnommen">Rückgeld entnommen</button>
+    <button class="button-orange" type="submit" name="abbrechen" value="abbrechen" id="entnommen"><?php echo $_SESSION['language']['rückgeldentnommen']?></button>
 </form>
 </html>

@@ -115,9 +115,9 @@ if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
     <div class="navigation">
         <div class="navigation-innen">
             <form action="static/php/startseite_handler.php" method="post" class="button-form">
-                <input type="submit"  class="button-gruen" name="tarif" value="Tages Ticket">
-                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['monatsticket'];?>">
-                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['jahresticket'];?>">
+                <input type="submit"  class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['Tages Ticket'];?>">
+                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['Monats Ticket'];?>">
+                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['Jahres Ticket'];?>">
             </form>
         </div>
     </div>

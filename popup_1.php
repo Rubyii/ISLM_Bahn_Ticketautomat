@@ -28,9 +28,10 @@ if (!empty($_POST['weiter'])) {
 </head>
 <body>
 <div class="top-text">
-    <span>Bezahlung erfolgt</span> <br>
-    <span id="wechselgeld">Ihr Wechselgeld beträgt</span> <br>
-    <span>Ihr Ticket folgt in Kürze...</span>
+    <span><?php echo $_SESSION['language']['bezerfolgt']?></span> <br>
+    <span><?php echo $_SESSION['language']['wechselgeld']?></span>
+    <span id="wechselgeld"><?php echo $_SESSION['language']['wechselgeld']?></span> <br>
+    <span><?php echo $_SESSION['language']['ticketfolgt']?></span>
 
 </div>
 
@@ -94,7 +95,7 @@ if (!empty($_POST['weiter'])) {
 </div>
 
 <form method="post" >
-    <button class="button-gruen1" type="submit" name="weiter" value="weiter" id="entnommen">Rückgeld entnommen</button>
+    <button class="button-gruen1" type="submit" name="weiter" value="weiter" id="entnommen"><?php echo $_SESSION['language']['rückgeldentnommen']?></button>
     <input type="hidden" id="bestand" value="0" name="bestand">
 </form>
 </html>

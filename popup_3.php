@@ -24,10 +24,10 @@ if (!empty($_POST['abbrechen'])) {
 </head>
 <body>
 <div class="main">
-    <p>Es ist nicht genügend Geld im Automaten <br> um das Wechselgeld auszugeben</p>
-    <p>Bitte wenden Sie sich an das Bahnpersonal</p>
+    <p><?php echo $_SESSION['language']['nichtgenugGeld']?> <br> <?php echo $_SESSION['language']['fürwechselgeld']?></p>
+    <p><?php echo $_SESSION['language']['personal']?></p>
     <form method="post" >
-        <button class="button-orange" type="submit" name="abbrechen" value="abbrechen" id="entnommen">Abbrechen</button>
+        <button class="button-orange" type="submit" name="abbrechen" value="abbrechen" id="entnommen"><?php echo $_SESSION['language']['abbrechen']?></button>
 
     </form>
 

@@ -18,9 +18,9 @@ function sprache($sprache)
             'start' => 'From',
             'ziel' => 'To',
             'ziel2'=>'Destination...',
-            'tagesticket' => 'Daily ticket',
-            'monatsticket' => 'Monthly ticket',
-            'jahresticket' => 'Yearly ticket',
+            'Tages Ticket' => 'Daily ticket',
+            'Monats Ticket' => 'Monthly ticket',
+            'Jahres Ticket' => 'Yearly ticket',
             'eingabeungültig' => 'Invalid input for destination',
             'erwachsen' => 'Adults',
             'senior' => 'Seniors',
@@ -67,9 +67,9 @@ function sprache($sprache)
             'start' => 'Start',
             'ziel' => 'Ziel',
             'ziel2'=>'Ziel...',
-            'tagesticket' => 'Tages Ticket',
-            'monatsticket' => 'Monats ticket',
-            'jahresticket' => 'Jahres ticket',
+            'Tages Ticket' => 'Tages Ticket',
+            'Monats Ticket' => 'Monats ticket',
+            'Jahres Ticket' => 'Jahres ticket',
             'erwachsen' => 'Erwachsene',
             'senior' => 'Senioren',
             'erm' => 'Ermäßigt',
@@ -102,7 +102,11 @@ function sprache($sprache)
             'drucken' => 'drucken',
             'laedt'=>'Lädt...',
             'infotext'=>'Achtung! Sie befinden sich in einem laufenden Kaufprozess',
-            'angabeInEuro'=>'Alle Angaben sind in Euro €'];
+            'angabeInEuro'=>'Alle Angaben sind in Euro €',
+            'nichtgenugGeld'=>'Es ist nicht genügend Geld im Automaten',
+            'fürwechselgeld'=>'um das Wechselgeld auszugeben',
+            'personalwenden'=>'Bitte wenden Sie sich an das Bahnpersonal',
+            ];
 
         return $lang;
     }

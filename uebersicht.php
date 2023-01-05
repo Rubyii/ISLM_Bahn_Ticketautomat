@@ -221,7 +221,7 @@ if (!empty($_POST['tarifÄndern'])) {
     </div>
     <div class="hinweistext">
         <div class="hinweistext-innen">
-            <h3>Bitte überprüfen Sie Ihre Eingaben</h3>
+            <h3><?php echo $_SESSION['language']['bitteEingabeprüfen'];?></h3>
 
 
         </div>
@@ -237,29 +237,29 @@ if (!empty($_POST['tarifÄndern'])) {
                     if (!$isAboTicket):
                         if (isset($startort) && isset($zielort))echo '<p >'.$startort.' - '.$zielort.'</p>';
                     ?>
-                    <input class="button-gruen" type="submit" value="Ändern" name="startseiteÄndern"></input>
+                    <input class="button-gruen" type="submit" value="<?php echo $_SESSION['language']['ändern'];?>" name="startseiteÄndern"></input>
                     <?php endif ?>
 
                 </div>
                 <?php endif ?>
                 <div class="innerinner">
                     <?php
-                    echo '<p>'.$klasse.'</p>';
+                    echo '<p>'. $_SESSION['language'][$klasse].'</p>';
                     ?>
-                    <input class="button-gruen" value="Ändern" type="submit" name="reisendeÄndern"></input>
+                    <input class="button-gruen" value="<?php echo $_SESSION['language']['ändern'];?>" type="submit" name="reisendeÄndern"></input>
                 </div>
                 <div class="innerinner">
                     <?php
-                    if (isset($ticketart)) echo '<p>'.$ticketart.'</p>';
-
+                    if (isset($ticketart)) echo '<p>'.$_SESSION['language'][$ticketart].'</p>';
+                    $ausgabe=  $_SESSION['language']['ändern'];
                     if (!$isAboTicket){
-                        echo '<input class="button-gruen" type="submit" value="Ändern" name=';
+                        echo '<input class="button-gruen" type="submit" value="'.$ausgabe.'" name=';
                         echo "'tarifÄndern'";
                         echo '">';
                         echo '</input>';
                     }else{
                         //unset($_SESSION['tarif']);
-                        echo '<input class="button-gruen" type="submit" value="Ändern" name=';
+                        echo '<input class="button-gruen" type="submit" value="'.$ausgabe.'" name=';
                         echo "'startseiteÄndern'";
                         echo '">';
                         echo '</input>';
@@ -271,8 +271,8 @@ if (!empty($_POST['tarifÄndern'])) {
 
             </div>
         <div class="right">
-            <div class="innerinner"><p>Anzahl Reisende</p>
-                <input class="button-gruen" type="submit" value="Ändern" name="reisendeÄndern"></input>
+            <div class="innerinner"><p><?php echo $_SESSION['language']['anzReisende'];?></p>
+                <input class="button-gruen" type="submit" value="<?php echo $_SESSION['language']['ändern'];?>" name="reisendeÄndern"></input>
             </div>
 
 
@@ -282,16 +282,20 @@ if (!empty($_POST['tarifÄndern'])) {
                 <div style="font-size: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
-                        echo '<p>'.$anzErwachsene."x Erwachsene".'</p>';
+                        $ausgabe=$_SESSION['language']['erwachsen'];
+                        echo '<p>'.$anzErwachsene."x ".$ausgabe.'</p>';
                     }
                     if ($anzKind != 0) {
-                        echo '<p>'.$anzKind."x Kind".'</p>';
+                        $ausgabe=$_SESSION['language']['kinder'];
+                        echo '<p>'.$anzKind."x ".$ausgabe.'</p>';
                     }
                     if ($anzSenior != 0) {
-                        echo '<p>'.$anzSenior."x Senior".'</p>';
+                        $ausgabe=$_SESSION['language']['kinder'];
+                        echo '<p>'.$anzSenior."x ".$ausgabe.'</p>';
                     }
                     if ($anzErmaessigt != 0) {
-                        echo '<p>'.$anzErmaessigt."x Ermäßigt".'</p>';
+                        $ausgabe=$_SESSION['language']['kinder'];
+                        echo '<p>'.$anzErmaessigt."x ".$ausgabe.'</p>';
                     }
 
                     ?>
@@ -313,8 +317,8 @@ if (!empty($_POST['tarifÄndern'])) {
                     ?>
                 </div>
                 <div></div>
-                <div style="font-size: 20px">Alle Angaben sind in Euro €</div>
-                <div><em class="preis">Preis: <?php echo $preisGesamtKomma?>€</em></div>
+                <div style="font-size: 20px"><?php echo $_SESSION['language']['angabeInEuro']?></div>
+                <div><em class="preis"><?php echo $_SESSION['language']['preis']?>: <?php echo $preisGesamtKomma?>€</em></div>
             </div>
 
         </div>
@@ -324,11 +328,12 @@ if (!empty($_POST['tarifÄndern'])) {
     <div class="navigation">
         <div class="navigation-innen">
 
-            <input type="submit" class="button-orange" value="Abbrechen" name="abbrechen">
+            <input type="submit" class="button-orange" value="<?php echo $_SESSION['language']['abbrechen']?>" name="abbrechen">
 
 
             <?php
-            echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="Zurück" name=';
+            $ausgabe=  $_SESSION['language']['zurück'];
+            echo '<input class="button-orange" style="left: 300px; position: relative" type="submit" value="'.$ausgabe.'" name=';
             if ($isAboTicket){
                 echo "'reisendeÄndern'";
 
@@ -337,7 +342,7 @@ if (!empty($_POST['tarifÄndern'])) {
             }
             echo '"></input>';
             ?>
-            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='Zahlungsabwicklung.php'">Weiter</button>
+            <button class="button-gruen" style="left: 200px; position: relative" type="button" onclick="location.href='Zahlungsabwicklung.php'"><?php echo $_SESSION['language']['weiter']?></button>
         </div>
     </div>
 </div>

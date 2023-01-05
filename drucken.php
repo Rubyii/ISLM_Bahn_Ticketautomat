@@ -84,7 +84,7 @@ session_start();
 
 
             <form action="static/php/abbrechen_uebersicht.php" method="post">
-                <input type="submit" class="input" value="Drucken">
+                <input type="submit" class="input" value="<?php echo $_SESSION['language']['drucken']?>">
             </form>
 
             <!-- Ende -->
