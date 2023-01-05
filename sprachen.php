@@ -1,0 +1,110 @@
+<?php
+
+#Sprache wird als Parameter übergeben
+#Funktion muss ein Array zurückgeben, dass dann als Sprach array verwende wird
+
+function sprache($sprache)
+{
+    if ($sprache == "en") {
+        $lang = [
+            'Willkommen' => 'welcome',
+            'bitteZiel' => 'Please enter a Destination',
+            'bitteAnzReisende' => 'Please enter a number of travelers',
+            'bitteTarif' => 'Please select your desired tariff',
+            'bitteEingabeprüfen' => 'Please check your entered data',
+            'bittezahlen' => 'Please pay',
+            'anzReisende'=>'Number of travelers',
+            'eingabeungültig' => 'invalid input',
+            'start' => 'From',
+            'ziel' => 'To',
+            'ziel2'=>'Destination...',
+            'tagesticket' => 'Daily ticket',
+            'monatsticket' => 'Monthly ticket',
+            'jahresticket' => 'Yearly ticket',
+            'eingabeungültig' => 'Invalid input for destination',
+            'erwachsen' => 'Adults',
+            'senior' => 'Seniors',
+            'erm' => 'Discounted',
+            'kinder' => 'Childern',
+            '2.Klasse' => '2nd class',
+            '1.Klasse' => '1st class',
+            'abbrechen' => 'Cancel',
+            'zurück' => 'Back',
+            'weiter' => 'Next',
+            'Einzelticket' => 'Single ticket',
+            'Viererticket' => 'Ticket for 4',
+            '5erGruppenticket' => 'Group ticket for 5',
+            '10erGruppenticket' => 'Group ticket for 10',
+            'ändern' => 'Change',
+            'preis' => 'Price',
+            'restbetrag' => 'Remaining:',
+            'münzen' => 'Coins',
+            'schein' => 'Bills',
+            'insgesamt' => 'Total amount',
+            'keine100Scheine' => 'Bills above 100€ will not be accepted',
+            'bezabgebrochen' => 'Payment canceled',
+            'rückgeld' => 'Your change is',
+            'bezerfolgt' => 'Payment was successful',
+            'wechselgeld' => 'Your Change is',
+            'rückgeldentnommen'=> 'Change recieved',
+            'ticketfolgt' => 'Your ticket follows shortly...',
+            'ticketdrucken' => 'Print ticket',
+            'drucken' => 'Print',
+            'laedt'=>'Loading...',
+            'infotext'=> 'Warning! Running purchasing process',
+            'angabeInEuro'=>'Every price in €'];
+        return $lang;
+    } else if ($sprache == "de") {
+        $lang = [
+            'Willkommen' => 'welcome',
+            'bitteZiel' => 'Bitte geben Sie ihr Ziel ein',
+            'bitteAnzReisende' => 'Bitte geben Sie die Anzahl der Reisenden an',
+            'bitteTarif' => 'Bitte wählen sie einen Tarif aus',
+            'bitteEingabeprüfen' => 'Bitte überprüfen sie ihre Eingaben',
+            'bittezahlen' => 'Bitte bezahlen Sie',
+            'anzReisende'=>'Anzahl Reisende',
+            'eingabeungültig' => 'Die Eingabe war ungültig',
+            'start' => 'Start',
+            'ziel' => 'Ziel',
+            'ziel2'=>'Ziel...',
+            'tagesticket' => 'Tages Ticket',
+            'monatsticket' => 'Monats ticket',
+            'jahresticket' => 'Jahres ticket',
+            'erwachsen' => 'Erwachsene',
+            'senior' => 'Senioren',
+            'erm' => 'Ermäßigt',
+            'kinder' => 'Kinder',
+            '2.Klasse' => '2. Klasse',
+            '1.Klasse' => '1. Klasse',
+            'abbrechen' => 'Abbrechen',
+            'zurück' => 'Zurück',
+            'weiter' => 'Weiter',
+
+            'Einzelticket' => 'Einzelticket',
+            'Viererticket' => 'Viererticket',
+            '5erGruppenticket' => '5er Gruppenticket',
+            '10erGruppenticket' => '10er Gruppenticket',
+
+            'ändern' => 'Ändern',
+            'preis' => 'Preis',
+            'restbetrag' => 'Restbetrag:',
+            'münzen' => 'Münzen',
+            'schein' => 'Scheine',
+            'insgesamt' => 'Insgesamt',
+            'keine100Scheine' => 'Es werden keine Scheine über 100€ angenommen',
+            'bezabgebrochen' => 'Bezahlung abgebrochen',
+            'rückgeld' => 'Ihr Rückgeld beträgt',
+            'bezerfolgt' => 'Bezahlung erfolgt',
+            'wechselgeld' => 'Ihr Wechselgeld beträgt',
+            'rückgeldentnommen'=> 'Rückgeld entnommen',
+            'ticketfolgt' => 'Ihr Ticket folgt in Kürze...',
+            'ticketdrucken' => 'Ticket drucken',
+            'drucken' => 'drucken',
+            'laedt'=>'Lädt...',
+            'infotext'=>'Achtung! Sie befinden sich in einem laufenden Kaufprozess',
+            'angabeInEuro'=>'Alle Angaben sind in Euro €'];
+
+        return $lang;
+    }
+
+}

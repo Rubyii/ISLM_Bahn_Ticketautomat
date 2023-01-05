@@ -140,7 +140,7 @@ if (!empty($_POST['navi-weiter'])) {
         </div>
         <div class="hinweistext">
             <div class="text">
-                Bitte geben Sie die Anzahl der Reisenden an
+                <?php echo $_SESSION['language']['bitteAnzReisende'] ?>
             </div>
         </div>
 
@@ -149,7 +149,7 @@ if (!empty($_POST['navi-weiter'])) {
 
                 <div class="main-grid">
                     <div>
-                        <label >Erwachsene</label>
+                        <label ><?php echo $_SESSION['language']['erwachsen']?></label>
                     </div>
                     <div>
                         <input type="button" <?php
@@ -164,7 +164,7 @@ if (!empty($_POST['navi-weiter'])) {
 
 
                     <div>
-                        <label >Senioren</label>
+                        <label ><?php echo $_SESSION['language']['senior']?></label>
                     </div>
                     <div>
                         <input type="button" <?php if($_SESSION['anzSenioren'] == 0) {echo 'disabled ';} ?> id="minus_senioren" class="button-orange" value="-" onclick="decrement(this)">
@@ -177,7 +177,7 @@ if (!empty($_POST['navi-weiter'])) {
                     </div>
 
                     <div>
-                        <label>Ermäßigt</label>
+                        <label><?php echo $_SESSION['language']['erm']?></label>
                     </div>
                     <div>
                         <input type="button" <?php if($_SESSION['anzErmaessigt'] == 0) {echo 'disabled ';} ?> id="minus_ermaessigt" class="button-orange" value="-" onclick="decrement(this)">
@@ -191,7 +191,7 @@ if (!empty($_POST['navi-weiter'])) {
                     </div>
 
                     <div>
-                        <label>Kinder</label>
+                        <label><?php echo $_SESSION['language']['kinder']?></label>
                     </div>
                     <div>
                         <input type="button" <?php if($_SESSION['anzKinder'] == 0) {echo 'disabled ';} ?> id="minus_kinder" class="button-orange" value="-" onclick="decrement(this)">
@@ -206,10 +206,10 @@ if (!empty($_POST['navi-weiter'])) {
                     <div>
 
                         <input type="radio"  name = "klasse" class="radio-btn " value="klasse2" id="klasse2" onclick="klasse(this)" <?php if($_SESSION['klasse'] == 'klasse2') {echo 'checked';} else if (empty($_SESSION['klasse'])) {echo 'checked';} ?>>
-                        <label for="klasse2" class="wagenklasse" id="klassen">2.Klasse</label>
+                        <label for="klasse2" class="wagenklasse" id="klassen"><?php echo $_SESSION['language']['2.Klasse']?></label>
 
                         <input type="radio"  name = "klasse" class="radio-btn " value="klasse1" id="klasse1" onclick="klasse(this)" <?php if($_SESSION['klasse'] == 'klasse1') {echo 'checked';} ?>>
-                        <label for="klasse1" class="wagenklasse2" id="klassen">1.Klasse</label>
+                        <label for="klasse1" class="wagenklasse2" id="klassen"><?php echo $_SESSION['language']['1.Klasse']?></label>
 
                     </div>
 
@@ -222,9 +222,9 @@ if (!empty($_POST['navi-weiter'])) {
             <div class="navigation-innen">
                 <div class="button-form">
                     <div class="empty-space"> </div>
-                    <input type="submit" class="button-orangeN navi-abbrechen" name="navi-abbrechen" value="Abbrechen">
-                    <input type="submit" class="button-orangeN navi-schritt" name="navi-zurück" value="Zurück">
-                    <input type="submit" class="button-gruenW navi-schritt" name="navi-weiter" value="Weiter" id="weiter" <?php if($count == 0) {echo 'disabled';} ?>>
+                    <input type="submit" class="button-orangeN navi-abbrechen" name="navi-abbrechen" value="<?php echo $_SESSION['language']['abbrechen']?>">
+                    <input type="submit" class="button-orangeN navi-schritt" name="navi-zurück" value="<?php echo $_SESSION['language']['zurück']?>">
+                    <input type="submit" class="button-gruenW navi-schritt" name="navi-weiter" value="<?php echo $_SESSION['language']['weiter']?>" id="weiter" <?php if($count == 0) {echo 'disabled';} ?>>
                 </div>
             </div>
         </div>

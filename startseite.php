@@ -7,6 +7,16 @@ else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || e
     unset($_SESSION['showinfo']);
 }
 //var_dump($_SESSION);
+include "sprachen.php";
+?>
+
+<?php
+$_SESSION['language']=[];
+if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
+    $_SESSION['language']=sprache("de");
+} else {
+    $_SESSION['language']=sprache("en");
+}
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +66,7 @@ else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || e
 
 <?php if(isset($_SESSION['showinfo'])): ?>
 <div class="info">
-    <span class="infotext"> &#9432; Achtung! Sie befinden sich in einem laufenden Kaufprozess!</span>
+    <span class="infotext"> &#9432; <?php echo $_SESSION['language']['infotext']?></span>
 </div>
 <?php endif; ?>
 
@@ -70,33 +80,34 @@ else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || e
     </div>
     <div class="hinweistext">
         <div class="text">
-            Bitte geben Sie Ihr Ziel ein
+            <?php echo $_SESSION['language']['bitteZiel']; ?>
         </div>
     </div>
 
     <div class="hauptfunktion">
         <div class="hauptfunktion-innen">
             <form action="static/php/startseite_handler.php" method="post">
-                <label for="start" class="label">Start</label>
+                <label for="start" class="label"><?php echo $_SESSION['language']['start'];?></label>
                 <input type="text" id="start" name = "start" value="Köln Hauptbahnhof" class="input" readonly>
                 <br><br>
-                <label for="ziel" class="label">Ziel</label>
+                <label for="ziel" class="label"><?php echo $_SESSION['language']['ziel'];?></label>
                 <div class="autocomplete" style="width:300px;">
-                    <input list="ziele" id="ziel" placeholder="Ziel..." name = "ziel" class="input-ziel" autocomplete="off"
+                    <input list="ziele" id="ziel" placeholder="<?php echo $_SESSION['language']['ziel2']?>" name = "ziel" class="input-ziel" autocomplete="off"
                         <?php if (isset($_SESSION['ziel'])){echo "value=".'"'.$_SESSION['ziel'].'"';}?>
                     >
                 </div>
                 <?php
                 if(isset($_SESSION['error'])){
                     if ($_SESSION['error']){
-                        echo "<p class='errormessage'> Die Eingabe ist nicht korrekt </p>";
+                        $error=$_SESSION['language']['eingabeungültig'];
+                        echo "<p class='errormessage'> $error </p>";
                     }
 
                 }
                 ?>
 
                 <br><br>
-                <input type="submit" id="weiter" class="input" value="Weiter" name="weiter">
+                <input type="submit" id="weiter" class="input" value="<?php echo $_SESSION['language']['weiter'];?>" name="weiter">
             </form>
         </div>
     </div>
@@ -104,13 +115,15 @@ else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || e
     <div class="navigation">
         <div class="navigation-innen">
             <form action="static/php/startseite_handler.php" method="post" class="button-form">
-                <input type="submit" class="button-gruen" name="tarif" value="Tages Ticket">
-                <input type="submit" class="button-gruen" name="tarif" value="Monats Ticket">
-                <input type="submit" class="button-gruen" name="tarif" value="Jahres Ticket">
+                <input type="submit"  class="button-gruen" name="tarif" value="Tages Ticket">
+                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['monatsticket'];?>">
+                <input type="submit" class="button-gruen" name="tarif" value="<?php echo $_SESSION['language']['jahresticket'];?>">
             </form>
         </div>
     </div>
 </div>
 </body>
 <script src="static/js/zeit.js"></script>
+<a href="startseite.php?GET_LANG=de"><img src="./static/images/deutsch.jpg" width="150 "</a>
+<a href="startseite.php?GET_LANG=en"><img src="./static/images/englisch.png" width="150 "</a>
 </html>

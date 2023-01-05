@@ -65,7 +65,7 @@ session_start();
     </div>
     <div class="hinweistext">
         <div class="text">
-            Bitte wählen sie einen Tarif aus
+            <?php echo $_SESSION['language']['bitteTarif']?>
         </div>
     </div>
 
@@ -80,7 +80,7 @@ session_start();
                         echo '<input type="radio" class="radio" name="tarif" id="Einzelticket" value="Einzelticket">';
                     }
                     ?>
-                    <label for="Einzelticket" class="normaltarif">Einzelticket</label>
+                    <label for="Einzelticket" class="normaltarif"><?php echo $_SESSION['language']['Einzelticket']?></label>
 
                     <?php
                     if (isset($_SESSION['tarif']) && $_SESSION['tarif'] == 'Viererticket'){
@@ -89,9 +89,10 @@ session_start();
                         echo '<input type="radio" class="radio" name="tarif" id="Viererticket" value="Viererticket">';
                     }
                     ?>
-                    <label for="Viererticket" class="normaltarif">Viererticket</label>
+                    <label for="Viererticket" class="normaltarif"><?php echo $_SESSION['language']['Viererticket']?></label>
 
                     <?php
+                    $ausgabe=$_SESSION['language']['5erGruppenticket'];
                     if (isset($_SESSION['count']) && $_SESSION['count'] == 5){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket"';
@@ -102,15 +103,17 @@ session_start();
                         }
 
                         echo      '>';
-                        echo '<label for="_5erGruppenticket" class="_5ergruppenticket">5er Gruppenticket</label>';
+
+                        echo '<label for="_5erGruppenticket" class="_5ergruppenticket">'.$ausgabe.'</label>';
                     }else{
                         //Button Grau
                         echo '<input type="radio" class="radio" name="tarif" id="_5erGruppenticket" value="5erGruppenticket" disabled>
-                    <label for="_5erGruppenticket" id="_5erGruppenticketlabel" class="_5ergruppenticket">5er Gruppenticket</label>';
+                    <label for="_5erGruppenticket" id="_5erGruppenticketlabel" class="_5ergruppenticket">'.$ausgabe.'</label>';
                     }
                     ?>
 
                     <?php
+                    $ausgabe=$_SESSION['language']['10erGruppenticket'];
                     if (isset($_SESSION['count']) && $_SESSION['count'] == 10){
                         //Button Gruen
                         echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket"';
@@ -121,18 +124,18 @@ session_start();
                         }
 
                         echo      '>';
-                        echo '<label for="_10erGruppenticket" class="_10ergruppenticket">10er Gruppenticket</label>';
+                        echo '<label for="_10erGruppenticket" class="_10ergruppenticket">'.$ausgabe.'</label>';
                     }else{
                         //Button Grau
                         echo '<input type="radio" class="radio" name="tarif" id="_10erGruppenticket" value="10erGruppenticket" disabled>
-                    <label for="_10erGruppenticket" id="_10erGruppenticketlabel" class="_10ergruppenticket">10er Gruppenticket</label>';
+                    <label for="_10erGruppenticket" id="_10erGruppenticketlabel" class="_10ergruppenticket">'.$ausgabe.'</label>';
                     }
                     ?>
                 </div>
                 <div class="navigation-btn">
-                    <input type="submit" class="Abbrechen" name="Abbrechen" id="Abbrechen" value="Abbrechen">
-                    <input type="submit" class="Zurück" name="Zurück" id="Zurück" value="Zurück">
-                    <input type="submit" id="weiter" class="button-disabled" value="Weiter" disabled>
+                    <input type="submit" class="Abbrechen" name="Abbrechen" id="Abbrechen" value="<?php echo $_SESSION['language']['abbrechen']?>">
+                    <input type="submit" class="Zurück" name="Zurück" id="Zurück" value="<?php echo $_SESSION['language']['zurück']?>">
+                    <input type="submit" id="weiter" class="button-disabled" value="<?php echo $_SESSION['language']['weiter']?>" disabled>
                 </div>
             </form>
         </div>
