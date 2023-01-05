@@ -157,7 +157,7 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
     <div class="navigation">
         <div class="navigation-innen">
             <form method="post">
-                <input type="submit" class="button-orange" value="Abbrechen" id="<?php echo $_SESSION['language']['abbrechen']?>" onclick="abbrechenVorgang(this)">
+                <input type="submit" class="button-orange" value="<?php echo $_SESSION['language']['abbrechen']?>" id="abbrechen" onclick="abbrechenVorgang(this)">
                 <input type="submit" class="button-orange" name="zurück" value="<?php echo $_SESSION['language']['zurück']?>" onclick="abbrechenVorgang(this)">
             </form>
 
@@ -182,7 +182,7 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>
-    <div class="loadingscreen" id="loading-text">Lädt...</div>
+    <div class="loadingscreen" id="loading-text"><?php echo $_SESSION['language']['laedt']?></div>
 </div>
 <!--Page Load-->
 

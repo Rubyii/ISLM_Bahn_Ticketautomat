@@ -13,6 +13,8 @@ if ($_SESSION['klasse'] == "klasse1") $klasse = "1.Klasse";
 $isAboTicket = false;
 if(isset($_SESSION['tarif'])) {
     if($_SESSION['tarif']=="Daily ticket"){$ticketart="Tages Ticket"; $_SESSION['tarif']=$ticketart;}
+    if($_SESSION['tarif']=="Monthly ticket "){$ticketart="Monats Ticket"; $_SESSION['tarif']=$ticketart;}
+    if($_SESSION['tarif']=="Yearly ticket"){$ticketart="Jahres Ticket"; $_SESSION['tarif']=$ticketart;}
     else $ticketart = $_SESSION['tarif'];
     if ($ticketart == "Tages Ticket" || $ticketart == "Monats Ticket" || $ticketart == "Jahres Ticket")  $isAboTicket = true;
 }
@@ -179,7 +181,7 @@ if (!empty($_POST['tarifÄndern'])) {
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>
-    <div class="loadingscreen" id="loading-text">Lädt...</div>
+    <div class="loadingscreen" id="loading-text"><?php echo $_SESSION['language']['laedt']?></div>
 </div>
 <!--Page Load-->
 

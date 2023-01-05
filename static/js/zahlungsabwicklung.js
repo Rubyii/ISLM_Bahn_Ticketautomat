@@ -5,7 +5,7 @@ function abbrechenVorgang(thisElement) {
     const iframes = document.querySelectorAll('iframe');
 
     let rückgeld = parseFloat(document.getElementById('gesamt').value.replace(',','')) - parseFloat(document.getElementById('restbetrag').value.replace('€','').replace('.','').replace(',','.'));
-    iframes[1].contentDocument.getElementById('rückgeld').innerHTML = "Ihr Rückgeld beträgt " + (rückgeld.toFixed(2) + '€').replace('.',',');
+    iframes[1].contentDocument.getElementById('rückgeld').innerHTML =  (rückgeld.toFixed(2) + '€').replace('.',',');
     const z = Array.from(document.getElementsByClassName('button-orange'));
     z.forEach( element => {
             element.disabled = true;
@@ -166,7 +166,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             (document.getElementById('rest').value) = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ((rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -294,7 +294,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -421,7 +421,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -548,7 +548,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ((rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -675,7 +675,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -802,7 +802,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -929,7 +929,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1056,7 +1056,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1183,7 +1183,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1310,7 +1310,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1437,7 +1437,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1564,7 +1564,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;
@@ -1697,7 +1697,7 @@ function buttonClicked(value){
             document.getElementById('grid-container').style = "filter: blur(3px)";
             document.getElementById('abbruch').style.visibility = 'unset';
             document.getElementById('rest').value = rest;
-            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ("Ihr Wechselgeld beträgt " + (rest * -1).toFixed(2) + '€').replace('.',',');
+            document.querySelector('iframe').contentDocument.getElementById('wechselgeld').innerHTML = ( (rest * -1).toFixed(2) + '€').replace('.',',');
             const z = Array.from(document.getElementsByClassName('button-orange'));
             z.forEach( element => {
                     element.disabled = true;

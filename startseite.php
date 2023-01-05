@@ -33,7 +33,7 @@ if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
 
 <div class="loadingscreen" id="loader-container" >
     <div class="loadingscreen" id="loader"></div>
-    <div class="loadingscreen" id="loading-text">Lädt...</div>
+    <div class="loadingscreen" id="loading-text"><?php echo $_SESSION['language']['laedt']?></div>
 </div>
 <!--Page Load-->
 
