@@ -31,6 +31,8 @@ else if($_SESSION['GET_LANG']=="de")
 else if($_SESSION['GET_LANG']=="en")
 {$_SESSION['language'] = sprache("en");}
 
+else
+    $_SESSION['language'] = sprache("de");
 
 ?>
 
