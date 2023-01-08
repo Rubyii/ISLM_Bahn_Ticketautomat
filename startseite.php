@@ -92,7 +92,7 @@ if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
                 <br><br>
                 <label for="ziel" class="label"><?php echo $_SESSION['language']['ziel'];?></label>
                 <div class="autocomplete" style="width:300px;">
-                    <input list="ziele" id="ziel" placeholder="<?php echo $_SESSION['language']['ziel2']?>" name = "ziel" class="input-ziel" autocomplete="off"
+                    <input list="ziele" id="ziel" placeholder="<?php echo $_SESSION['language']['ziel2']?>" name = "ziel" class="input-ziel" autocomplete="off"<?php if($_SESSION['language']['ziel']=="To"){echo "style='margin: 0px 0px 0px 91px'";}?>
                         <?php if (isset($_SESSION['ziel'])){echo "value=".'"'.$_SESSION['ziel'].'"';}?>
                     >
                 </div>
@@ -107,7 +107,7 @@ if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
                 ?>
 
                 <br><br>
-                <input type="submit" id="weiter" class="input" value="<?php echo $_SESSION['language']['weiter'];?>" name="weiter">
+                <input type="submit" id="weiter" class="input" value="<?php echo $_SESSION['language']['weiter'];?>" name="weiter"style="position:absolute; top:66vh; left:78vw;height: 100px;">
             </form>
         </div>
     </div>
@@ -121,9 +121,11 @@ if (isset($_GET['GET_LANG']) != "" && $_GET['GET_LANG'] == 'de') {
             </form>
         </div>
     </div>
+    <a class="flaggen" href="startseite.php?GET_LANG=de"><img src="./static/images/deutsch.png" width="150 "</a>
+    <a class="flaggen" href="startseite.php?GET_LANG=en"><img src="./static/images/englisch.png" width="150 "</a>
+
 </div>
 </body>
 <script src="static/js/zeit.js"></script>
-<a href="startseite.php?GET_LANG=de"><img src="./static/images/deutsch.jpg" width="150 "</a>
-<a href="startseite.php?GET_LANG=en"><img src="./static/images/englisch.png" width="150 "</a>
+
 </html>

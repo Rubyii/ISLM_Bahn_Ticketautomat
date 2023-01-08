@@ -14,7 +14,7 @@
     padding-bottom: 2.5%;
     height: 100vh;
     width: 100vw;
-    grid-template-rows: auto auto 60vh auto;
+    grid-template-rows: auto auto 40vh auto;
 
 }
 
@@ -218,6 +218,7 @@
     border: none;
     border-radius: 15px;
     box-shadow: 0 2px #999;
+    line-height: 60px;
 }
 
 .button-gruen:active {
@@ -309,4 +310,22 @@
 .autocomplete-active {
     background-color: #1a7c1b;
     color: #1a7c1b;
+}
+
+.grid-container .flaggen{
+    width:10px;
+    padding-top:5px;
+    padding-right:1px;
+    height:70px;
+    -webkit-tap-highlight-color: transparent;
+}
+.grid-container .flaggen:active{
+    transform: translateY(2px);
+}
+
+.grid-container .flaggen >img{
+    width:150px;
+    height:80px;
+
+
 }

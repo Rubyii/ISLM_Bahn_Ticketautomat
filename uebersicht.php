@@ -12,10 +12,11 @@ if ($_SESSION['klasse'] == "klasse1") $klasse = "1.Klasse";
 
 $isAboTicket = false;
 if(isset($_SESSION['tarif'])) {
-    if($_SESSION['tarif']=="Daily ticket"){$ticketart="Tages Ticket"; $_SESSION['tarif']=$ticketart;}
-    if($_SESSION['tarif']=="Monthly ticket "){$ticketart="Monats Ticket"; $_SESSION['tarif']=$ticketart;}
+    if($_SESSION['tarif']=="Day ticket"){$ticketart="Tages Ticket"; $_SESSION['tarif']=$ticketart;}
+    if($_SESSION['tarif']=="Monthly ticket"){$ticketart="Monats Ticket"; $_SESSION['tarif']=$ticketart;}
     if($_SESSION['tarif']=="Yearly ticket"){$ticketart="Jahres Ticket"; $_SESSION['tarif']=$ticketart;}
     else $ticketart = $_SESSION['tarif'];
+
     if ($ticketart == "Tages Ticket" || $ticketart == "Monats Ticket" || $ticketart == "Jahres Ticket")  $isAboTicket = true;
 }
 
