@@ -132,8 +132,9 @@ $result = $expired->format('d.m.Y');
 $cellHeightTopBottom = 20;
 $cellHeightMain = 40;
 $gapBetweenTickets = 15;
-$gaprechts = 8;
+$gaprechts = 10;
 
+$i1 = 105;
 if ($ticketart == "Einzelticket") {
     $count = 0;
     $saveX = 0;
@@ -227,7 +228,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Einzelticket_Erwachsen, 2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY(105, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Einzelticket_Erwachsen * 0.19, 2));
@@ -339,7 +340,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Einzelticket_Erwachsen, 2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY(105+ 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Einzelticket_Erwachsen * 0.19, 2));
@@ -449,7 +450,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Kind,2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Kind * 0.19,2));
@@ -560,7 +561,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Kind,2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Kind * 0.19,2));
@@ -670,7 +671,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Senior,2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Senior * 0.19,2));
@@ -780,7 +781,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Senior,2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Senior * 0.19,2));
@@ -890,7 +891,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Ermaessigt,2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Ermaessigt * 0.19,2));
@@ -1000,7 +1001,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**".number_format($preis_Einzelticket_Ermaessigt,2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***".number_format($preis_Einzelticket_Ermaessigt * 0.19,2));
@@ -1129,7 +1130,7 @@ else if ($ticketart == "Gruppenticket") {
     $pdf->Write(3, "MwSt D:");
     $pdf->SetXY(75, $saveY + 10);
     $pdf->Write(3, "**".number_format($preis_Gruppenticket,2));
-    $pdf->SetXY(95, $saveY + 10);
+    $pdf->SetXY($i1, $saveY + 10);
     $pdf->Write(3, "19,00% = ");
     $pdf->SetXY(130, $saveY + 10);
     $pdf->Write(3, "***".number_format($preis_Gruppenticket * 0.19,2));
@@ -1242,7 +1243,7 @@ else if ($isAboTicket) {
             else {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Erwachsen, 2));
             }
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -1367,7 +1368,7 @@ else if ($isAboTicket) {
             else {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Erwachsen, 2));
             }
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -1492,7 +1493,7 @@ else if ($isAboTicket) {
             else {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Kind, 2));
             }
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -1620,7 +1621,7 @@ else if ($isAboTicket) {
             else {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Kind, 2));
             }
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -1749,7 +1750,7 @@ else if ($isAboTicket) {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Senior, 2));
             }
 
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -1879,7 +1880,7 @@ else if ($isAboTicket) {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Senior, 2));
             }
 
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -2009,7 +2010,7 @@ else if ($isAboTicket) {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Ermaessigt, 2));
             }
 
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -2139,7 +2140,7 @@ else if ($isAboTicket) {
                 $pdf->Write(3, "**" . number_format($preis_Jahresticket_Ermaessigt, 2));
             }
 
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             if ($ticketart == "Tagesticket") {
@@ -2266,7 +2267,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Erwachsen, 2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Erwachsen * 0.19, 2));
@@ -2367,7 +2368,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Erwachsen, 2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Erwachsen * 0.19, 2));
@@ -2468,7 +2469,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Kind, 2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Kind * 0.19, 2));
@@ -2569,7 +2570,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Kind, 2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Kind * 0.19, 2));
@@ -2670,7 +2671,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Senior, 2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Senior * 0.19, 2));
@@ -2771,7 +2772,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Senior, 2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Senior * 0.19, 2));
@@ -2872,7 +2873,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Ermaessigt, 2));
-            $pdf->SetXY(95, $saveY + 10);
+            $pdf->SetXY($i1, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Ermaessigt * 0.19, 2));
@@ -2973,7 +2974,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Write(3, "MwSt D:");
             $pdf->SetXY(75+ 200, $saveY + 10);
             $pdf->Write(3, "**" . number_format($preis_Viererticket_Ermaessigt, 2));
-            $pdf->SetXY(95+ 200, $saveY + 10);
+            $pdf->SetXY($i1 + 200, $saveY + 10);
             $pdf->Write(3, "19,00% = ");
             $pdf->SetXY(130+ 200, $saveY + 10);
             $pdf->Write(3, "***" . number_format($preis_Viererticket_Ermaessigt * 0.19, 2));
