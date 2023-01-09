@@ -22,7 +22,6 @@
     display: grid;
     grid-template-columns: 33% 33% 33%;
     margin-left: 50px;
-    margin-top: 50px;
 }
 .left-grid {
     display: grid;
@@ -31,7 +30,7 @@
 }
 
 input {
-    width: 75px;
+    width: 100px;
     border: 2px solid black;
 }
 .status-kunde {
