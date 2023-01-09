@@ -100,22 +100,22 @@ $json_data = json_decode($json, true);
     <div>
         <h3>Einzelticket:</h3>
         <div class="status-kunde">
-            <label for="einzelticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="einzelticket" name="einzelticket" value= <?php echo number_format($json_data['einzelticket'],2).'€' ?>>
+            <label for="einzelticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="einzelticket" name="einzelticket" value= <?php echo number_format($json_data['einzelticket'],2,".","").'€' ?>>
             <p id="einzelticketP"></p>
         </div>
         <h3>Viererticket:</h3>
         <div class="status-kunde">
-            <label for="viererticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="viererticket" name="viererticket" value= <?php echo number_format($json_data['viererticket'],2).'€' ?>>
+            <label for="viererticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="viererticket" name="viererticket" value= <?php echo number_format($json_data['viererticket'],2,".","").'€' ?>>
             <p id="viererticketP"></p>
         </div>
         <h3>Gruppenticket 5 Personen:</h3>
         <div class="status-kunde">
-            <label for="gruppenticket5">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="gruppenticket5" name="gruppenticket5" value= <?php echo number_format($json_data['gruppenticket5'],2).'€' ?>>
+            <label for="gruppenticket5">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="gruppenticket5" name="gruppenticket5" value= <?php echo number_format($json_data['gruppenticket5'],2,".","").'€' ?>>
             <p id="gruppenticket5P"></p>
         </div>
         <h3>Gruppenticket 10 Personen:</h3>
         <div class="status-kunde">
-            <label for="gruppenticket10">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="gruppenticket10" name="gruppenticket10" value= <?php echo number_format($json_data['gruppenticket10'],2).'€' ?>>
+            <label for="gruppenticket10">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="gruppenticket10" name="gruppenticket10" value= <?php echo number_format($json_data['gruppenticket10'],2,".","").'€' ?>>
             <p id="gruppenticket10P"></p>
         </div>
 
@@ -123,17 +123,17 @@ $json_data = json_decode($json, true);
     <div>
         <h3>Tagesticket:</h3>
         <div class="status-kunde">
-            <label for="tagesticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="tagesticket" name="tagesticket" value= <?php echo number_format($json_data['tagesticket'],2).'€' ?>>
+            <label for="tagesticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="tagesticket" name="tagesticket" value= <?php echo number_format($json_data['tagesticket'],2,".","").'€' ?>>
             <p id="tagesticketP"></p>
         </div>
         <h3>Monatsticket:</h3>
         <div class="status-kunde">
-            <label for="monatsticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="monatsticket" name="monatsticket" value= <?php echo number_format($json_data['monatsticket'],2).'€' ?>>
+            <label for="monatsticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="monatsticket" name="monatsticket" value= <?php echo number_format($json_data['monatsticket'],2,".","").'€' ?>>
             <p id="monatsticketP"></p>
         </div>
         <h3>Jahresticket:</h3>
         <div class="status-kunde">
-            <label for="jahresticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="jahresticket" name="jahresticket" value= <?php echo number_format($json_data['jahresticket'],2).'€' ?>>
+            <label for="jahresticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="jahresticket" name="jahresticket" value= <?php echo number_format($json_data['jahresticket'],2,".","").'€' ?>>
             <p id="jahresticketP"></p>
         </div>
     </div>

@@ -25,19 +25,19 @@ $json_data_stats = json_decode($json, true);
 
 if(!$isAboTicket) {
     if ($ticketart == "Einzelticket") {
-        $json_data_stats['einzeltickets_euro'] += $_SESSION['preisGesamt'];
+        $json_data_stats['einzeltickets_euro'] += floatval(str_replace(",","",$_SESSION['preisGesamt']));
         $json_data_stats['einzeltickets_anzahl'] += $anzErmaessigt + $anzErwachsene + $anzSenior + $anzKind;
     }
     else if ($ticketart == "Viererticket") {
-        $json_data_stats['vierertickets_euro'] += $_SESSION['preisGesamt'];
+        $json_data_stats['vierertickets_euro'] += floatval(str_replace(",","",$_SESSION['preisGesamt']));
         $json_data_stats['vierertickets_anzahl'] += $anzErmaessigt + $anzErwachsene + $anzSenior + $anzKind;
     }
     else if ($ticketart == "5erGruppenticket") {
-        $json_data_stats['gruppenticket5_euro'] += $_SESSION['preisGesamt'];
+        $json_data_stats['gruppenticket5_euro'] += floatval(str_replace(",","",$_SESSION['preisGesamt']));
         $json_data_stats['gruppenticket5_anzahl'] += 1;
     }
     else if ($ticketart == "10erGruppenticket") {
-        $json_data_stats['gruppenticket10_euro'] += $_SESSION['preisGesamt'];
+        $json_data_stats['gruppenticket10_euro'] += floatval(str_replace(",","",$_SESSION['preisGesamt']));
         $json_data_stats['gruppenticket10_anzahl'] += 1;
     }
 

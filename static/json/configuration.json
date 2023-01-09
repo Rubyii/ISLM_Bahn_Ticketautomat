@@ -8,11 +8,11 @@
     "lang": "20",
     "klasse2": "0",
     "klasse1": "10",
-    "einzelticket": "10",
+    "einzelticket": "5000.10",
     "viererticket": "36.00",
     "gruppenticket5": "8.50",
     "gruppenticket10": "8.00",
     "tagesticket": "10.00",
     "monatsticket": "50.00",
-    "jahresticket": "250.00"
+    "jahresticket": "10000.00"
 }

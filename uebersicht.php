@@ -95,8 +95,9 @@ function ermaessigtPreisBerechnung($_rechenwerte): float
 
 
 if ($anzErwachsene != 0){
-    $preisPPErwachsene = number_format(erwachsenePreisBerechnung($rechenwerte),2);
-    $preisPPErwachseneKomma = str_replace(".",",",$preisPPErwachsene);
+
+    $preisPPErwachsene = number_format(erwachsenePreisBerechnung($rechenwerte),2, ".", "");
+    $preisPPErwachseneKomma = number_format($preisPPErwachsene,2, ",", ".");
 }else {
     $preisPPErwachsene = 0;
     $preisPPErwachseneKomma = 0;
@@ -104,8 +105,8 @@ if ($anzErwachsene != 0){
 
 
 if ($anzKind != 0){
-    $preisPPKind = number_format(kinderPreisBerechnung($rechenwerte),2);
-    $preisPPKindKomma = str_replace(".",",",$preisPPKind);
+    $preisPPKind = number_format(kinderPreisBerechnung($rechenwerte),2, ".", "");
+    $preisPPKindKomma = number_format($preisPPKind,2, ",", ".");
 }else {
     $preisPPKind = 0;
     $preisPPKindKomma = 0;
@@ -113,8 +114,8 @@ if ($anzKind != 0){
 
 
 if ($anzSenior != 0){
-    $preisPPSenior = number_format(seniorPreisBerechnung($rechenwerte),2);
-    $preisPPSeniorKomma = str_replace(".",",",$preisPPSenior);
+    $preisPPSenior = number_format(seniorPreisBerechnung($rechenwerte),2, ".", "");
+    $preisPPSeniorKomma = number_format($preisPPSenior,2, ",", ".");
 }else {
     $preisPPSenior = 0;
     $preisPPSeniorKomma = 0;
@@ -122,8 +123,8 @@ if ($anzSenior != 0){
 
 
 if ($anzErmaessigt != 0){
-    $preisPPErmaessigt = number_format(ermaessigtPreisBerechnung($rechenwerte),2);
-    $preisPPErmaessigtKomma = str_replace(".",",",$preisPPErmaessigt);
+    $preisPPErmaessigt = number_format(ermaessigtPreisBerechnung($rechenwerte),2, ".", "");
+    $preisPPErmaessigtKomma = number_format($preisPPErmaessigt,2, ",", ".");
 }else {
     $preisPPErmaessigt = 0;
     $preisPPErmaessigtKomma = 0;
@@ -132,9 +133,6 @@ if ($anzErmaessigt != 0){
 $preisGesamt = number_format(($anzErwachsene * $preisPPErwachsene) + ($anzKind * $preisPPKind) + ($anzSenior * $preisPPSenior) + ($anzErmaessigt * $preisPPErmaessigt), 2);
 
 $preisGesamtKomma =  number_format(str_replace(',','',$preisGesamt),2, ",",".");
-
-
-
 
 $_SESSION['preisGesamt'] = $preisGesamt;
 
@@ -282,7 +280,7 @@ if (!empty($_POST['tarifÄndern'])) {
             <div class="rightright">
                 <div>
                 </div>
-                <div style="font-size: 35px">
+                <div style="font-size: 30px">
                     <?php
                     if ($anzErwachsene != 0) {
                         $ausgabe=$_SESSION['language']['erwachsen'];
@@ -293,17 +291,17 @@ if (!empty($_POST['tarifÄndern'])) {
                         echo '<p>'.$anzKind."x ".$ausgabe.'</p>';
                     }
                     if ($anzSenior != 0) {
-                        $ausgabe=$_SESSION['language']['kinder'];
+                        $ausgabe=$_SESSION['language']['senior'];
                         echo '<p>'.$anzSenior."x ".$ausgabe.'</p>';
                     }
                     if ($anzErmaessigt != 0) {
-                        $ausgabe=$_SESSION['language']['kinder'];
+                        $ausgabe=$_SESSION['language']['erm'];
                         echo '<p>'.$anzErmaessigt."x ".$ausgabe.'</p>';
                     }
 
                     ?>
                 </div>
-                <div style="position: relative; font-size: 35px; right: 35px">
+                <div style="position: relative; font-size: 30px; right: 35px">
                     <?php
                     if ($anzErwachsene != 0) {
                         echo '<p>'."p.P ".$preisPPErwachseneKomma.'</p>';
