@@ -24,8 +24,8 @@ if (!empty($_POST['abbrechen'])) {
 </head>
 <body>
 <div class="main">
-    <p><?php echo $_SESSION['language']['nichtgenugGeld']?> <br> <?php echo $_SESSION['language']['fürwechselgeld']?></p>
-    <p><?php echo $_SESSION['language']['personal']?></p>
+    <p><?php echo $_SESSION['language']['nichtgenugGeld']?> <br> <?php echo $_SESSION['language']['fürwechselgeld']?>
+    <br> <?php echo $_SESSION['language']['personalwenden']?></p>
     <form method="post" >
         <button class="button-orange" type="submit" name="abbrechen" value="abbrechen" id="entnommen"><?php echo $_SESSION['language']['abbrechen']?></button>
 

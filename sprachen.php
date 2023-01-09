@@ -8,8 +8,8 @@ function sprache($sprache)
     if ($sprache == "en") {
         $lang = [
             'Willkommen' => 'welcome',
-            'bitteZiel' => 'Please enter a Destination',
-            'bitteAnzReisende' => 'Please enter a number of travelers',
+            'bitteZiel' => 'Please enter a destination',
+            'bitteAnzReisende' => 'Please enter the number of travelers',
             'bitteTarif' => 'Please select your desired tariff',
             'bitteEingabeprüfen' => 'Please check your entered data',
             'bittezahlen' => 'Please pay',
@@ -53,7 +53,10 @@ function sprache($sprache)
             'drucken' => 'Print',
             'laedt'=>'Loading...',
             'infotext'=> 'Warning! Running purchasing process',
-            'angabeInEuro'=>'Every price in €'];
+            'angabeInEuro'=>'Every price in €',
+            'nichtgenugGeld'=>'There ist not enough Change in the ticket machine',
+            'fürwechselgeld'=>'',
+            'personalwenden'=>'Please contact the railway staff'];
         return $lang;
     } else if ($sprache == "de") {
         $lang = [

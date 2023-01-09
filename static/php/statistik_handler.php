@@ -34,11 +34,11 @@ if(!$isAboTicket) {
     }
     else if ($ticketart == "5erGruppenticket") {
         $json_data_stats['gruppenticket5_euro'] += $_SESSION['preisGesamt'];
-        $json_data_stats['gruppenticket5_anzahl'] += $anzErmaessigt + $anzErwachsene + $anzSenior + $anzKind;
+        $json_data_stats['gruppenticket5_anzahl'] += 1;
     }
     else if ($ticketart == "10erGruppenticket") {
         $json_data_stats['gruppenticket10_euro'] += $_SESSION['preisGesamt'];
-        $json_data_stats['gruppenticket10_anzahl'] += $anzErmaessigt + $anzErwachsene + $anzSenior + $anzKind;
+        $json_data_stats['gruppenticket10_anzahl'] += 1;
     }
 
     $json_data_stats['gesamt_euro'] = $json_data_stats['einzeltickets_euro'] + $json_data_stats['vierertickets_euro'] + $json_data_stats['gruppenticket5_euro'] + $json_data_stats['gruppenticket10_euro'];

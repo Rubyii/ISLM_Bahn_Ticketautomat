@@ -124,7 +124,7 @@ else
                 ?>
 
                 <br><br>
-                <input type="submit" id="weiter" class="input" value="<?php echo $_SESSION['language']['weiter'];?>" name="weiter"style="position:absolute; top:66vh; left:78vw;height: 100px;">
+                <input type="submit" id="weiter" class="input" value="<?php echo $_SESSION['language']['weiter'];?>" name="weiter"style="position:absolute; top:68vh; left:78vw;height: 100px;">
             </form>
         </div>
     </div>
