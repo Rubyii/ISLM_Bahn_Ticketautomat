@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ((!empty($_SESSION['anzErwachsene']) && $_SESSION['anzErwachsene'] > 0) || (!empty($_SESSION['anzKinder']) && $_SESSION['anzKinder'] > 0) || (!empty($_SESSION['anzErmaessigt']) && $_SESSION['anzErmaessigt'] > 0) ||(!empty($_SESSION['anzSenioren']) && $_SESSION['anzSenioren'] > 0) || $_SESSION['klasse'] == "klasse1" || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Einzelticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Viererticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "5erGruppenticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "10erGruppenticket"))) {
+if ((!empty($_SESSION['anzErwachsene']) && $_SESSION['anzErwachsene'] > 0) || (!empty($_SESSION['anzKinder']) && $_SESSION['anzKinder'] > 0) || (!empty($_SESSION['anzErmaessigt']) && $_SESSION['anzErmaessigt'] > 0) ||(!empty($_SESSION['anzSenioren']) && $_SESSION['anzSenioren'] > 0) ||  (!empty($_SESSION['klasse']) && $_SESSION['klasse'] == "klasse1") || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Einzelticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "Viererticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "5erGruppenticket")) || ((!empty($_SESSION['tarif']) && ($_SESSION['tarif']) == "10erGruppenticket"))) {
     $_SESSION['showinfo'] = true;
 }
 else if (empty($_SESSION['anzErwachsene']) || empty($_SESSION['anzKinder']) || empty($_SESSION['anzSenioren']) || empty($_SESSION['anzErmaessigt']) || ($_SESSION['anzErwachsene'] == 0 || $_SESSION['anzErmaessigt'] == 0 || $_SESSION['anzKinder'] == 0 || $_SESSION['anzSenioren'] == 0) && $_SESSION['klasse'] == "klasse2") {
@@ -15,20 +15,20 @@ $_SESSION['language'] = [];
 //if(isset($_SESSION['GET_LANG'])&&$_GET['GET_LANG']==$_SESSION['GET_LANG']){} // funktioniert nicht, da getölang ja keinen wert hat
 
 
-if ($_GET['GET_LANG'] == 'en')
+if (isset($_GET['GET_LANG']) && $_GET['GET_LANG'] == 'en')
     {                // falls englisch angefragt-> get lang nicht leer und englisch
     $_SESSION['language'] = sprache("en");
     $_SESSION['GET_LANG'] = "en";
     }
-else if ($_GET['GET_LANG'] == 'de') //falls deutsch angefragt-> get lang nicht leer und deutsch
+else if (isset($_GET['GET_LANG']) && $_GET['GET_LANG'] == 'de') //falls deutsch angefragt-> get lang nicht leer und deutsch
     {
     $_SESSION['language'] = sprache("de");
     $_SESSION['GET_LANG'] = "de";
     }
-else if($_SESSION['GET_LANG']=="de")
+else if(isset($_GET['GET_LANG']) &&$_SESSION['GET_LANG']=="de")
 {$_SESSION['language'] = sprache("de");}
 
-else if($_SESSION['GET_LANG']=="en")
+else if(isset($_GET['GET_LANG']) && $_SESSION['GET_LANG']=="en")
 {$_SESSION['language'] = sprache("en");}
 
 else
