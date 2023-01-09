@@ -131,8 +131,9 @@ $result = $expired->format('d.m.Y');
 
 $cellHeightTopBottom = 20;
 $cellHeightMain = 40;
+$sizeDatum_Euro = 16;
 $gapBetweenTickets = 15;
-$gaprechts = 10;
+$gaprechts = 9;
 
 $i1 = 105;
 if ($ticketart == "Einzelticket") {
@@ -218,7 +219,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -237,11 +238,11 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Einzelticket_Erwachsen, 2));
 
-            $pdf->SetFont('Arial', '', 12);
+            $pdf->SetFont('Arial', '', 10);
             $pdf->SetXY(175, $saveY + 13);
             $pdf->Write(3, "Barzahlung");
 
@@ -330,7 +331,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -349,7 +350,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Einzelticket_Erwachsen, 2));
 
@@ -440,7 +441,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10 , $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -459,7 +460,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160,$saveY ,160,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Kind,2));
 
@@ -551,7 +552,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10 + 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -570,7 +571,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160+ 200,$saveY ,160+ 200,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Kind,2));
 
@@ -661,7 +662,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10 , $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -680,7 +681,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160,$saveY ,160,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Senior,2));
 
@@ -771,7 +772,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10 + 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -790,7 +791,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160+ 200,$saveY ,160+ 200,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Senior,2));
 
@@ -881,7 +882,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10 , $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -900,7 +901,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160,$saveY ,160,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Ermaessigt,2));
 
@@ -991,7 +992,7 @@ if ($ticketart == "Einzelticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200 , $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1010,7 +1011,7 @@ if ($ticketart == "Einzelticket") {
             $pdf->Line(160+ 200,$saveY ,160+ 200,$saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**".number_format($preis_Einzelticket_Ermaessigt,2));
 
@@ -1120,7 +1121,7 @@ else if ($ticketart == "Gruppenticket") {
     // Datum und Uhrzeit
     $pdf->SetXY(10 , $saveY + 8);
     $pdf->SetFont('Arial', '', 12);
-    $pdf->SetXY(18, $saveY + 8);
+    $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
     $pdf->Write(3, $date);
     $pdf->SetXY(45, $saveY + 8);
     $pdf->Write(3, $time);
@@ -1139,7 +1140,7 @@ else if ($ticketart == "Gruppenticket") {
     $pdf->Line(160,$saveY ,160,$saveY + 20);
 
     // Betrag
-    $pdf->SetFont('Arial', 'B', 18);
+    $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
     $pdf->SetXY(162, $saveY + 5);
     $pdf->Write(3, "EUR**".number_format($preis_Gruppenticket,2));
 
@@ -1225,7 +1226,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1259,7 +1260,7 @@ else if ($isAboTicket) {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Erwachsen, 2));
@@ -1350,7 +1351,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1384,7 +1385,7 @@ else if ($isAboTicket) {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Erwachsen, 2));
@@ -1475,7 +1476,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1510,7 +1511,7 @@ else if ($isAboTicket) {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Kind, 2));
@@ -1603,7 +1604,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1638,7 +1639,7 @@ else if ($isAboTicket) {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Kind, 2));
@@ -1731,7 +1732,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1768,7 +1769,7 @@ else if ($isAboTicket) {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Senior, 2));
@@ -1861,7 +1862,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -1898,7 +1899,7 @@ else if ($isAboTicket) {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Senior, 2));
@@ -1991,7 +1992,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2028,7 +2029,7 @@ else if ($isAboTicket) {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Ermaessigt, 2));;
@@ -2121,7 +2122,7 @@ else if ($isAboTicket) {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2158,7 +2159,7 @@ else if ($isAboTicket) {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             if ($ticketart == "Tagesticket") {
                 $pdf->Write(3, "EUR**" . number_format($preis_Tagesticket_Ermaessigt, 2));;
@@ -2257,7 +2258,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2276,7 +2277,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Erwachsen, 2));
 
@@ -2358,7 +2359,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2377,7 +2378,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Erwachsen, 2));
 
@@ -2459,7 +2460,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2478,7 +2479,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Kind, 2));
 
@@ -2560,7 +2561,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2579,7 +2580,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Kind, 2));
 
@@ -2661,7 +2662,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2680,7 +2681,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Senior, 2));
 
@@ -2762,7 +2763,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2781,7 +2782,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Senior, 2));
 
@@ -2863,7 +2864,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2882,7 +2883,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160, $saveY, 160, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Ermaessigt, 2));
 
@@ -2964,7 +2965,7 @@ else if ($ticketart == "Viererticket") {
             // Datum und Uhrzeit
             $pdf->SetXY(10+ 200, $saveY + 8);
             $pdf->SetFont('Arial', '', 12);
-            $pdf->SetXY(18+ 200, $saveY + 8);
+            $pdf->SetXY($sizeDatum_Euro + 200, $saveY + 8);
             $pdf->Write(3, $date);
             $pdf->SetXY(45+ 200, $saveY + 8);
             $pdf->Write(3, $time);
@@ -2983,7 +2984,7 @@ else if ($ticketart == "Viererticket") {
             $pdf->Line(160+ 200, $saveY, 160+ 200, $saveY + 20);
 
             // Betrag
-            $pdf->SetFont('Arial', 'B', 18);
+            $pdf->SetFont('Arial', 'B', $sizeDatum_Euro);
             $pdf->SetXY(162+ 200, $saveY + 5);
             $pdf->Write(3, "EUR**" . number_format($preis_Viererticket_Ermaessigt, 2));
 
