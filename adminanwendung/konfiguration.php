@@ -136,21 +136,23 @@ $json_data = json_decode($json, true);
             <label for="jahresticket">Normalpreis pro Person</label> <input oninput="testEuro(this)" type="text" id="jahresticket" name="jahresticket" value= <?php echo number_format($json_data['jahresticket'],2,".","").'€' ?>>
             <p id="jahresticketP"></p>
         </div>
+
+        <div class="message">
+            <?php if(!empty($_POST['submit'])): ?>
+                <div>
+                    <p id="successText">Ihre Eingaben wurden erfolgreich gespeichert</p>
+                </div>
+            <?php endif; ?>
+
+        </div>
+        <div class="bottom-navigation">
+            <input type="submit" value="Bestätigen" id="bestätigen" name="submit">
+        </div>
     </div>
 
 
 </div>
-    <div class="message">
-        <?php if(!empty($_POST['submit'])): ?>
-        <div>
-            <p id="successText">Ihre Eingaben wurden erfolgreich gespeichert</p>
-        </div>
-        <?php endif; ?>
 
-    </div>
-    <div class="bottom-navigation">
-        <input type="submit" value="Bestätigen" id="bestätigen" name="submit">
-    </div>
 
 </form>
 
