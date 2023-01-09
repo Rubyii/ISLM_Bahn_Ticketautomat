@@ -105,7 +105,7 @@ else
         <div class="hauptfunktion-innen">
             <form action="static/php/startseite_handler.php" method="post">
                 <label for="start" class="label"><?php echo $_SESSION['language']['start'];?></label>
-                <input type="text" id="start" name = "start" value="Köln Hauptbahnhof" class="input" readonly <?php if($_SESSION['language']['start']=="From"){echo "style='margin: 0px 0px 0px 12px'";}?>>
+                <input type="text" id="start" name = "start" value="Köln Hauptbahnhof" class="input" readonly <?php if($_SESSION['language']['start']=="From"){echo "style='margin: 0px 0px 0px 13px'";}?>>
                 <br><br>
                 <label for="ziel" class="label"><?php echo $_SESSION['language']['ziel'];?></label>
                 <div class="autocomplete" style="width:300px;">
