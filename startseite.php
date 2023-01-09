@@ -13,22 +13,25 @@ include "sprachen.php";
 <?php
 $_SESSION['language'] = [];
 //if(isset($_SESSION['GET_LANG'])&&$_GET['GET_LANG']==$_SESSION['GET_LANG']){} // funktioniert nicht, da getölang ja keinen wert hat
+if (empty($_GET['GET_LANG']))
+{
+    $_GET['GET_LANG'] = "";
+}
 
-
-if (isset($_GET['GET_LANG']) && $_GET['GET_LANG'] == 'en')
+if ($_GET['GET_LANG'] == 'en')
     {                // falls englisch angefragt-> get lang nicht leer und englisch
     $_SESSION['language'] = sprache("en");
     $_SESSION['GET_LANG'] = "en";
     }
-else if (isset($_GET['GET_LANG']) && $_GET['GET_LANG'] == 'de') //falls deutsch angefragt-> get lang nicht leer und deutsch
+else if ($_GET['GET_LANG'] == 'de') //falls deutsch angefragt-> get lang nicht leer und deutsch
     {
     $_SESSION['language'] = sprache("de");
     $_SESSION['GET_LANG'] = "de";
     }
-else if(isset($_GET['GET_LANG']) &&$_SESSION['GET_LANG']=="de")
+else if($_SESSION['GET_LANG']=="de")
 {$_SESSION['language'] = sprache("de");}
 
-else if(isset($_GET['GET_LANG']) && $_SESSION['GET_LANG']=="en")
+else if($_SESSION['GET_LANG']=="en")
 {$_SESSION['language'] = sprache("en");}
 
 else
