@@ -10,6 +10,8 @@ session_start();
     <title>Ticket drucken</title>
     <link rel="stylesheet" href="static/css/drucken.css">
     <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 

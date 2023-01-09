@@ -83,6 +83,7 @@ if (!empty($_POST['navi-weiter'])) {
     <link rel="stylesheet" href="static/css/anzahl_reisende.css">
     <script async defer src="static/js/anzReisende.js"></script>
     <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/keinRechtsclick.js"></script>
 
 </head>
 <body>

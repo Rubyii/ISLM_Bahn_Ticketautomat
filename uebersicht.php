@@ -172,6 +172,8 @@ if (!empty($_POST['tarifÄndern'])) {
     <title>Uebersicht</title>
     <link rel="stylesheet" href="static/css/uebersicht.css">
     <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 

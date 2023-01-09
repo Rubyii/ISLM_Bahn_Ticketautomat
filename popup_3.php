@@ -20,7 +20,8 @@ if (!empty($_POST['abbrechen'])) {
     <meta charset="UTF-8">
     <title>Bezahlen</title>
     <link rel="stylesheet" href="static/css/popup_3.css">
-
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 <div class="main">

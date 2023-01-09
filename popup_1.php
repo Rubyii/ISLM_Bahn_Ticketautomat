@@ -24,7 +24,8 @@ if (!empty($_POST['weiter'])) {
     <meta charset="UTF-8">
     <title>Bezahlen</title>
     <link rel="stylesheet" href="static/css/popup_1.css">
-
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 <div class="top-text">

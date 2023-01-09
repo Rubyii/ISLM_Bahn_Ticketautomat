@@ -17,6 +17,8 @@ session_start();
     <link rel="stylesheet" href="static/css/tarif.css">
     <script async defer src="static/js/tarif_handler.js"></script>
     <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 

@@ -14,6 +14,8 @@ $preisGesamtKomma = number_format(str_replace(',','',$gesamtpreis),2, ",",".");
     <title>Bezahlen</title>
     <link rel="stylesheet" href="static/css/zahlung.css">
     <script async defer src="static/js/pageloader.js"></script>
+    <script async defer src="static/js/keinRechtsclick.js"></script>
+    <script async defer src="static/js/keinZurueck.js"></script>
 </head>
 <body>
 
